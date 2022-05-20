@@ -1,0 +1,217 @@
+.pitem{
+  width: 200px;
+  height: 490px;
+  margin-right: 6px;
+  color:#fff;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.pitem .line{
+  border-bottom: 1px solid #FFF;
+  margin: 19px 16px;
+}
+
+.pitem .deprecated{
+  text-decoration:line-through;
+}
+.pitem .chractor {
+  margin-top: 40px;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 25px;
+  text-align: center;
+  height: 160px;
+}
+.pitem .button {
+  background: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 180px;
+  height: 43px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  color: #9D7EAE;
+  font-weight: 600;
+  line-height: 43px;
+}
+p.more{
+  font-size: 12px;
+  line-height: 16px;
+}
+p.more a {
+  color: white;
+}
+.b{
+  border: 1px solid #ABABAB;
+  border-radius: 3px;
+}
+.w850{width:850px;}
+.ml850{margin-left:850px;}
+.rbutton{
+  width: 220px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  color: white;
+  background: #3B72B2;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.compare {
+  border-left: 1px solid #ababab;
+  border-top: 1px solid #ababab;
+}
+
+.compare .item {
+  border-right: 1px solid #ababab;
+  border-bottom: 1px solid #ababab;
+}
+
+.compare .last {
+  border-bottom: none;
+}
+
+.compare .item .title {
+  background: #EBEBEB;
+  height: 60px;
+  line-height: 60px;
+  text-indent: 25px;
+  font-size: 18px;
+  position: relative;
+  border-bottom: 1px solid #ababab;
+}
+
+.compare .arr {
+  width: 16px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  cursor: pointer;
+  background-image: url(/img/arrdown.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.compare .arr_r {
+  transform: rotate(0deg);
+}
+
+.compare .arr_b {
+  transform: rotate(180deg);
+}
+
+.compare .scontent {
+    margin-left: 0;
+    display: none;
+}
+
+.compare .scontent .c_line {
+  border-bottom: 1px solid #ababab;
+  display: flex;
+  justify-content: space-between;
+}
+
+.compare .scontent .c_line > span  {
+  width:16%;
+  min-width: 140px;
+  line-height: 50px;
+  border-right: 1px solid #ababab;
+  text-align: center;
+  display: inline-block;
+}
+.compare .scontent .c_line > .name {
+  font-weight: normal;
+  width: 16%;
+}
+.compare .scontent .c_line > .data {
+  font-size: 16px;
+  width: 16%;
+}
+.compare .scontent .c_line > span img{
+  width: 24px;
+}
+
+.compare .scontent .c_line span.last  {
+  border-right: none;
+}
+
+div.last {
+  border-bottom: none !important;
+}
+
+.rbutton a{
+  color: white;
+  text-decoration: none;
+  
+}
+
+.spitem {
+  width: 180px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 10px;
+}
+
+.spitem .chractor p {
+  line-height: 21px;
+  font-size: 14px;
+}
+.spitem .stitle {
+  padding-bottom: 10px;
+}
+.spitem .stitle .sbig {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  display: block;
+  text-align: left;
+}
+.spitem .stitle .ssmall {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  display: block;
+  text-align: left;
+}
+
+.spitem .chractor p {
+  line-height: 24px;
+  color: rgb(66, 66, 66);
+  font-weight: 300;
+  padding-top: 14px;
+  text-align: left;
+}
+
+.spitem .chractor a {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 15px;
+  display: block;
+}
+
+.fs34{
+  font-size: 34px !important;
+}
+
+.fs24{
+  font-size: 24px !important;
+}
+
+
+
+/**
+功能：
+、信息订阅、历史消息云存储、多端与多设备同步、反垃圾
+
+拓展：API接口限流、支持设备数、存储空间的大小、每日消息数、群数量、群规模、聊天室管理
+
+支持：24小时技术支持、指定工程师
+**/

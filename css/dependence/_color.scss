@@ -1,0 +1,57 @@
+@import './_var';
+@import './_function';
+/**
+  * 颜色
+  */
+.text-white{color: #ffffff}
+.text-black{color: #000000}
+
+.text-drop-title{color: $nav-drop-menu-title}
+.text-part-count{color: $part-title-count}
+.text-part-link{color: $part-link-1}
+.text-part-link2{color: $part-link-2}
+.text-down-link{color: $down-link}
+.text-footer-title{color: $footer-title};
+.text-footer{color: $footer-link};
+.text-footer-bottom{color:$footer-bottom}
+.text-sea-virtue{color: $sea-virtue}
+.text-down-m1{color: $down-m1}
+@include md{
+  .md\:text-part-link2{color: $part-link-2}
+}
+/**
+  * 背景色
+  */
+.bg-none {background-image: none}
+.bg-white{background-color: white}
+.bg-menu-back{background: $menu-back}
+.bg-part-back{background: $part-back}
+.bg-part-back-1{background: $part-back-1}
+.bg-dev-back{background: $dev-back};
+.bg-blue{background: $header-back};
+.bg-card-1{background: $card-back-1}
+.bg-card-2{background: $card-back-2}
+.bg-card-3{background: $card-back-3}
+.bg-card-4{background: $card-back-4}
+.bg-info-custom{background: $info-custom}
+.bg-api-quote{background: $api-quote}
+.bg-footer{background: $footer-back}
+.bg-footer-line{background: $footer-line}
+.bg-gradient-01{background: linear-gradient(90deg, #0EABEC 0%, #47B6FF 100%)}
+.bg-footer-menu{background: $footer-menu-back}
+.bg-down-install{background: $down-back-install}
+.bg-down-setup{background: $down-back-setup}
+.bg-down-part{background: $down-part-back}
+.bg-down-m1{background: $down-m1-back}
+
+.hover\:bg-down-version{
+  &:hover {
+    background: $down-version-back;
+  }
+}
+
+.sm\:bg-doc-detail{
+  @include mobile {
+    background: $doc-detail-back;
+  }
+}

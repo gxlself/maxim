@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="One-click IM Public Cloud, One-click IM Private Cloud, One-click IM Proprietary Cloud, Quick Integration, Convenient and Professional " />
+    <meta name="Keywords"
+          content="Lanying IM, Maximtop, IM SDK, Instant Messaging, IM Cloud, IM Cloud Service, Mobile IM, Open Source IM, Enterprise IM, Chat Software, Mobile Customer Service, Online Customer Service, IM Business Scenario, APP Social, Developer Service, Live Chatroom, Live Audio/Video, Audio/Video, Live Platform, Maximtop Anti-spam, Content Security " />
+    <meta name="Keywords" content="Multi-Cloud Architecture, Private Cloud, One-click Deployment, One-click Installation, IM Private Cloud, Easy to Customize, Enable Private Cloud " />
+    <meta name="Keywords" content="Global Connectivity, Overseas, Cross-Cluster Deployment, Global Data Center, Business Customization, IM Public Cloud, Made to Measure, Enable Proprietary Cloud " />
+    <meta name="Keywords" content="Cloud Storage for Message, Multi-Device Synchronization, Message Roaming, Cloud Storage, Open Platform, App Client " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/en/css/common.css">
+    <link rel="stylesheet" href="/en/css/index.css">
+    <link rel="stylesheet" href="/en/css/snav.css">
+    <link rel="stylesheet" href="/en/css/price.css">
+    <link rel="stylesheet" href="/en/css/doc.css">
+
+    <script src="/en/js/jquery.js"></script>
+    <script>$(function () {
+  // Set tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['One-Click IM Public Cloud' ,
+    '153,277 Lines Of Code Open Sourced' ,
+    'One-Click IM Private Cloud ',
+    'One-Click IM Proprietary Cloud' ,
+    'The 1st and Only private IM for All Clouds' ,
+    'Next-Gen Cloud Native IM '
+  ];
+  const mqarr2 = ['Easy integration, global connectivity, start at CN￥25 per day. ',
+    'Maximtop Open Source（MTOS）2021.08.12' ,
+    'Easy to customize, 10 minutes to set up, monthly charge from 0 CN￥. ',
+    'Exclusive tenant resource and cloud service level guarantee. ',
+    'Listed in AWS/Aliyun/QingCloud marketplaces, deploy anywhere.' ,
+    'Multi-cloud architecture, One-Click deployment, monthly charge (PAYG) '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/en/privacy/">
+    <title>LANYING.IM - Professional SDK, Monthly Charged Private Cloud </title>
+</head>
+
+
+<body style="min-width: 100px; !important;">
+  <style>
+    body {
+      margin: 0;
+      /* padding: 10px 20px; */
+      color: #4f4f4f;
+      line-height: 21px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+    }
+
+    .manualEntry {
+      font-weight: 400;
+    }
+  </style>
+  <div class="title pt30">User privacy policy </div>
+  <div class="panel-group" id="faq-collapse" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" style="padding: 20px;">
+      <p>
+        To protect user personal information, Maximtop may collect and use your relevant information in products or services using. All details about how we collect, use, store and share this information, and the ways we provide you with access to, update, control and protect this information are transparent in this Privacy Policy. This Privacy Policy is closely related to Maximtop services you use, please read it carefully and make your appropriate choices based-on it when necessary. 
+      </p>
+      <p><b>By using or continuing to use our services, you consent to our collection, use, storage and sharing of your information in accordance with this Privacy Policy. </b></p>
+      <div class="manualEntry">I. Information we might collect </div>
+      <p>The following information about you may be collected, stored, and used when we provide services. Without this relevant information, you may not be able to register as our user, enjoy some of our services, or even if we can continue to provide you with some services, the intended effect of the services will not be achieved. </p>
+      <p class="i">1. Information you provide </p>
+      <li>The personal information, such as phone number, email and bank card number, that you provide to us when registering our account or using our services; </li>
+      <li>The shared information you provide to other parties through our services, and the information you store when use our services. </li>
+      <p class="i">2. Your information shared by other parties </p>
+      <li>Shared information about you when other parties use our services. </li>
+      <p class="i">3. We have direct access to some of your information; we may collect the following information when you use our services: </p>
+      <p></p>
+      <li>Your log information, system may get cookies and web beacon when you use our service 
+        Or other technical information that collected automatically, including: 
+        Device or software information, such as configuration information provided by your mobile device, web browser, or other programs you use to access our services, your IP address, and the version and device ID used by your mobile device; </li>
+      <li>Information you search and browse when using our services, such as web search terms you use, url addresses of social media pages you visit, </li>
+      <li>and other information and content details that you browse or request when using our service; </li>
+      <li>Information about mobile applications (APPs) and other software you have used, and information about how you used these APPs and software; </li>
+      <li>The information about your communication through our services, such as the account number you have communicated with, as well as the communication time, data and duration; </li>
+      <li>The information (metadata) that you share through our services, such as the date, time, or location of a shared photo or video taken or uploaded. Location information refers to the information we collect about your location when you turn on the device location function and use our location-based related services, including: 
+        When you use our services from a mobile device with location function, 
+        the location information collected through GPS or WiFi; </li>
+      <li>
+        Real-time information provided by you or other users containing your geographic location, such as information about your region contained in the account information you provided, shared information uploaded by you or others showing your current or former geographic location, such as geo-tagged information contained in shared photos; You can stop our collection of your geographic location information at any time by turning off the location function. 
+      </li>
+      <p></p>
+
+      <div class="manualEntry">II. How we might use this information </div>
+      <p>We may use the information gathered in the course of providing you with services for the following purposes:  </p>
+      <p>1. Used for authentication, customer service, security, fraud detection, archiving and backup purposes to ensure the security of our products and services to you; </p>
+      <p>2. Used to help us design new services and improve existing services; </p>
+      <p>3. Used for better understanding how you access and use our services to respond specifically to your personalized needs, such as language settings, location settings, personalized help services and instructions, or otherwise respond to you and other users of our services; </p>
+      <p>4. Used for software certification or software upgrade management; Let you participate in the investigation of our products and services. </p>
+      <p>
+        5. In order to give you a better experience, improve our services or other uses you agree to, we may use the information collected through one/some of our services for our other services in a pooled or personalized way on the premise of complying with relevant laws and regulations. For example, information gathered when you use one of our services may be used in another service to provide you with specific content, or to show you non-universally pushed information that is relevant to you. You can also authorize us to use the information provided and stored by that service for our other services if appropriate options available. 
+      </p>
+
+      <div class="manualEntry">III. How you can access and control your personal information </div>
+      <p>We will make every possible technical effort to ensure that you can access, update and correct your registration information or other personal information provided when using our services. When accessing, updating, correcting, and deleting your personal information, we may require you to authenticate to secure your account. </p>
+      <div class="manualEntry">IV. Information security </div>
+      <p>
+        We retain your personal information only for the period necessary for the purposes stated in this Privacy Policy and for the period required by laws and regulations. We use various security techniques and procedures to prevent loss, improper use, unauthorized viewing or disclosure of information. For example, in some services, we will use encryption techniques (such as SSL) to protect the personal information you provide. However, please understand that due to technical limitations and various malicious means that may exist, in the Internet industry, even if we try our best to strengthen security measures, it is impossible to always ensure 100% security of information. You need to understand that the systems and communication networks you use to access our services may have problems due to circumstances beyond our control. 
+      </p>
+      <div class="manualEntry">V. Scope of Privacy Policy </div>
+      <p>This Privacy Policy applies to all of our services except for certain specific services. Please note that this Privacy Policy does not apply to information collected by third-party services (including any third-party websites) accessed through our services, nor information collected through other companies and institutions that advertise in our services. 
+      </p>
+      <div class="manualEntry">VI. Policy change </div>
+      <p>
+        We may amend the terms of this Privacy Policy as and when appropriate, and such amendments form part of this Privacy Policy. If such amendments result in a substantial diminution of your rights under this Privacy Policy, we will notify you by prominently posting on the home page or by sending you an email or otherwise before the amendments take effect, in which case you agree to be bound by this revised Privacy Policy if you continue to use our services. 
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

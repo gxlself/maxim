@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  {% include snav.html %}
+
+  <div class="sea-header h-screen md:h-107.5 text-white text-center flex flex-col justify-center items-center">
+    <div class="hidden md:block">
+      <h1 class="font-light mb-v16 md:mb-1 md:text-9.5">
+        选择合适的跨地区通讯模式，<br />
+        提高国际业务用户体验
+      </h1>
+      <p>满足目标地区数据保护法规要求，高效跨洲通讯，出海企业首选</p>
+    </div>
+
+    <h1 class="block md:hidden text-v54">
+      {% t auto.key_223_991641457  %} {% comment %}两种出海模式{% endcomment %}
+    </h1>
+  </div>
+
+  <div class="py-v120 md:py-0 px-v40 md:px-p6.25 flex flex-col md:flex-row items-center md:-mt-12 md:mb-9.5">
+    <div class="md:w-1/2 md:px-18.75">
+      <h1 class="mb-v30 md:mb-7 text-v34 md:text-4xl md:font-normal">传统出海模式</h1>
+      <p class="mb-v30 md:mb-4.5 text-v26 md:text-lg">{% t auto.key_224_439602892  %} {% comment %}传统出海服务架构，视业务重心选择，国内数据中心加国外代理，或者国外数据中心配合国内代理{% endcomment %}</p>
+      <p class="mb-v50 md:mb-0 text-v26 md:text-lg text-sea-virtue font-semibold">{% t auto.key_225_117929369  %} {% comment %}优点：技术简单、成本低，只优化链路{% endcomment %}</p>
+    </div>
+
+    <div class="md:w-1/2">
+      <img class="md:rounded-3.5 w-full sea-shadow bg-white" src="../img/sea/sea-tradition-m.png" alt="">
+    </div>
+  </div>
+
+  <div class="pb-v120 md:pb-0 px-v40 md:px-p6.25 flex flex-col-reverse md:flex-row items-center md:mb-20">
+    <div class="md:w-1/2">
+      <img class="md:rounded-3.5 w-full sea-shadow" src="../img/sea/sea-global-m.png" alt="">
+    </div>
+    <div class="md:w-1/2 md:px-18.75">
+      <h1 class="mb-v30 md:mb-7 text-v34 md:text-4xl md:font-normal">{% t auto.key_226_864241573  %} {% comment %}全球通连模式{% endcomment %}</h1>
+      <p class="mb-v30 md:mb-4.5 text-v26 md:text-lg">{% t auto.key_227_883983340  %} {% comment %}率先研发的多数据中心架构，支持服务全球跨集群部署，数据可按照地域就近访问，为出海应用提供更专业选择{% endcomment %}</p>
+      <p class="mb-v50 md:mb-0 text-v26 md:text-lg text-sea-virtue font-semibold">{% t auto.key_228_894652473  %} {% comment %}优点：用户体验极佳、数据全球分布、技术先进{% endcomment %}</p>
+    </div>
+  </div>
+
+  <div class="part-five bg-part-back-1 pt-v120 md:pt-13.5 pb-v50 md:pb-0">
+    <h1 class="mb-v10 md:mb-2 text-v42 md:text-4xl font-normal text-center">{% t auto.key_203_849028605  %} {% comment %}真正全球通连{% endcomment %}</h1>
+    <p class="text-center text-v24 md:text-lg mb-v80 md:mb-7">
+      {% t auto.key_204_788248796  %} {% comment %}跨地域数据中心部署，出海业务首选{% endcomment %}
+    </p>
+
+    <div class="flex justify-center">
+      <div>
+        <h2>
+          <span class="text-v54 md:text-14.5 text-part-count leading-v66 md:leading-17.5" style="font-family: Biko;">22</span>
+          <span class="font-light text-v24 md:text-lg">个</span>
+        </h2>
+        <p class="text-v24 md:text-base">覆盖全球地理区域</p>
+      </div>
+
+      <div class="md:ml-25">
+        <h2>
+          <span class="text-v54 md:text-14.5 text-part-count leading-v66 md:leading-17.5" style="font-family: Biko;">200</span>
+          <span class="font-light text-v24 md:text-lg">个</span>
+        </h2>
+        <p class="text-v24 md:text-base">服务国家和地区近</p>
+      </div>
+    </div>
+
+    <img class="md:w-full" src="../img/sea/sea-1.png" />
+  </div>
+
+  <div class="part-back relative py-v150 md:pt-27 md:pb-24.5 text-center text-white overflow-hidden">
+    <h1 class="mb-v50 md:mb-12.5 text-v42 md:text-4xl font-normal text-center">专业SDK, 私有云按月付费</h1>
+    <a class="inline-block border w-v320 md:w-102 text-v26 md:text-5 leading-v90 md:leading-17.5 rounded-v10 md:rounded-1" href="https://console.lanyingim.com/" target="_blank" >
+      {% t auto.key_222_137272277  %} {% comment %}立即免费试用{% endcomment %}
+    </a>
+  </div>
+
+  {% include nfooter.html %}
+</body>
+</html>

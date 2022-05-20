@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="One-click IM Public Cloud, One-click IM Private Cloud, One-click IM Proprietary Cloud, Quick Integration, Convenient and Professional " />
+    <meta name="Keywords"
+          content="Lanying IM, Maximtop, IM SDK, Instant Messaging, IM Cloud, IM Cloud Service, Mobile IM, Open Source IM, Enterprise IM, Chat Software, Mobile Customer Service, Online Customer Service, IM Business Scenario, APP Social, Developer Service, Live Chatroom, Live Audio/Video, Audio/Video, Live Platform, Maximtop Anti-spam, Content Security " />
+    <meta name="Keywords" content="Multi-Cloud Architecture, Private Cloud, One-click Deployment, One-click Installation, IM Private Cloud, Easy to Customize, Enable Private Cloud " />
+    <meta name="Keywords" content="Global Connectivity, Overseas, Cross-Cluster Deployment, Global Data Center, Business Customization, IM Public Cloud, Made to Measure, Enable Proprietary Cloud " />
+    <meta name="Keywords" content="Cloud Storage for Message, Multi-Device Synchronization, Message Roaming, Cloud Storage, Open Platform, App Client " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/en/css/common.css">
+    <link rel="stylesheet" href="/en/css/index.css">
+    <link rel="stylesheet" href="/en/css/snav.css">
+    <link rel="stylesheet" href="/en/css/price.css">
+    <link rel="stylesheet" href="/en/css/doc.css">
+
+    <script src="/en/js/jquery.js"></script>
+    <script>$(function () {
+  // Set tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['One-Click IM Public Cloud' ,
+    '153,277 Lines Of Code Open Sourced' ,
+    'One-Click IM Private Cloud ',
+    'One-Click IM Proprietary Cloud' ,
+    'The 1st and Only private IM for All Clouds' ,
+    'Next-Gen Cloud Native IM '
+  ];
+  const mqarr2 = ['Easy integration, global connectivity, start at CN￥25 per day. ',
+    'Maximtop Open Source（MTOS）2021.08.12' ,
+    'Easy to customize, 10 minutes to set up, monthly charge from 0 CN￥. ',
+    'Exclusive tenant resource and cloud service level guarantee. ',
+    'Listed in AWS/Aliyun/QingCloud marketplaces, deploy anywhere.' ,
+    'Multi-cloud architecture, One-Click deployment, monthly charge (PAYG) '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/en/refund-policy/">
+    <title>LANYING.IM - Professional SDK, Monthly Charged Private Cloud </title>
+</head>
+
+
+<body style="min-width: 100px !important;">
+  <style>
+    body {
+      margin: 0;
+      /* padding: 10px 20px; */
+      color: #4f4f4f;
+      line-height: 21px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+    }
+
+    .manualEntry {
+      font-weight: 400;
+    }
+
+    .t {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .t1 {
+      text-indent: 24px;
+    }
+
+    .t2 {
+      text-indent: 48px;
+    }
+
+    .t3 {
+      text-indent: 72px;
+    }
+
+    a {
+      color: rgb(52, 117, 192);
+      text-decoration: none;
+    }
+  </style>
+  <div class="title pt30"> Maximtop Services Termination Process </div>
+  <div class="panel-group" id="faq-collapse" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" style="padding: 20px;">
+      <p>Since you have registered as a customer of Maximtop and use the products/services provided by Maximtop, this process is part of Maximtop Services Contract, please read it carefully. </p>
+      <p>If you request to terminate the service before the expiration of Maximtop service period, you must follow the following procedures. Maximtop will validate whether you meet the conditions for service termination and refunding according to the following procedures and requirements. </p>
+      <p class="t">I. Service termination process </p>
+      <p class="t1">1. Please send a termination request email to your consultant (or the contact person agreed in Maxtimtop Service Contract) one month in advance and explain the reason for termination. </p>
+      <p class="t1">2. Maximtop will reply whether the termination agreed within 3 working days after receiving your request. </p>
+      <p class="t1">3. If the termination agreed, please provide Maximtop the following materials: </p>
+      <p class="t2">1. All copies of invoices (if invoiced); </p>
+      <p class="t2">2. A description with official seal; </p>
+      <p class="t2">3. If the invoice issued by Maximtop is a special VAT invoice, you need to open credit note in your tax bureau (if certified); </p>
+      <p class="t2">4. Payment voucher with official seal; </p>
+      <p class="t1">4. After receiving the above complete materials, Maximtop will negotiate with you to service termination and refund settling. </p>
+      <p class="t">II. Refund rules and instructions </p>
+
+      <p class="t1">1. When refunding, Maximtop will only refund you the difference between the advance payment and your actual service fee consumed, neither gift amount nor preferential amount will be included in the refund settlement amount. </p>
+      <p class="t1">2. Refund is only supported when the corresponding product/service has been used for 6 months or longer. </p>
+      <p class="t1">3. For product/service used less than 6 months, the refund settlement rules are as follows: </p>
+      <p class="t2">1. If the actual consumption amount is greater than the 6-month function usage fee/basic monthly service fee of the corresponding service, it will be implemented according to Article 2 above and refund is supported; </p>
+      <p class="t2">
+        2.
+        If the actual consumption amount is less than the 6-month function usage fee/basic monthly service fee of the corresponding service, it is deemed that you have used the service for 6 whole months, and Meiximtop will calculate the actual amount of the corresponding service according to the 6-month function usage fee/basic monthly service fee, and refund the remaining paid amount to you after deducting the above fees. The refundable amount is: Balance - (6-month function usage fee/basic monthly service fee - actual consumption amount). 
+      </p>
+      <p class="t1">4. Refund is not supported in the following cases： </p>
+      <p class="t2">1. Refund process not followed, or refund materials are missing； </p>
+      <p class="t2">2. Bundling product/service or package purchased； </p>
+      <p class="t2">3. Recharged amount (including paid amount) with marketing discount, preferential activities, etc.； </p>
+      <p class="t2">4. Maximtop cannot fulfill the service promise due to your own reasons or your violation of relevant national laws and regulations </p>
+      <p class="t1">5. Any other questions about refund, please contact the exclusive consultant for your purchased product/service. </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

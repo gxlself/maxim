@@ -1,0 +1,352 @@
+From efea5ce819309976015469789164b2d027314403 Mon Sep 17 00:00:00 2001
+From: Eric Liang <eric@bmxlabs.com>
+Date: Wed, 19 Aug 2020 15:39:05 +0800
+Subject: [PATCH] add click on nav
+
+---
+ _includes/snav.html | 85 ++++++++++++++++++++++-----------------------
+ css/index.css       |  2 +-
+ css/snav.css        | 58 +++++++++++--------------------
+ 3 files changed, 63 insertions(+), 82 deletions(-)
+
+diff --git a/_includes/snav.html b/_includes/snav.html
+index 91eb633..721a560 100644
+--- a/_includes/snav.html
++++ b/_includes/snav.html
+@@ -14,29 +14,29 @@
+     <a href="/"><img class="fl h43 mt27" src="/img/colorlogo.png" /></a>
+     <ul class="nav ml220">
+       <li class="ap">
+-        <span sid="pro">产品</span>
++        <span sid="pro"><a href="/product/">产品</a></span>
+         <div class="drop">
+           <!-- <div class="arr">
+             <div class="arr_arr"></div>
+           </div> -->
+           <ul class="tl w420">
+             <li>
+-              <p class="title black">IM即时通讯</p>
+-              <p class="mt10"><a class="b2 fw3" href="/product/">富文本消息</a></p>
+-              <p><a class="b2 fw3" href="/product/#scloud">消息云存储</a></p>
+-              <p><a class="b2 fw3" href="/product/#open">开放平台</a></p>
++              <p class="title black"><a href="/product/">IM即时通讯</a></p>
++              <p class="mt10 b2 fw3"><a href="/product/">富文本消息</a></p>
++              <p class="b2 fw3"><a href="/product/#scloud">消息云存储</a></p>
++              <p class="b2 fw3"><a href="/product/#open">开放平台</a></p>
+             </li>
+             <li>
+-              <p class="title">部署模式</p>
+-              <p class="mt10"><a class="b2 fw3" href="/deploy/?d=pub">公有云</a></p>
+-              <p><a class="b2 fw3" href="/deploy/?d=pri">私有云<img class="h12 ml3" src="/img/gif/hot.gif" /></a></p>
+-              <p><a class="b2 fw3" href="/deploy/?d=pro">专有云</a></p>
++              <p class="title black"><a href="/deploy/?d=pub">部署模式</a></p>
++              <p class="mt10 b2 fw3"><a href="/deploy/?d=pub">公有云</a></p>
++              <p class="b2 fw3" ><a href="/deploy/?d=pri">私有云<img class="h12 ml3" src="/img/gif/hot.gif" /></a></p>
++              <p class="b2 fw3" ><a href="/deploy/?d=pro">专有云</a></p>
+             </li>
+             <li>
+-              <p class="title">出海应用首选</p>
+-              <p class="mt10"><a class="b2 fw3" href="/oversea/">真正全球通连</a></p>
+-              <p><a class="b2 fw3" href="/oversea/">经典代理模式</a></p>
+-              <p><a class="b2 fw3" href="/oversea/">全球数据中心</a></p>
++              <p class="title black"><a href="/oversea/">出海应用首选</a></p>
++              <p class="mt10 b2 fw3"><a href="/oversea/">真正全球通连</a></p>
++              <p class="b2 fw3" ><a href="/oversea/">经典代理模式</a></p>
++              <p class="b2 fw3" ><a href="/oversea/">全球数据中心</a></p>
+             </li>
+ 
+           </ul>
+@@ -44,10 +44,10 @@
+       </li>
+ 
+ 
+-      <li><a sid="pri" href="/plans/">定价</a></li>
++      <li><span><a sid="pri" href="/plans/">定价</a></span></li>
+ 
+       <li class="ap">
+-        <span class="pointer" sid="dev">开发者中心</span>
++        <span class="pointer" sid="dev"><a href="/developer/">开发者中心</a></span>
+         <div class="drop">
+           <!-- <div class="arr">
+             <div class="arr_arr"></div>
+@@ -55,8 +55,8 @@
+           <ul class="tl w150">
+             <li>
+               <!-- <p class="title black">开发</p> -->
+-              <p class="mt20 b2 fw3"><a class="b2" href="/developer/">开发者中心</a></p>
+-              <p class="mt10 b2"><a class="b2 fw3" href="/docs/">文档中心</a></p>
++              <p class="mt20 b2 fw3"><a href="/developer/">开发者中心</a></p>
++              <p class="mt10 b2 fw3"><a href="/docs/">文档中心</a></p>
+             </li>
+           </ul>
+         </div>
+@@ -64,16 +64,16 @@
+ 
+ 
+       <li class="ap">
+-        <span class="pointer" sid="dow">下载</span>
++        <span class="pointer" sid="dow"><a href="/downloads/">下载</a></span>
+         <div class="drop">
+           <!-- <div class="arr">
+             <div class="arr_arr"></div>
+           </div> -->
+           <ul class="tl w150">
+             <li>
+-              <p class="title black">Demo体验</p>
+-              <p class="mt10 b2"><a class="b2 fw3" href="/downloads/">源码和SDK</a></p>
+-              <p class="mt10 b2"><a class="b2 fw3" href="/downloads/">私有部署安装</a></p>
++              <p class="title black"><a href="/downloads/">Demo体验</a></p>
++              <p class="mt10 b2 fw3"><a href="/downloads/">源码和SDK</a></p>
++              <p class="mt10 b2 fw3"><a href="/downloads/">私有部署安装</a></p>
+             </li>
+           </ul>
+         </div>
+@@ -89,7 +89,7 @@
+         <span>中文</span> / <span>EN</span>
+       </p>
+       <p class="h22 mt13 lh22 tr">
+-        <a target="_blank" class="mr20 fs14 fwn" href="https://console.lanyingim.com">登录</a>
++        <a target="_blank" class="mr20 fs14 fwn white" href="https://console.lanyingim.com">登录</a>
+         <a class="abutton" target="_blank" href="https://console.lanyingim.com">免费注册</a>
+       </p>
+     </div>
+@@ -97,31 +97,30 @@
+     <a href="/"><img class="fl h43 mt27" src="/img/whitelogo.png" /></a>
+     <ul class="nav ml220">
+       <li class="ap">
+-        <span sid="pro">产品</span>
++        <span sid="pro"><a href="/product/">产品</a></span>
+         <div class="drop">
+           <!-- <div class="arr">
+             <div class="arr_arr"></div>
+           </div> -->
+           <ul class="tl w420">
+             <li>
+-              <p class="title">IM即时通讯</p>
+-              <p class="mt10"><a class="b2 fw3" href="/product/">富文本消息</a></p>
+-              <p><a class="b2 fw3" href="/product/#scloud">消息云存储</a></p>
+-              <p><a class="b2 fw3" href="/product/#open">开放平台</a></p>
++              <p class="title black"><a href="/product/">IM即时通讯</a></p>
++              <p class="mt10 b2 fw3"><a href="/product/">富文本消息</a></p>
++              <p class="b2 fw3"><a href="/product/#scloud">消息云存储</a></p>
++              <p class="b2 fw3"><a href="/product/#open">开放平台</a></p>
+             </li>
+             <li>
+-              <p class="title">部署模式</p>
+-              <p class="mt10"><a class="b2 fw3" href="/deploy/?d=pub">公有云</a></p>
+-              <p><a class="b2 fw3" href="/deploy/?d=pri">私有云<img class="h12 ml3" src="/img/gif/hot.gif" /></a></p>
+-              <p><a class="b2 fw3" href="/deploy/?d=pro">专有云</a></p>
++              <p class="title black"><a href="/deploy/?d=pub">部署模式</a></p>
++              <p class="mt10 b2 fw3"><a href="/deploy/?d=pub">公有云</a></p>
++              <p class="b2 fw3"><a href="/deploy/?d=pri">私有云<img class="h12 ml3" src="/img/gif/hot.gif" /></a></p>
++              <p class="b2 fw3"><a href="/deploy/?d=pro">专有云</a></p>
+             </li>
+             <li>
+-              <p class="title">出海应用首选</p>
+-              <p class="mt10"><a class="b2 fw3" href="/oversea/">真正全球通连</a></p>
+-              <p><a class="b2 fw3" href="/oversea/">经典代理模式</a></p>
+-              <p><a class="b2 fw3" href="/oversea/">全球数据中心</a></p>
++              <p class="title black"><a href="/oversea/">出海应用首选</a></p>
++              <p class="mt10 b2 fw3"><a href="/oversea/">真正全球通连</a></p>
++              <p class="b2 fw3" ><a href="/oversea/">经典代理模式</a></p>
++              <p class="b2 fw3" ><a href="/oversea/">全球数据中心</a></p>
+             </li>
+-
+           </ul>
+         </div>
+       </li>
+@@ -130,7 +129,7 @@
+       <li><span class="pointer"><a sid="pri" href="/plans/">定价</a></span>
+       </li>
+       <li class="ap">
+-        <span class="pointer" sid="dev">开发者中心</span>
++        <span class="pointer" sid="dev"><a href="/developer/">开发者中心</a></span>
+         <div class="drop">
+           <!-- <div class="arr">
+             <div class="arr_arr"></div>
+@@ -138,23 +137,23 @@
+           <ul class="tl w150">
+             <li>
+               <!-- <p class="title black">开发</p> -->
+-              <p class="mt20 b2 fw3"><a class="b2" href="/developer/">开发者中心</a></p>
+-              <p class="mt10 b2"><a class="b2 fw3" href="/docs/">文档中心</a></p>
++              <p class="mt20 b2 fw3"><a href="/developer/">开发者中心</a></p>
++              <p class="mt10 b2 fw3"><a href="/docs/">文档中心</a></p>
+             </li>
+           </ul>
+         </div>
+       </li>
+       <li class="ap">
+-        <span class="pointer" sid="dow">下载</span>
++        <span class="pointer" sid="dow"><a href="/downloads/">下载</a></span>
+         <div class="drop">
+           <!-- <div class="arr">
+             <div class="arr_arr"></div>
+           </div> -->
+           <ul class="tl w150">
+             <li class="lh30">
+-              <p class="title black">Demo体验</p>
+-              <p class="mt10 b2"><a class="b2 fw3" href="/downloads/">源码和SDK</a></p>
+-              <p class="mt10 b2"><a class="b2 fw3" href="/downloads/">私有部署安装</a></p>
++              <p class="title black"><a href="/downloads/">Demo体验</a></p>
++              <p class="mt10 b2 fw3"><a href="/downloads/">源码和SDK</a></p>
++              <p class="mt10 b2 fw3"><a href="/downloads/">私有部署安装</a></p>
+             </li>
+           </ul>
+         </div>
+diff --git a/css/index.css b/css/index.css
+index 57be963..e25de6e 100644
+--- a/css/index.css
++++ b/css/index.css
+@@ -10,7 +10,7 @@ a{
+ .sheader nav{
+   border-bottom: none;
+ }
+-.sheader nav a,.sheader nav > span{
++.sheader nav > span{
+   color:white;
+ }
+ 
+diff --git a/css/snav.css b/css/snav.css
+index b39f477..336acbf 100644
+--- a/css/snav.css
++++ b/css/snav.css
+@@ -11,7 +11,12 @@ nav a {
+   color: #4a4a4a;
+ }
+ 
+-nav ul.nav>li {
++nav a:hover, nav ul>li a:hover {
++  text-decoration: none;
++  color: #2E96FF;
++}
++
++nav ul>li {
+   height: 72px;
+   /* padding: 0 0 0 55px; */
+   text-align: center;
+@@ -22,7 +27,7 @@ nav ul.nav>li {
+   margin-top: 24px;
+ }
+ 
+-.sheader nav ul.nav>li>span, nav ul.nav>li>a {
++.sheader nav span>a {
+   height: 72px;
+   display: block;
+   /* box-sizing: border-box; */
+@@ -32,15 +37,14 @@ nav ul.nav>li {
+   color: white;
+ }
+ 
+-.sheader nav ul.nav>li:hover>span, nav ul.nav>li:hover>a {
++.sheader nav span>a:hover{
+   border-bottom: 3px solid #32ADE6;
+   font-family: PingFangSC-Regular;
+   font-size: 14px;
+-  color: white;
+ }
+ 
+ 
+- nav ul.nav>li>span, nav ul.nav>li>a {
++nav span>a {
+   height: 72px;
+   line-height: 72px;
+   display: block;
+@@ -50,14 +54,13 @@ nav ul.nav>li {
+   font-size: 14px;
+   color: #565E66;
+ }
+- nav ul.nav>li:hover>span, nav ul.nav>li:hover>a {
++nav span>a:hover{
+   border-bottom: 3px solid #32ADE6;
+   font-family: PingFangSC-Regular;
+   font-size: 14px;
+-
+ }
+ 
+-nav ul.nav>li>.sel {
++nav ul>li>.sel {
+   color: #0E1114;
+ }
+ 
+@@ -68,7 +71,7 @@ nav .drop {
+   top: 75px;
+   left: 0;
+   background: white;
+-  border-top: 1px solid #f0f0f0; 
++  border-top: 1px solid #f0f0f0;
+   border-left: 1px solid #f0f0f0;
+   border-right: 1px solid #f0f0f0;
+   border-bottom: 1px solid #f0f0f0;
+@@ -113,7 +116,7 @@ nav .drop ul li .title {
+   line-height: 40px;
+   border-bottom: 1px solid #c8c8c8;
+   font-weight: 400;
+-  cursor: normal;
++  cursor: pointer;
+ }
+ 
+ nav .drop ul li p {
+@@ -137,12 +140,12 @@ nav .drop ul li p {
+   display: none;
+   box-sizing: border-box;
+ }
+-#fixedNav ul.nav li> a, #fixedNav ul.nav li> span, #fixedNav a {
++#fixedNav nav li>span, #fixedNav nav li a, #fixedNav a {
+   color: #565E66;
+ }
+ 
+-#fixedNav ul.nav li:hover>span,#fixedNav ul.nav li:hover>a, #fixedNav ul.nav li:hover>.sel,#fixedNav ul.nav li>.sel {
+-  color: #0E1114;
++#fixedNav nav li>span:hover, #fixedNav nav li a:hover, #fixedNav a:hover, #fixedNav nav li>.sel{
++  color: #2E96FF;
+ }
+ .sgray {
+   /* font-family: PingFangSC-Regular; */
+@@ -150,26 +153,8 @@ nav .drop ul li p {
+   color: #565E66;
+ }
+ 
+-
+-nav ul.nav>li>span, nav ul.nav>li>a {
+-  height: 72px;
+-  display: block;
+-  /* box-sizing: border-box; */
+-  padding: 0 20px;
+-  font-family: PingFangSC-Regular;
+-  font-size: 14px;
+-  /* color: #565E66; */
+-}
+-
+-nav ul.nav>li:hover>span, nav ul.nav>li:hover>a  {
+-  border-bottom: 3px solid #32ADE6;
+-  font-family: PingFangSC-Regular;
+-  font-size: 14px;
+-  
+-}
+-
+-nav ul.nav>li>.sel {
+-color: #0E1114;
++nav ul>li>.sel {
++  color: #0E1114;
+ }
+ nav a.abutton {
+   background:#32ADE6;
+@@ -188,11 +173,8 @@ nav a.abutton {
+ .abutton:hover {
+   background: #2E96FF;
+   font-size: 14px;
+-  
++
+ }
+ 
+ .mt13{margin-top: 13px;}
+-.mt12{margin-top: 12px;}
+-
+-
+-
++.mt12{margin-top: 12px;}
+\ No newline at end of file
+-- 
+2.24.0
+

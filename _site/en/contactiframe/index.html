@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="One-click IM Public Cloud, One-click IM Private Cloud, One-click IM Proprietary Cloud, Quick Integration, Convenient and Professional " />
+    <meta name="Keywords"
+          content="Lanying IM, Maximtop, IM SDK, Instant Messaging, IM Cloud, IM Cloud Service, Mobile IM, Open Source IM, Enterprise IM, Chat Software, Mobile Customer Service, Online Customer Service, IM Business Scenario, APP Social, Developer Service, Live Chatroom, Live Audio/Video, Audio/Video, Live Platform, Maximtop Anti-spam, Content Security " />
+    <meta name="Keywords" content="Multi-Cloud Architecture, Private Cloud, One-click Deployment, One-click Installation, IM Private Cloud, Easy to Customize, Enable Private Cloud " />
+    <meta name="Keywords" content="Global Connectivity, Overseas, Cross-Cluster Deployment, Global Data Center, Business Customization, IM Public Cloud, Made to Measure, Enable Proprietary Cloud " />
+    <meta name="Keywords" content="Cloud Storage for Message, Multi-Device Synchronization, Message Roaming, Cloud Storage, Open Platform, App Client " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/en/css/common.css">
+    <link rel="stylesheet" href="/en/css/index.css">
+    <link rel="stylesheet" href="/en/css/snav.css">
+    <link rel="stylesheet" href="/en/css/price.css">
+    <link rel="stylesheet" href="/en/css/doc.css">
+
+    <script src="/en/js/jquery.js"></script>
+    <script>$(function () {
+  // Set tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['One-Click IM Public Cloud' ,
+    '153,277 Lines Of Code Open Sourced' ,
+    'One-Click IM Private Cloud ',
+    'One-Click IM Proprietary Cloud' ,
+    'The 1st and Only private IM for All Clouds' ,
+    'Next-Gen Cloud Native IM '
+  ];
+  const mqarr2 = ['Easy integration, global connectivity, start at CN￥25 per day. ',
+    'Maximtop Open Source（MTOS）2021.08.12' ,
+    'Easy to customize, 10 minutes to set up, monthly charge from 0 CN￥. ',
+    'Exclusive tenant resource and cloud service level guarantee. ',
+    'Listed in AWS/Aliyun/QingCloud marketplaces, deploy anywhere.' ,
+    'Multi-cloud architecture, One-Click deployment, monthly charge (PAYG) '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/en/contactiframe/">
+    <title>LANYING.IM - Professional SDK, Monthly Charged Private Cloud </title>
+</head>
+
+
+<body>
+  <div class="w420 fs16">
+    <form action="https://formspree.io/xjdqgezx" method="POST" name="form">
+      <div class="r">
+        <input type="text" name="name" class="w420 h35 indent5 mt25" placeholder='Name * '>
+        <div c="name" class="err">Name is required, please enter. </div>
+      </div>
+
+      <div class="r">
+        <input type="text" name="company" class="w420 h35 indent5 mt25" placeholder='Company * '>
+        <div c="company" class="err">Company is required, please enter. </div>
+      </div>
+
+      <div class="r">
+        <input type="text" name="phone" class="w420 h35 indent5 mt25" placeholder='Mobile number * '>
+        <div c="phone" class="err">Mobile number is required, please enter. </div>
+      </div>
+
+      <div class="r">
+        <input type="email" name="email" class="w420 h35 indent5 mt25" placeholder='Email * '>
+        <div c="email" class="err">Email is required, please enter. </div>
+      </div>
+      <div class="r">
+        <input type="text" name="product" class="w420 h35 indent5 mt25" placeholder='Intended product * '>
+        <div c="product" class="err">Intended product is required, please enter. </div>
+      </div>
+
+      <textarea name="note" class="w420 h100 mt25 indent5" placeholder='Question and comment (optional) '></textarea>
+      <div class="sbutton ib w420 h35 lh35 mt25" onclick="fsubmit()">Contact us </div>
+    </form>
+  </div>
+</body>
+
+<script>
+  const sarr = ['name', 'company', 'phone', 'email', 'product'];
+  function fsubmit() {
+    let ret = true;
+    sarr.forEach(x => {
+      if (document.querySelector('[name=' + x + ']').value == '') {
+        document.querySelector('[c=' + x + ']').style.display = 'block';
+        ret = false;
+      } else {
+        document.querySelector('[c=' + x + ']').style.display = 'none';
+      }
+    })
+    if (ret) {
+      document.forms[0].submit();
+    }
+  }
+
+</script>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .indent5 {
+    text-indent: 5px !important;
+  }
+  .h35 {
+    height: 35px !important;
+    box-sizing: content-box;
+  }
+  .w420 {
+    width: 420px !important;
+  }
+  /* @media (max-width: 750px) {
+    .w420 {
+      width:70vw!important;
+    }
+  } */
+  .mt25 {
+    margin-top: 25px !important;
+  }
+  .r {
+    position: relative;
+  }
+  .fs16 {
+    font-size: 16px !important;
+  }
+  input{
+    border: 1px solid;
+  }
+  .h100 {
+    height: 100px !important;
+  }
+  textarea {
+    border: 1px solid #DDD;
+  }
+  .sbutton {
+    background: #F5A623;
+    border-radius: 8px;
+    width: 300px;
+    /* height: 35px; */
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+  }
+  .err {
+    font-size: 12px;
+    height: 13px;
+    line-height: 13px;
+    color: #db3f3e;
+    position: absolute;
+    top: 68px;
+    display: none;
+  }
+
+  .sbutton {
+    background: #F5A623;
+    border-radius: 8px;
+    width: 300px;
+    /* height: 35px; */
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+  }
+
+  .err {
+    font-size: 12px;
+    height: 13px;
+    line-height: 13px;
+    color: #db3f3e;
+    position: absolute;
+    top: 68px;
+    display: none;
+  }
+
+  .r {
+    position: relative;
+  }
+
+
+  textarea {
+    border: 1px solid #DDD;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+</style>
+
+
+</html>

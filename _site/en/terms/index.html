@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="One-click IM Public Cloud, One-click IM Private Cloud, One-click IM Proprietary Cloud, Quick Integration, Convenient and Professional " />
+    <meta name="Keywords"
+          content="Lanying IM, Maximtop, IM SDK, Instant Messaging, IM Cloud, IM Cloud Service, Mobile IM, Open Source IM, Enterprise IM, Chat Software, Mobile Customer Service, Online Customer Service, IM Business Scenario, APP Social, Developer Service, Live Chatroom, Live Audio/Video, Audio/Video, Live Platform, Maximtop Anti-spam, Content Security " />
+    <meta name="Keywords" content="Multi-Cloud Architecture, Private Cloud, One-click Deployment, One-click Installation, IM Private Cloud, Easy to Customize, Enable Private Cloud " />
+    <meta name="Keywords" content="Global Connectivity, Overseas, Cross-Cluster Deployment, Global Data Center, Business Customization, IM Public Cloud, Made to Measure, Enable Proprietary Cloud " />
+    <meta name="Keywords" content="Cloud Storage for Message, Multi-Device Synchronization, Message Roaming, Cloud Storage, Open Platform, App Client " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/en/css/common.css">
+    <link rel="stylesheet" href="/en/css/index.css">
+    <link rel="stylesheet" href="/en/css/snav.css">
+    <link rel="stylesheet" href="/en/css/price.css">
+    <link rel="stylesheet" href="/en/css/doc.css">
+
+    <script src="/en/js/jquery.js"></script>
+    <script>$(function () {
+  // Set tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['One-Click IM Public Cloud' ,
+    '153,277 Lines Of Code Open Sourced' ,
+    'One-Click IM Private Cloud ',
+    'One-Click IM Proprietary Cloud' ,
+    'The 1st and Only private IM for All Clouds' ,
+    'Next-Gen Cloud Native IM '
+  ];
+  const mqarr2 = ['Easy integration, global connectivity, start at CN￥25 per day. ',
+    'Maximtop Open Source（MTOS）2021.08.12' ,
+    'Easy to customize, 10 minutes to set up, monthly charge from 0 CN￥. ',
+    'Exclusive tenant resource and cloud service level guarantee. ',
+    'Listed in AWS/Aliyun/QingCloud marketplaces, deploy anywhere.' ,
+    'Multi-cloud architecture, One-Click deployment, monthly charge (PAYG) '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/en/terms/">
+    <title>LANYING.IM - Professional SDK, Monthly Charged Private Cloud </title>
+</head>
+
+
+<body style="min-width: 100px !important;">
+  <style>
+    body {
+      margin: 0;
+      /* padding: 10px 20px; */
+      color: #4f4f4f;
+      line-height: 21px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+    }
+
+    .manualEntry {
+      font-weight: 400;
+    }
+
+    .t {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .t1 {
+      text-indent: 24px;
+    }
+
+    .t2 {
+      text-indent: 48px;
+    }
+
+    a {
+      color: rgb(52, 117, 192);
+      text-decoration: none;
+    }
+  </style>
+  <div class="title pt30">Maximtop Services Terms </div>
+  <div class="panel-group" id="faq-collapse" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" style="padding: 20px;">
+      <p> Maximtop refers Beijing Maximtop Technology Co., Ltd. 
+
+        (hereinafter referred as ‘our company’ or ‘Maximtop’) provides “Internet Cloud Service” to customers. These Terms of Service are an agreement between Maximtop customers and our company. You are welcome to use Maximtop Services provided by our company. Before you register as a Maximtop customer, you have fully read, understood and accepted all the contents of this Agreement. Once you select "I have read and agreed" and complete the registration, you agree to abide by all the agreements of this Agreement. If you do not accept these terms, please do not install, use, register or otherwise access our services. 
+      </p>
+
+      <p class="t">1、Confirmation and acceptance of Terms of Service </p>
+      <p class="t1">（1）Our company provides Maximtop Services to Maximtop customers. Please refer to Maximtop Official Website (hereinafter referred to as ‘Maximtop Platform’) for more service details: <a href="https://www.lanyingim.com"
+          target="_blank">www.lanyingim.com</a>。</p>
+      <p class="t1">
+        （2）The Terms of Service include the text of the Terms, various rules that have been published or may be published in the future by Maximtop Services, and modifications and supplements made by our company from time to time to the text of the above Terms and various rules. All rules, modifications and additions to the text of these terms and rules are an integral part of the Terms of Service and have the same effect as the text of the Terms of Service. Unless otherwise expressly stated, your use of Maximtop Services shall be governed by these Terms of Service. 
+      </p>
+
+      <p class="t1">（3）The contents of Maximtop Services are provided to Maximtop customers by our company according to the actual situation. We reserve the right to modify these Terms of Service at any time, and will publish the revised text on this page after modification. Therefore, please check this page frequently. </p>
+      <p class="t1">（4）If you choose to continue to use Maximtop Services, you will be deemed to accept the modifications of the Terms of Service by our company. </p>
+      <p class="t">2、Terms of Use </p>
+      In order to effectively protect your legitimate rights and interests in using Maximtop Services, you understand and agree to accept the following terms and conditions: 
+      <p class="t1">（1）You understand and agree that our company can unilaterally modify these Terms of Use without your consent. The Terms of Use shall be subject to the prompts on the page when you use the Services. You agree and abide by the Terms of Use as the prerequisite for your use of Maximtop Services. </p>
+      <p class="t1">
+        （2）We will inform you of the service progress and prompt you for the next step by email, but we do not guarantee that you will receive the email in time and will not bear any consequences. Therefore, in the process of using Maximtop Services, you should log in to this website in time to view and carry out relevant operations. Our company will not assume any responsibility for any disputes or losses caused by your failure to check the service state in time, submit relevant applies and modify and confirm the service state in time. 
+      </p>
+      <p class="t1">（3）When you use Maximtop Services, our company reserves the right to charge you for the services in accordance with these Terms of Use, the corresponding service charge introduction, the order or the relevant agreement. </p>
+      <p class="t1">（4）You shall not use Maximtop Services capabilities, technologies, etc. for any commercial activities without the authorization of our company. </p>
+      <p class="t1">（5）We reserve the right to disqualify you and terminate our services at any time if the information you provide is incorrect or untrue. </p>
+      <p class="t">3、Customer Rights and Obligations </p>
+      <p class="t1">（1）You shall be responsible for the account (hereinafter referred to as "Maximtop account") you applied for and obtained on Maximtop website. Only you can use your Maximtop account, which is non-transferable, non-donative and non-inheritable. </p>
+      <p class="t1">
+        （2）You are fully responsible for all actions and remarks made using the Maximtop account and password. You should agree that our company will identify your identity through your username and password of Maximtop account. Please keep your account username and password properly, and you will bear the losses caused by the disclosure of username or password. If you find that others fraudulently use or steal your Maximtop account and password or any other circumstances without legal authorization, you should immediately notify our company with the contact information published in official website, asking us to suspend your Maximtop Services. At the same time, you should understand that it takes a reasonable period for our company to take measures on your request. Before that, our company will not be responsible for the executed instructions and your losses. 
+      </p>
+      <p class="t1">（3）You have the right to enjoy the services and technical support provided by Maximtop. Please refer to the relevant product introduction for details. </p>
+      <p class="t1">（4）You guarantee that you will not use technical or other means to disturb websites and services of Maximtop and other customers, as well as branch services. </p>
+      <p class="t1">
+        （5）You shall bear all responsibilities for massaging by yourself, and our company has no obligation to filter or audit the content sent by Maximtop customers, nor shall it bear any responsibilities of examination, audit, supervision or other joint and several liabilities. If your actions cause losses to our company, you should bear corresponding legal responsibilities, and our company reserves the right to claim compensation through legal channels. 
+      </p>
+      <p class="t1">（6）You may not modify, re-create, decompile or reverse-engineer the SDK of Maximtop Services, or take other attempts to extract source code and perform any acts suspected of infringing Maximtop's intellectual property rights unless Maximtop gives you explicit written authorization. </p>
+      <p class="t1">
+        （7）Any other commercial software and services derived from Maximtop Services developed and officially released shall be authorized by our company, and our company has the right to stop unauthorized derivative commercial software and services and claim compensation from its developers. Downloading, installing and using derivative commercial software and services without the authorization of our company may lead to unpredictable risks, and all legal liabilities and disputes arising therefrom have nothing to do with our company. 
+      </p>
+      <p class="t1">（8）You shall respect the intellectual property rights and other legal rights of Maximtopand other third parties, and our company reserves the right to terminate the service provided to you and claim compensation from you through legal channels when you infringe the legal rights and interests of Maximtop. </p>
+      <p class="t1">
+        （9）You shall ensure that the contact information provided is valid, and ensure the security and stability of the e-mail box you use to receive Maximtop mails, in order to receive the notification message sent by our company in time. You should bear the responsibility for all the consequences caused by the incorrect contact information provided by you and the poor security and stability of the e-mail service you use to receive our mail. 
+      </p>
+      <p class="t1">
+        （10）You guarantee that you will comply with national and local laws and regulations, industry practices and social public ethics when using the services provided by Maximtop, and will not use Maximtop services to store, publish and disseminate the following information and content: any content (information) that violates national laws, regulations and policies; Political propaganda or news information in violation of state regulations; Information involving state secrets or security; Feudal superstition or obscene, pornographic, obscene information or information instigating crimes; Gambling prizes, gambling games; Information that violates the national ethnic and religious policies; Information that hinders the safe operation of the Internet; Information that infringes upon the legitimate rights and interests of others, or other information or content that is detrimental to social order, social security and public morality. 
+      </p>
+      <p class="t1">（11）You guarantee that the mobile number used when registering your account on this website is valid for a long time and has been authenticated by real name. Once the mobile number is found to be invalid, it will be regarded as your account invalid and the account will be disabled. </p>
+      <p class="t1">（12）You have the right to request us to issue a formal invoice for the service fee you paid, but the amount in the invoice does not include the gift part such as preferential activities. </p>
+      <p class="t">4、Maximtop Rights and Obligations </p>
+      <p class="t1">（1）Maximtop provides you with qualified services based on the service you choose and the payment. </p>
+      <p class="t1">
+        （2）Maximtop promises to take confidentiality measures for your information, data and user information, not disclose your information to third parties, and not authorize third parties to use your information, unless: It should be provided according to laws and regulations, and the administrative and judicial authorities require our company to provide it; You agree that our company will provide it to a third party; Submitted by our company to solve the reported incident and filed lawsuit; Published by you publicly; Maximtop website has the right to use the public data and information registered on our site. 
+      </p>
+      <p class="t1">（3）Maximtop has the authority to audit you and decide whether to accept you as a customer. Just because you have passed the audit of Maximtop and become a customer, does not mean that Maximtop needs to bear any legal responsibility for your actions. </p>
+      <p class="t1">（4）Maximtop has the right to review the application information you submit and decide whether to provide or shut down the service. </p>
+      <p class="t1">（5）Maxim Topology reserves the right to terminate the services provided to you in case you violate national or local laws and regulations or these Terms of Use. And in any case, our company will not be liable for any indirect, accidental, special and subsequent damages. </p>
+      <p class="t1">
+        （6）For information you publish using the Maximtop Services, Maximtop reserves the right to filter keywords of your messaging information according to relevant national laws and regulations. If it is found that the content you send clearly violates relevant national laws and regulations, our company has the right to make actions including but not limited to dissuading, intercepting and even reporting to relevant departments. 
+      </p>
+      <p class="t1">（7）Our company reserves the right to forcibly close services and freeze accounts if your application misuses system resources. </p>
+      <p class="t1">（8）Our company reserves the right to require you to forcibly upgrade the application and stop serving the old version of our SDK due to system or service upgrade. </p>
+      <p class="t1">（9）Our company only provides security measures according to the existing technology to prevent the information held by our company from being lost, abused and forged. Detailed security measures include data backup and encryption. You acknowledge that despite these security measures, our company does not guarantee the absolute security of this information. </p>
+      <p class="t1">（10）For any other commercial software and services derived from Maximtop Services, our company has the right to stop unauthorized services derived from commercial software and services and claim compensation from its developers. </p>
+      <p class="t1">
+        （11）If you authorize to open an infrastructure resource account in a third party through Maximtop Platform, Maximtop has the right to replace, upgrade and cancel this account during service operation. If the third-party service has abnormal system operation, system security and data security problems, you will bear the responsibilities and losses caused by it, and Maximtop has no obligation to bear any responsibilities or compensation. 
+      </p>
+      <p class="t">5、Cost </p>
+      <p class="t1">（1）The service fee standard of Maximtop is subject to the actual pricing of Maximtop. After logging in to Maximtop Platform, you can view account information, submit orders, open, suspend or terminate service items, recharge and view bills through the background management. </p>
+      <p class="t1">（2）You can only enjoy the services provided by Maximtop after you submit your order and pay for it. If you fail to pay within 3 days after submitting the order, these terms of use and all agreements reached with you on the services are invalid. </p>
+      <p class="t1">
+        （3）If both parties agree to continue serving by Maximtop after the services expire, you shall pay the renewal fee at least 7 days before expiration. If Maximtop adjusts the product name, service or price at the time of renewal, both parties agree to serve according to the new product name, service and price in effect at the time of renewal. </p>
+      <p class="t1">
+        （4）Maximtop Services can only be opened for pre-recharge. You need to ensure that the available balance of your Maximtop account is sufficient, and the pre-recharge fee will not be refunded once it is paid. When the available balance of your account is insufficient, you should recharge it in time, and the available balance of your account shall be subject to the amount displayed in the background management of Maximtop. Our company has the right to suspend the provision of Maximtop Services to you when the available amount of your account is less than 0, and any losses caused by this shall be borne by you. Maximtop reserves the right not to provide services or terminate services to you before you pay all the fees as agreed; And reserve the right to pursue legal responsibility for your overdue payment. Overdue arrears will be paid a late payment fee of one thousandth per day from the date when the services stop. 
+      </p>
+      <p class="t1">（5）Maximtop will start billing on the first day you subscribe to Maximtop service, with a deduction every natural month. You may request the Maximtop to issue VAT invoices for the amount that has been deducted, and please provide the necessary information for invoicing according to the requirements of Maximtop. </p>
+      <p class="t1">
+        （6）You can enjoy preferential activities and complimentary services according to the arrangement of Maximtop. You fully understand that all complimentary service items and price-related activities in Maximtop are one-time special discounts in addition to the normal service price, and the preferential contents do not include the modification, update and maintenance costs of complimentary service items, and complimentary service items cannot be discounted to offset the service price and cannot be exchanged for cash. If the recharge amount of Maximtop account is given away, the gift part should be consumed after the actual payment part exhausted. 
+      </p>
+      <p class="t">6、Maximtop services and modifications, suspensions and terminations of the Terms of Service </p>
+      </p>
+      <p class="t1">
+        （1）Maximtop services are constantly changing and improving services. Maximtop services may add or remove some features or services, and may suspend or completely stop this product. In the event of a material change in the content of Maximtop or these Terms of Service, Maximtop shall announce the material change in advance on the Maximtop website or at an appropriate location on other platforms of the product. If you continue to use Maximtop products or services, you will be deemed to accept the above changes. If you do not accept the above changes, you have the right to continue to use the changed Maximtop services according to the contents and standards before the changes until the advance payment under the valid orders corresponding to the services is exhausted or the use of Maximtop services is stopped. If you choose to stop using Maximtop services, Maximtop should settle with you and you should move out the business data. 
+      </p>
+      <p class="t1">
+        （2）If Maximtop deletes, suspends or completely stops some or all of its services due to business development needs, unless expressly provided by law, Maximtop has the right to directly refund the actual paid but unconsumed recharge amount for you without your application, and empty the balance, recharge amount, vouchers, coupons, etc. in your Maximtop account accordingly. 
+      </p>
+      <p class="t1">（3）If you request to terminate the service before the expiration of the service period in Maximtop, Maximtop will confirm whether you meet the conditions for termination of service and refund according to the processing procedures. The specific processing procedures are as follows: " <a
+          href="/en/refund-policy/">Maximtop Services Termination Process </a>”. </p>
+
+      <p class="t">7、Terms of Privacy </p>
+      <p>In the process of using Maximtop services, Maximtop will collect the information provided voluntarily or generated by using the services in the following ways to provide services to you, optimize our services and ensure the security of your account: </p>
+      <p class="t1">（1）When you use Maximtop services, we collect your user's nickname, avatar, and UserID. If you don't provide this information, you may not be able to use all Maximtop services normally. </p>
+      <p class="t1">（2）When you use Maximtop services, we store your user's message data. If you don't agree to store such messages, you may not be able to use all Maximtop services normally. </p>
+      <p class="t1">（3）When you use Maximtop services, we collect your user's terminal device information, including OS version, application package name, screen size, OS name version number, time zone, language, network type (WIFI, 5G, 4G, 3G, 2G, etc.), App </p>
+      We collect terminal equipment information such as version number, equipment model, mobile phone network operator, etc. It’s for your users to use our services normally and help us to continuously improve our services. </p>
+      <p class="t1">
+        （4）When you use Maximtop services, we collect SDK log information, including SDK version number, user Token, APPID, user's handset manufacturer, OS name version number, network type, operator code, interface call error code, connection failure error code, which is collected to solve problems you may encounter when using Maximtop services. If you do not provide such information, it will affect our troubleshooting. 
+      </p>
+      <p class="t1">
+        （5）Our company will provide certain user information to partners who cooperate with us to provide you with products and services, or help our company marketing; our company will share some information with third parties for the purpose of improving our products, services and advertising. But our company will not provide information to third parties for marketing purposes, and certainly not sell user information. 
+      </p>
+      <p class="t1">（6）By agreeing to or using these Terms of Privacy, you agree to use and disclose your personal information in accordance with the following terms. </p>
+      <p class="t1">
+        （7）Username and password: You need to set a username and password to identify you when you register. You can only use this account through the password you set. If you disclose the password, you may lose your personally identifiable information and may lead to adverse legal consequences for you. If the account and password are potentially or actually endangered for any reason, you should contact our company immediately, and our company will not be responsible for this until our company takes meastures. 
+      </p>
+      <p class="t1">（8）Registration information: When you register your account, you should provide our company with the name, address, phone number and email address of your business or organization, etc., in order to provide targeted services to you. You understand and agree that our company will inform you of this information through your email address. </p>
+      <p class="t1">（9）Bank or Alipay account information: If the services provided by our company require you to submit your bank or Alipay account information, our company will strictly fulfill the relevant confidentiality agreement after the corresponding information received. </p>
+      <p class="t1">（10）According to relevant laws, regulations and national standards, we may collect and use your relevant user information without asking your authorization and consent in the following situations: </p>
+      <p class="t2">1）Directly related to national security, national defense security and other national interests; </p>
+      <p class="t2">2）Directly related to major public interests such as public safety, public health and public knowledge; </p>
+      <p class="t2">3）Directly related to criminal investigation, prosecution, trial and sentence enforcement; </p>
+      <p class="t2">4）In order to safeguard the life, property, reputation and other major legitimate rights and interests of your users or other individuals, but it is difficult to obtain the consent; </p>
+      <p class="t2">5）Disclosed to the public by yourself; </p>
+      <p class="t2">6）Collecting user information from legally publicly disclosed information, such as legal news reports, government information disclosure and other channels; </p>
+      <p class="t2">7）Necessary for signing and performing the contract upon your request; </p>
+      <p class="t2">8）Necessary to maintain the safe and stable operation of the provided product or service, such as detecting and handling faults of the product or service; </p>
+      <p class="t2">9）Necessary for legitimate journalism; </p>
+      <p class="t2">10）When it is necessary to carry out statistical or academic research in the public interest and provides academic research or description results to the outside world, the user information contained in the results is de-identified; </p>
+      <p class="t2">11）Other circumstances specified by laws and regulations. </p>
+      <p class="t">8、Confidentiality Provisions </p>
+      <p class="t1">（1）All technical and non-technical information disclosed by both parties to each other is classified as confidential information. Including but not limited to product information, product schedule, product price, financial and marketing planning, user data, code base, API application data interface, technical description, design, special formula, special algorithm, etc. 
+      </p>
+      <p class="t1">（2）Both parties agree to keep confidential the above-mentioned information of the other party, and strictly require the employees who have access to the above-mentioned confidential information to abide by the confidentiality obligations of this article. Unless required by state organs according to law or the above confidential information has entered the public domain, the party receiving the confidential information shall not disclose it to the outside world. 
+      </p>
+      <p class="t1">（3）Both parties explicitly recognize that their business data are their important assets and key confidential information, and both parties shall protect the above confidential information from disclosure. Once the above confidential information disclosure is found, both parties shall take all reasonable measures to avoid or mitigate the damaging consequences. </p>
+      <p class="t1">（4）The Terms shall not be invalidated by termination of Maximtop services. </p>
+      <p class="t">9、Scope and Limitation of Liability </p>
+      <p class="t1">（1）Our company is liable only for the liabilities set out in these Terms of Service up to and including the fees paid by you for using Maximtop services. </p>
+      <p class="t1">（2）Your profile information is provided by yourself and we cannot guarantee that it is accurate, timely and complete. </p>
+      <p class="t1">
+        （3）Our company does not assume any legal liability if the following circumstances occur: Provide your registration information and user information according to the law or the requirements of relevant government departments; Disclosure of any user information due to your improper use; Any service interruption or obstruction caused by hacker attack, computer virus invasion, illegal content information, harassment information shielding, government control and any other network, technology, communication lines, information security management measures, etc., which cannot meet the use requirements; Your losses due to third parties’, such as operators, communication line failures, technical problems, network, computer failures, system instability and other force-majeure cases; Risks arising from the use of anonymous or impersonated information from others containing threatening, defamatory, offensive or illegal content that may exist in Maximtop services. 
+      </p>
+      <p class="t1">（4）Our company does not provide any form of warranty for Maximtop services, including but not limited to the following: Our services meet your needs; Our services are free from interference, timely provision or error. </p>
+      <p class="t1">（5）The quality and content of third-party services provided by a partner of Maximtop services shall be the responsibility of the partner. </p>
+      <p class="t1">
+        （6）Where permitted by law, our company shall not be liable for any indirect, punitive, special or derivative losses (including but not limited to business losses, loss of income, loss of profits or loss of other economic benefits) in connection with or arising from these Terms of Service. No matter how it arises, no matter whether it is caused by breach of this  Terms of Service (including breach of warranty) or infringement, our company will not assume any legal liability. 
+      </p>
+      <p class="t">10、Trademarks and Intellectual Property </p>
+      <p class="t1">（1）Maximtop services are developed and provided by our company. Maximtop's patents, copyrights, designs and other intellectual property rights, as well as all information contents related to Maximtop services, including but not limited to works, pictures, archives, information, materials, architectures and page designs, are owned by our company according to law. 
+      </p>
+      <p class="t1">（2）Maximtop customers have no right to copy, distribute, transfer, license or provide others with the above resources except with the express consent of our company or commercial license, otherwise they must bear corresponding responsibilities. </p>
+
+      <p class="t1">（3）All contents on Maximtop platform, including but not limited to works, pictures, archives, information, materials, website structure, website screen arrangement and web page design, are intellectual properties owned by our company according to law, including but not limited to trademark rights, patents, copyrights, trade secrets, etc. </p>
+      <p class="t">11、Force-Majeure Terms </p>
+      Maximtop is not liable for losses caused by force-majeure. Force-majeure referred to in these Terms includes: Natural disasters, changes in laws and regulations or government instructions; Causes unique to the characteristics of network services, such as the failure of domestic and foreign basic telecom operators, the damage of infrastructure such as optical cables, the technical defects related to computers or the Internet, the limitation of Internet coverage, computer viruses, hacker attacks and other factors; and other unforeseeable, unavoidable and insurmountable objective situations within the legal scope. 
+      </p>
+      <p class="t">12、Terms of Use </p>
+      <p class="t1">（1）You have the right to choose the content of Maximtop services and receive technical support from Maximtop. </p>
+      <p class="t1">（2）You guarantee that you will comply with national and local laws and regulations, industry practices and social public ethics when using Maximtop services or publishing content through Maximtop services, and will not use Maximtop services to store, publish and disseminate the following information and content: </p>
+      <p class="t2">（a）Any content (information) that violates national laws, regulations and policies; </p>
+      <p class="t2">（b）Political propaganda or information that violates state regulations; </p>
+      <p class="t2">（c）Information involving state secrets or security; </p>
+      <p class="t2">（d）Feudal superstition or obscene, pornographic, obscene or instigating information; </p>
+      <p class="t2">（e）Gambling prizes, gambling games; </p>
+      <p class="t2">（f）Information that violates the national ethnic and religious policies; </p>
+      <p class="t2">（g）Information that interferes with the security of the Internet; </p>
+      <p class="t2">（h）Information that infringes upon the legitimate rights and interests of others; </p>
+      <p class="t2">（i）Other information or content that is detrimental to public order, public security or public morals. </p>
+      <p class="t1">（3）If you violate the above commitments, the consequences of such actions have nothing to do with Maximtop. If there is a definite record to prove that you have violated the above commitments, Maximtop can terminate the service contract relationship with you and claim corresponding compensation. </p>
+      <p class="t1">
+        （4）You shall comply with all other regulations and procedures of the Maximtop. You must bear legal responsibility for your actions in the process of using Maximtop services. The forms of your legal liability include, but are not limited to, compensation for the infringed person, and equal compensation for Maximtop after Maximtop first bears the administrative penalty or tort damages caused by your actions. If you violate the above regulations, Maximtop has the right to immediately suspend or terminate some or all of its services to you at its independent judgment, including freezing or canceling the use rights of your account. 
+      </p>
+      <p class="t1">
+        （5）For information you publish using Maximtop, Maximtop reserves the right to filter keywords of its communication information according to relevant national laws and regulations. If it is found that the content you send clearly violates relevant national laws and regulations, Maximtop has the right to make measures including but not limited to dissuasion, interception, and even reporting to relevant public security departments. 
+      </p>
+      <p class="t1">
+        （6）The third party entrusted by Maximtop or Maximtop products has the right to review the application products and content provided by you, including but not limited to content review, functional testing, security testing, etc. If it is found that your application products do not comply with national laws, regulations and policies, or the application products you provide may infringe upon the legitimate rights and interests of others or contain advertising information to other third parties, or other circumstances that do not meet the requirements, Maximtop has the right not to provide services to them; If services have been provided, Maximtop has the right to immediately stop continuing to provide services to them, and keep relevant records and report to relevant competent departments. However, this agreement shall not be regarded as the legal guarantee provided by Maximtop for the application products provided by you, and you shall provide the guarantee for the application products by yourself and bear all responsibilities arising therefrom. 
+      </p>
+      <p class="t1">（7）If you need to obtain permission or approval from relevant state departments for business or non-business activities through services provided by Maximtop, you should obtain it first. </p>
+      <p class="t1">（8）You may not modify, translate, publish, adapt, rent, sublicense or otherwise distribute or transfer services or software provided by Maximtop except as licensed. Nor shall you reverse engineer, decompile or attempt to otherwise discover any source code of Maximtop. </p>
+      <p class="t1">
+        （9）You warrant that you shall not abuse Maximtop services, including but not limited to using Maximtop services to infringe upon the intellectual property rights or legitimate interests of Maximtop or others, and shall not use Maximtop services to provide services directly competitive with Maximtop to third parties. If Maximtop finds that you violate the Terms of Use, it has the right to take corresponding measures according to the situation, including but not limited to immediately terminating the service, suspending the service or deleting the corresponding information, etc. If a third-party organization or individual questions or complaints about you, Maximtop will inform you that you have the responsibility to explain and issue supporting materials within the specified time. If you fail to provide evidence to the contrary or you fail to give feedback within the time limit, Maximtop will take measures including but not limited to immediate terminating of service, suspension of service or deletion of corresponding information. If Maximtop fails to contact you due to your failure to update your contact information in time or incorrect contact information, it will also be regarded as your failure to give feedback within the time limit. 
+      </p>
+      <p class="t1">
+        （10）You understand that Maximtop cannot guarantee that its services are flawless, but Maximtop is committed to continuously improving the quality and level of services. Therefore, you agree that even if there are defects in the services provided by Maximtop, the above defects are inevitable at the technical level of the industry at that time, and they will not be regarded as Maximtop's breach of contract. You agree to cooperate with Maximtop to solve the above defects. 
+      </p>
+      <p class="t1">（11）If you request to terminate the service before the expiration of the service period in Maximtop, Maximtop will confirm whether you meet the conditions for termination of service and refund according to the processing procedures, which are subject to the relevant regulations of Maximtop. </p>
+      <p class="t">13、Application of Law and Jurisdiction </p>
+      <p class="t1">（1）If any provision in these Terms of Service are empty valued and void in whole or in part, or unenforceable for any reason, the remaining provisions of these Terms of Service shall remain valid and binding. </p>
+      <p class="t1">
+        （2）The validity, interpretation, variation, enforcement and dispute resolution of these  Terms of Service shall be governed by the laws of the People's Republic of China. Disputes arising from these Terms of Service shall first be settled through friendly negotiation. If negotiation fails, they shall be settled in accordance with the laws of the People's Republic of China and submitted to the court with jurisdiction in the place where our company is located for litigation. </p>
+      <p class="t1">（3）Customers' comments or suggestions on any part of Maximtop services or any part of these Terms of Service can be contacted by email with our company. Our email: <a
+          href="mailto:support@maximtop.com">support@maximtop.com</a> Our company reserves the right to interpret these Terms of Service. </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  <div class="sheader relative flex flex-col px-v40 md:px-0 h-screen md:h-173.5">
+    {% include snav.html %}
+    <div class="text-white flex-1 flex flex-col items-center justify-center h-full pb-1/12">
+      <p id="sa1" class="mb-v16 md:mb-2 text-v54 md:text-12 leading-v75 md:leading-17 text-center">{% t auto.key_176_780381875  %} {% comment %}新一代 云原生 IM{% endcomment %}</p>
+      <p id="sa2" class="text-v26 md:text-lg leading-v36 md:leading-6">{% t auto.key_3817_228909701  %} {% comment %}一键启用多云架构的即时通讯云服务{% endcomment %}</p>
+    </div>
+
+    <div class="sheader-shape-01 absolute md:w-173.5 md:h-173.5 md:top-16 md:-left-74"></div>
+    <div class="sheader-shape-02 absolute md:w-72.5 md:h-72.5 md:top-42.5 md:right-31.5"></div>
+    <div class="sheader-shape-03 absolute md:w-127 md:h-127 md:top-79 md:right-0"></div>
+
+    <ul class="absolute left-v40 right-v40 md:left-0 md:right-0 bottom-v14 md:bottom-0 head-card flex flex-wrap justify-between md:justify-center text-v24 md:text-xs text-center">
+      <li class="head-card-item-1 common-shadow">
+        <a class="absolute inset-0" href="https://console.lanyingim.com" target="_blank">
+          <img class="md:mb-3 h-v60 md:h-9.5" src="../img/header/dock_lanying.png" />
+          <span>{% t auto.key_178_745994901  %} {% comment %}免费试用{% endcomment %}</span>
+        </a>
+      </li>
+      <li class="head-card-item-1 common-shadow">
+        <a class="absolute inset-0" href="https://market.aliyun.com/products/55530001/cmjj00042034.html" target="_blank">
+          <img class="md:mb-3 h-v60 md:h-9.5" src="../img/header/dock_aliyun.png" />
+          <span>{% t auto.key_179_515828895  %} {% comment %}阿里云云市场{% endcomment %}</span>
+        </a>
+      </li>
+      <li class="head-card-item-1 common-shadow">
+        <a class="absolute inset-0" href="{% t auto.key_180_000579549  %} {% comment %}https://appcenter.qingcloud.com/apps/app-f3ba91wg/美信拓扑%20IM%20私有云{% endcomment %}" target="_blank">
+          <img class="md:mb-2 h-v60 md:h-10" src="../img/header/dock_qingyun.png" />
+          <span>{% t auto.key_181_823109130  %} {% comment %}青云 AppCenter{% endcomment %}</span>
+        </a>
+      </li>
+      <li class="head-card-item-2 text-white common-shadow">
+        <a class="absolute inset-0" href="https://awsmarketplace.amazonaws.cn/marketplace/search/results?x=0&y=0&searchTerms=%E7%BE%8E%E4%BF%A1%E6%8B%93%E6%89%91" target="_blank">
+          <img class="md:mb-2 h-v60 md:h-11" src="../img/header/dock_amazon.png" />
+          <span>{% t auto.key_182_366483264  %} {% comment %}AWS Marketplace 中国{% endcomment %}</span>
+        </a>
+      </li>
+      <li class="head-card-item-2 text-white common-shadow">
+        <a class="absolute inset-0" href="https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=maxim.top" target="_blank">
+          <img class="md:mb-2 h-v60 md:h-12" src="../img/header/dock_aws.png" />
+          <span>{% t auto.key_183_142892106  %} {% comment %}AWS Marketplace 全球{% endcomment %}</span>
+        </a>
+      </li>
+      <!-- <a class="" href="https://console.lanyingim.com" target="_blank">{% t auto.key_177_087690673  %} {% comment %}现在开始{% endcomment %}</a> --->
+    </ul>
+  </div>
+
+  <div class="part-one relative z-1 flex flex-col flex-col-reverse md:flex-row justify-center items-center px-v40 md:px-0 py-v120 md:py-0">
+    <div class="part-btns flex md:hidden w-full md:mt-12.5">
+      <button class="btn-doc">{% t auto.key_3825_558693963 %} {% comment %}文档{% endcomment %}</button>
+      <button class="btn-download">{% t auto.key_5_232822105 %} {% comment %}下载{% endcomment %}</button>
+    </div>
+    
+    <img class="md:w-124 hidden md:block" src="../img/product/part1-pic.png" />
+    <img class="md:w-124 block md:hidden mt-v80" src="../img/product/part1-pic-m.png" />
+
+    <div>
+      <h1 class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">极简设计的SDK与API，快速集成</h1>
+
+      <div class="tab">
+        <ul class="flex relative mb-v40 md:mb-12.5">
+          <li class="tab-item tab-active" tabid="im">IM</li>
+          <li class="tab-item" tabid="push">推送</li>
+          <li class="tab-line absolute transition left-0 -bottom-v10 md:-bottom-1.5 w-v24 md:w-4" active="im"></li>
+        </ul>
+  
+        <ul class="tab-content block" infoid="im">
+          <li>{% t auto.key_184_430047489  %} {% comment %}IM聊天支持语音、图片、自定义消息{% endcomment %}</li>
+          <li>{% t auto.key_185_884305785  %} {% comment %}消息云端存储，支持多设备同步{% endcomment %}</li>
+          <li>{% t auto.key_186_620891751  %} {% comment %}开放平台架构，方便支持服务扩展{% endcomment %}</li>
+        </ul>
+  
+        <ul class="tab-content hidden" infoid="push">
+          <li>基于蓝莺 IMSDK 实现，两大服务仅需一次集成；</li>
+          <li>默认支持各主流厂商通道；</li>
+          <li>独创证书设置与更新机制，无忧升级。</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="part-btns hidden md:flex w-full">
+        <button class="btn-doc">{% t auto.key_3825_558693963 %} {% comment %}文档{% endcomment %}</button>
+        <button class="btn-download">{% t auto.key_5_232822105 %} {% comment %}下载{% endcomment %}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-two relative z-0 flex flex-col md:flex-row justify-center items-center bg-part-back px-v40 py-v120 md:pt-33.5 md:pb-0 md:transform md:-translate-y-25">
+    <div>
+      <h1 class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">支持各种聊天场景，任何场景即时通讯</h1>
+
+      <div class="tab part-two-tab">
+        <ul class="flex relative mb-v40 md:mb-12.5">
+          <li class="tab-item tab-active" tabid="live-home">直播间</li>
+          <li class="tab-item" tabid="online-service">在线客服</li>
+          <li class="tab-item" tabid="online-education">在线教育</li>
+          <li class="tab-item" tabid="app-soclal">APP社交</li>
+          <li class="tab-item" tabid="oa">协同办公</li>
+          <li class="tab-line absolute transition left-0 -bottom-v10 md:-bottom-1.5 w-v24 md:w-4" active="live-home"></li>
+        </ul>
+  
+        <div class="tab-content block" infoid="live-home">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </div>
+  
+        <ul class="tab-content hidden" infoid="online-service">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+
+        </ul>
+
+        <ul class="tab-content block" infoid="online-education">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </ul>
+  
+        <ul class="tab-content hidden" infoid="app-soclal">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </ul>
+
+        <ul class="tab-content block" infoid="oa">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </ul>
+      </div>
+    </div>
+
+    <div class="md:ml-25 w-full md:w-auto part-two-img-wrap">
+      <div imgid="live-home" class="w-full md:w-72.5 h-v330 md:h-72.5 block live-home"></div>
+      <div imgid="online-service" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden online-service"></div>
+      <div imgid="online-education" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden online-education"></div>
+      <div imgid="app-soclal" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden app-soclal"></div>
+      <div imgid="oa" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden oa"></div>
+    </div>
+  </div>
+
+  <div class="part-three px-v40 py-v120 md:px-0 md:pt-16 md:pb-14 flex flex-col items-center relative z-1">
+    <h1 class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">{% t auto.key_194_504955642  %} {% comment %}一键启用，多云架构{% endcomment %}</h1>
+
+    <div class="tab part-three-tab text-center">
+      <ul class="inline-flex relative mb-v40 md:mb-12.5 justify-start md:justify-center">
+        <li class="tab-item tab-active" tabid="public-cloud">{% t auto.key_40_536730755  %} {% comment %}公有云{% endcomment %}</li>
+        <li class="tab-item" tabid="previte-cloud">{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</li>
+        <li class="tab-item" tabid="proprietary-cloud">{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}</li>
+        <li class="tab-line absolute transition left-0 -bottom-v10 md:-bottom-1.5 w-v24 md:w-4" active="public-cloud"></li>
+      </ul>
+
+      <div class="tab-content block" infoid="public-cloud">
+        <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+          <img class="md:w-132.5 mb-v50 md:mb-0" src="../img/product/bg-public-cloud.png">
+          <div class="md:w-105">
+            <h4 class="mb-v24 md:mb-3.5">简单注册账号，即可使用公有云平台，最经济便捷的方式。</h4>
+            <p>作为即时通讯云服务的典型方式，公有云为开发者提供了快速构建业务的可能。通过资源共享，极大降低了服务使用成本。</p>
+          </div>
+        </div>
+      </div>
+
+      <ul class="tab-content hidden" infoid="previte-cloud">
+        <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+          <img class="md:w-132.5 mb-v50 md:mb-0" src="../img/product/bg-previte-cloud.png">
+          <div class="md:w-105">
+            <h4>{% t auto.key_80_609470785  %} {% comment %}独立专享的资源，比公有云更高的服务保障，私有云级别的数据自主性。专有云为专业用户提供，并可提供灵活的业务定制。{% endcomment %}</h4>
+            <br>
+            <h4 class="mb-v24 md:mb-7">{% t auto.key_81_096276901  %} {% comment %}蓝莺IM专有云的资源完全透明可监督，通过控制台操作一键部署，可随时切换部署方式，迁移无忧。{% endcomment %} </h4>
+            <p>{% t auto.key_82_731566204  %} {% comment %}如果要切换到私有云，我们可以直接将云服务商账号转让给你，或者协助进行私有云数据迁移；如果要切换到公有云商业版，我们可以自动进行数据同步后，你的一次点击即可完成。{% endcomment %} </p>
+          </div>
+        </div>
+      </ul>
+
+      <ul class="tab-content hidden" infoid="proprietary-cloud">
+        <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+          <img class="md:w-132.5 mb-v50 md:mb-0" src="../img/product/bg-proprietary-cloud.png">
+          <div class="md:w-105">
+            <h4>{% t auto.key_106_796006501 %} {% comment %}自主可控，方便定制，10分钟安装，按月付费。{% endcomment %}</h4>
+            <br>
+            <h4>{% t auto.key_107_552325646 %} {% comment %}蓝莺IM私有云可以一键安装，省心高效。使用私有云，你将完全掌控你的数据和服务，并毫无限制地访问所有服务。{% endcomment %} </h4>
+            <br>
+            <h4>{% t auto.key_108_474714328 %} {% comment %}借助于最先进的容器技术，蓝莺IM所有的服务有已完成云原生改造，这是私有云可以稳定可靠地运行在从裸机服务器、私有云计算平台到各种内部容器平台环境中的重要依靠。{% endcomment %}</h4>
+            <br>
+            <h4>{% t auto.key_109_877669801 %} {% comment %}私有云非常适合在企业、学校等各种组织的非开放网络里运行。{% endcomment %}</h4>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="part-four pb-v100 md:py-5.5 px-v40 text-center">
+    <h1 class="mb-v10 md:mb-5 text-v42 md:text-4xl font-normal">{% t auto.key_192_258671863  %} {% comment %}快速集成，简单专业{% endcomment %}</h1>
+    <p class="text-center text-v24 md:text-lg mb-v50 md:mb-7">
+      {% t auto.key_193_549348393  %} {% comment %}专业即时通讯，扫码试用，1小时集成，初创企业必选{% endcomment %}
+    </p>
+
+    <div class="flex flex-wrap justify-between text-white">
+      <div class="integration-card bg-card-1 card-shadow">
+        <h4>{% t auto.key_93_206632896  %} {% comment %}行业低价{% endcomment %}</h4>
+        <p>{% t auto.key_94_191583806  %} {% comment %}极致优化的高性能服务保证了高性价比，按需使用，定价平滑不跳档。{% endcomment %}</p>
+        <a class="card-link" href="{% t link.base %}plans/">{% t auto.key_95_393408742  %} {% comment %}查看定价 >{% endcomment %}</a>
+      </div>
+      <div class="integration-card bg-card-2 card-shadow">
+        <h4>{% t auto.key_96_123222669  %} {% comment %}快速集成{% endcomment %}</h4>
+        <p>{% t auto.key_97_860999452  %} {% comment %}跨平台的SDK Floo，整洁优美的 API ，让集成非常简单。{% endcomment %}</p>
+        <a class="card-link" href="https://console.lanyingim.com" target="_blank">{% t auto.key_98_038740639  %} {% comment %}查看详情 >{% endcomment %}</a>
+      </div>
+
+      <div class="integration-card bg-card-3 card-shadow">
+        <h4>{% t auto.key_99_907129159  %} {% comment %}高效可靠{% endcomment %}</h4>
+        <p>{% t auto.key_100_070761300  %} {% comment %}全新设计的二进制通讯协议，低流量低延时，保证消息的可靠有序投递。{% endcomment %}</p>
+      </div>
+      <div class="integration-card bg-card-4 card-shadow">
+        <h4>{% t auto.key_101_228888440  %} {% comment %}稳定健壮{% endcomment %}</h4>
+        <p>{% t auto.key_102_221267471  %} {% comment %}千万级并发，服务稳定，SLA 可用性可达 99.99%。{% endcomment %}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-five bg-part-back-1 pt-v120 md:pt-13.5 pb-v50 md:pb-0">
+    <h1 class="mb-v10 md:mb-2 text-v42 md:text-4xl font-normal text-center">{% t auto.key_203_849028605  %} {% comment %}真正全球通连{% endcomment %}</h1>
+    <p class="text-center text-v24 md:text-lg mb-v80 md:mb-7">
+      {% t auto.key_204_788248796  %} {% comment %}跨地域数据中心部署，出海业务首选{% endcomment %}
+      <a class="hidden md:inline-block text-part-link md:ml-4.5" href="{% t link.base %}oversea/">{% t auto.key_205_058218033  %} {% comment %}了解更多>{% endcomment %}></a>
+    </p>
+
+    <div class="flex justify-center">
+      <div>
+        <h2>
+          <span class="text-v54 md:text-14.5 text-part-count leading-v66 md:leading-17.5" style="font-family: Biko;">22</span>
+          <span class="font-light text-v24 md:text-lg">个</span>
+        </h2>
+        <p class="text-v24 md:text-base">覆盖全球地理区域</p>
+      </div>
+
+      <div class="md:ml-25">
+        <h2>
+          <span class="text-v54 md:text-14.5 text-part-count leading-v66 md:leading-17.5" style="font-family: Biko;">200</span>
+          <span class="font-light text-v24 md:text-lg">个</span>
+        </h2>
+        <p class="text-v24 md:text-base">服务国家和地区近</p>
+      </div>
+    </div>
+
+    <img class="md:w-full" src="../img/sea/sea-1.png" />
+  </div>
+
+  <div class="part-six customer bg-part-back-1 relative pb-v100 md:pb-15 px-v40">
+    <div class="md:absolute top-0 left-0 right-0 transform md:-translate-y-full text-center">
+      <h1 class="mb-v10 md:mb-2 text-v42 md:text-4xl font-normal">{% t auto.key_206_407581106  %} {% comment %}客户案例{% endcomment %}</h1>
+      <p class="text-v24 md:text-lg mb-v50 md:mb-7"> {% t auto.key_207_625039742  %} {% comment %}重视效率与安全的企业更愿意选择我们{% endcomment %} </p>
+    </div>
+
+    <div class="flex justify-between flex-wrap text-left md:text-center">
+      <a class="customer-card" href="https://www.transsion.com/" target="_blank">
+        <div class="md:h-15 flex md:justify-center items-center">
+          <img class="md:w-30" src="../img/customer/logo.chuanyin.png" />
+          <img class="md:w-27.5" src="../img/customer/logo.chuanglan.png" />
+        </div>
+        <h3>传音</h3>
+        <p>为每台传音手机提供内置聊天服务</p>
+      </a>
+      <a class="customer-card" href="https://www.teddymobile.cn" target="_blank">
+        <div class="md:h-15 flex md:justify-center items-center">
+          <img class="md:w-24" src="../img/customer/logo.oppo.png" />
+          <img class="md:w-37" src="../img/customer/logo.teddy.png" />
+        </div>
+        <h3>OPPO</h3>
+        <p>{% t auto.key_211_883121710  %} {% comment %}为每台OPPO手机提供内置聊天服务{% endcomment %}</p>
+      </a>
+      <a class="customer-card" href="https://www.zidanduanxin.com" target="_blank">
+        <div class="md:h-15 flex md:justify-center items-center">
+          <img class="md:w-16.5" src="../img/customer/logo.zidanduanxin.png" />
+        </div>
+        <h3>{% t auto.key_208_540806193  %} {% comment %}子弹短信{% endcomment %}</h3>
+        <p>{% t auto.key_209_636211267  %} {% comment %}现象级社交聊天App{% endcomment %}</p>
+      </a>
+
+      <a class="customer-card" href="https://w.sohu.com" target="_blank">
+        <div class="md:h-15 flex md:justify-center items-center">
+          <img class="md:w-17.5" src="../img/customer/logo.sohu.png" />
+          <img class="md:w-29" src="../img/customer/logo.huyou.png" />
+        </div>
+        <h3>{% t auto.key_212_338946879  %} {% comment %}狐友App{% endcomment %}</h3>
+        <p>{% t auto.key_213_044914091  %} {% comment %}搜狐旗下有趣又有爱的社交软件{% endcomment %}</p>
+      </a>
+      <a class="customer-card" href="https://www.grdoc.org/" target="_blank">
+        <div class="md:h-15 flex md:justify-center items-center">
+          <img class="md:w-30.5" src="../img/customer/logo.jiankangbao.png" />
+          <img class="md:w-19" src="../img/customer/logo.grdoc.png" />
+        </div>
+        <h3>{% t auto.key_214_206963878  %} {% comment %}中国家医网{% endcomment %}</h3>
+        <p>{% t auto.key_215_880375974  %} {% comment %}健康报主办的中国居民与家庭医生沟通平台{% endcomment %}</p>
+      </a>
+      <a class="customer-card" href="https://www.xieshoue.org/" target="_blank">
+        <div class="md:h-15 flex md:justify-center items-center">
+          <img class="md:w-17.5" src="../img/customer/logo.cdc.png" />
+          <img class="md:w-21.5" src="../img/customer/logo.xieshou.png" />
+        </div>
+        <h3>{% t auto.key_216_121077513  %} {% comment %}携手医访{% endcomment %}</h3>
+        <p>{% t auto.key_217_605978233  %} {% comment %}中国疾病预防控制中心性病控制中心主持开发的健康传播服务平台{% endcomment %}</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="part-seven bg-part-back-2 text-white py-v120 md:pt-13.5 md:pb-24.5 px-v40 md:px-0">
+    <h1 class="mb-v10 md:mb-2 text-v42 md:text-4xl font-normal text-center">{% t auto.key_218_830965350  %} {% comment %}战略合作伙伴{% endcomment %}</h1>
+    <p class="text-center text-v24 md:text-lg mb-v50 md:mb-7">{% t auto.key_219_392656138  %} {% comment %}为企业和开发者提供专业服务，是我们共同的选择{% endcomment %}</p>
+    <ul class="flex flex-wrap justify-between md:justify-center md:px-10 mb-v120 md:mb-0">
+      <li class="partner-card">
+        <a class="block" href="https://www.pgyer.com/" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.pgyer.png" />
+          <img class="block md:hidden" src="/img/partner/logo.pgyer.m.png" />
+        </a>
+      </li>
+      <li class="partner-card">
+        <a class="block" href="https://www.aliyun.com/" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.aliyun.png" />
+          <img class="block md:hidden" src="/img/partner/logo.aliyun.m.png" />
+        </a>
+      </li>
+      <li class="partner-card">
+        <a class="block" href="https://aws.amazon.com/" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.aws.png" />
+          <img class="block md:hidden" src="/img/partner/logo.aws.m.png" />
+        </a>
+      </li>
+      <li class="partner-card">
+        <a class="block" href="https://www.qingcloud.com/" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.qingcloud.png" />
+          <img class="block md:hidden" src="/img/partner/logo.qingcloud.m.png" />
+        </a>
+      </li>
+      <li class="partner-card">
+        <a class="block" href="https://ext.dcloud.net.cn/search?q=%E7%BE%8E%E4%BF%A1%E6%8B%93%E6%89%91" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.dcloud.png" />
+          <img class="block md:hidden" src="/img/partner/logo.qingcloud.m.png" />
+        </a>
+      </li>
+      <li class="partner-card">
+        <a class="block" href="https://www.qingcloud.com/" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.ucloud.png" />
+          <img class="block md:hidden" src="/img/partner/logo.ucloud.m.png" />
+        </a>
+      </li>
+      <li class="partner-card">
+        <a class="block" href="https://www.qingcloud.com/" target="_blank">
+          <img class="hidden md:block" src="/img/partner/logo.qiniu.png" />
+          <img class="block md:hidden" src="/img/partner/logo.qiniu.m.png" />
+        </a>
+      </li>
+    </ul>
+
+    <div class="md:pt-17.5 text-center">
+      <h1 class="mb-v50 md:mb-12.5 text-v42 md:text-4xl font-normal text-center">专业SDK, 私有云按月付费</h1>
+      <a class="inline-block border w-v320 md:w-102 text-v26 md:text-5 leading-v90 md:leading-17.5 rounded-v10 md:rounded-1" href="https://console.lanyingim.com/" target="_blank" >
+        {% t auto.key_222_137272277  %} {% comment %}立即免费试用{% endcomment %}
+      </a>
+    </div>
+  </div>
+
+  {% include nfooter.html %}
+
+</body>
+</html>

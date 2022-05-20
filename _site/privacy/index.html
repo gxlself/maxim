@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="一键开通即时通讯公有云，一键安装即时通讯私有云，一键部署即时通讯专有云，快速集成，简单专业 " />
+    <meta name="Keywords"
+          content="蓝莺IM, 美信拓扑, IM SDK, 即时通讯, 即时通讯云, IM云服务, 移动IM, 开源IM, 企业IM, 聊天软件, 移动客服, 在线客服, IM业务场景, APP社交, 开发者服务, 直播聊天室, 实时音视频, 音视频, 直播平台, 美信反垃圾, 内容安全 " />
+    <meta name="Keywords" content="多云架构, 私有云, 一键部署, 一键安装, 即时通讯私有云, 方便定制, 开通私有云 " />
+    <meta name="Keywords" content="全球通连, 海外, 跨集群部署, 全球数据中心, 业务定制, 即时通讯公有云, 方便定制, 开通专有云 " />
+    <meta name="Keywords" content="消息云端存储, 多设备同步, 消息漫游, 云存储, 开放平台, 应用客户端 " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/snav.css">
+    <link rel="stylesheet" href="/css/price.css">
+    <link rel="stylesheet" href="/css/doc.css">
+
+    <script src="/js/jquery.js"></script>
+    <script>$(function () {
+  // 设置 tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['一键开通 即时通讯 公有云' ,
+    '美信拓扑已开源代码 163277 行' ,
+    '一键安装 即时通讯 私有云 ',
+    '一键部署 即时通讯 专有云' ,
+    '唯一上架阿里云云市场的 即时通讯 私有云' ,
+    '新一代 云原生 IM '
+  ];
+  const mqarr2 = ['快速集成，全球通连，每天仅需25元 ',
+    '美信拓扑开源（MTOS）2021.08.12' ,
+    '自主可控，方便定制，10分钟安装，按月付费 🔥 ',
+    '专业服务，运维无忧，随心切换底层云服务 ',
+    '直接购买阿里云云主机，选择美信拓扑镜像' ,
+    '一键启用多云架构的即时通讯云服务 '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/privacy/">
+    <title>蓝莺 IM - 专业SDK，私有云按月付费 </title>
+</head>
+
+
+<body style="min-width: 100px; !important;">
+  <style>
+    body {
+      margin: 0;
+      /* padding: 10px 20px; */
+      color: #4f4f4f;
+      line-height: 21px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+    }
+
+    .manualEntry {
+      font-weight: 400;
+    }
+  </style>
+  <div class="title pt30">用户隐私协议 </div>
+  <div class="panel-group" id="faq-collapse" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" style="padding: 20px;">
+      <p>
+        美信拓扑为了保护用户的个人信息，在用户使用我们的产品或服务时，我们可能会收集和使用您的相关信息。我们希望通过本《隐私政策》向您说明，在使用我们的服务时，我们如何收集、使用、储存和分享这些信息，以及我们为您提供的访问、更新、控制和保护这些信息的方式。本《隐私政策》与您所使用的美信拓扑服务息息相关，我们也希望您能够仔细阅读，并在需要时，按照本《隐私政策》的指引，作出您认为适当的选择。 
+      </p>
+      <p><b>您使用或继续使用我们的服务，都表示您同意我们按照本《隐私政策》收集、使用、储存和分享您的信息。 </b></p>
+      <div class="manualEntry">一.我们可能收集的信息 </div>
+      <p>《我们提供服务时，可能会收集、储存和使用下列与您有关的信息。如果您不提供相关信息，可能无法注册成为我们的用户、享受我们提供的某些服务，或者即便我们可以继续向您提供一些服务，也无法达到该服务拟达到的效果。 </p>
+      <p class="i">1.您提供的信息 </p>
+      <li>您在注册我们的账户或使用我们的服务时，向我们提供的相关个人信息，例如电话号码、电子邮件和银行卡号等； </li>
+      <li>您通过我们的服务向其他方提供的共享信息，以及您使用我们的服务时所储存的信息。 </li>
+      <p class="i">2.其他方分享的您的信息 </p>
+      <li>其他方使用我们的服务时所提供有关您的共享信息。 </li>
+      <p class="i">3.我们获取的您的信息,您使用我们服务时我们可能收集如下信息： </p>
+      <p></p>
+      <li>您日志信息指您使用我们服务时，系统可能会通过 cookies、web beacon 
+        或其他方式自动采集的技术信息，包括： 
+        设备或软件信息，例如您的移动设备、网页浏览器或您用于接入我们的服务的其他程序所提供的配置信息、您的IP地址和您的移动设备所用的版本和设备识别码； </li>
+      <li>您在使用我们服务时搜索和浏览的信息，例如您使用的网页搜索词语、访问的社交媒体页面url地址， </li>
+      <li>以及您在使用我们服务时浏览或要求提供的其他信息和内容详情； </li>
+      <li>有关您曾使用的移动应用（APP）和其他软件的信息，以及您曾经使用该等移动应用和软件的信息； </li>
+      <li>您通过我们的服务进行通讯的信息，例如曾通讯的账号，以及通讯时间、数据和时长； </li>
+      <li>您通过我们的服务分享的内容所包含的信息（元数据），例如拍摄或上传的共享照片或录像的日期、时间或地点等。位置信息指您开启设备定位功能并使用我们基于位置提供的相关服务时，我们收集的有关您位置的信息，包括： 
+        您通过具有定位功能的移动设备使用我们的服务时，我们通过 GPS 或 WiFi 
+        等方式收集的您的地理位置信息； </li>
+      <li>
+        您或其他用户提供的包含您所处地理位置的实时信息，例如您提供的账户信息中包含的您所在地区信息，您或其他人上传的显示您当前或曾经所处地理位置的共享信息，例如您或其他人共享的照片包含的地理标记信息；您可以通过关闭定位功能随时停止我们对您的地理位置信息的收集。 
+      </li>
+      <p></p>
+
+      <div class="manualEntry">二.我们可能如何使用信息 </div>
+      <p>我们可能将在向您提供服务的过程之中所收集的信息用作下列用途：  </p>
+      <p>1.在我们提供服务时，用于身份验证、客户服务、安全防范、诈骗监测、存档和备份用途，确保我们向您提供的产品和服务的安全性； </p>
+      <p>2.帮助我们设计新服务，改善我们现有服务； </p>
+      <p>3.使我们更加了解您如何接入和使用我们的服务，从而针对性地回应您的个性化需求，例如语言设定、位置设定、个性化的帮助服务和指示，或对您和其他使用我们服务的用户作出其他方面的回应； </p>
+      <p>4.软件认证或管理软件升级；让您参与有关我们产品和服务的调查。 </p>
+      <p>
+        5.为了让您有更好的体验、改善我们的服务或您同意的其他用途，在符合相关法律法规的前提下，我们可能将通过我们的某一项服务所收集的信息，以汇集信息或者个性化的方式，用于我们的其他服务。例如，在您使用我们的一项服务时所收集的信息，可能在另一服务中用于向您提供特定内容，或向您展示与您相关的、非普遍推送的信息。如果我们在相关服务中提供了相应选项，您也可以授权我们将该服务所提供和储存的信息用于我们的其他服务。 
+      </p>
+
+      <div class="manualEntry">三.您如何访问和控制自己的个人信息 </div>
+      <p>我们将尽一切可能采取适当的技术手段，保证您可以访问、更新和更正自己的注册信息或使用我们的服务时提供的其他个人信息。在访问、更新、更正和删除您的个人信息时，我们可能会要求您进行身份验证，以保障您的账户安全。 </p>
+      <div class="manualEntry">四.信息安全 </div>
+      <p>
+        我们仅在本《隐私政策》所述目的所必需期间和法律法规要求的时限内保留您的个人信息。我们使用各种安全技术和程序，以防信息的丢失、不当使用、未经授权阅览或披露。例如，在某些服务中，我们将利用加密技术（例如SSL）来保护您提供的个人信息。但请您谅解，由于技术的限制以及以及可能存在的各种恶意手段，在互联网行业，即便竭尽所能加强安全措施，也不可能始终保证信息百分之百的安全。您需要了解，您接入我们的服务所用的系统和通讯网络，有可能因我们可控范围外的情况而发生问题。 
+      </p>
+      <div class="manualEntry">五.隐私政策的适用范围 </div>
+      <p>除某些特定服务外，我们所有的服务均适用本《隐私政策》。请您注意，本《隐私政策》不适用于以下情况：通过我们的服务而接入的第三方服务（包括任何第三方网站）收集的信息；通过在我们服务中进行广告服务的其他公司和机构所收集的信息。 
+      </p>
+      <div class="manualEntry">六.变更 </div>
+      <p>
+        我们可能适时修订本《隐私政策》的条款，该等修订构成本《隐私政策》的一部分。如该等修订造成您在本《隐私政策》下权利的实质减少，我们将在修订生效前通过在主页上显著位置提示或向您发送电子邮件或以其他方式通知您，在该种情况下，若您继续使用我们的服务，即表示同意受经修订的本《隐私政策》的约束。 
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

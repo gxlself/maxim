@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="一键开通即时通讯公有云，一键安装即时通讯私有云，一键部署即时通讯专有云，快速集成，简单专业 " />
+    <meta name="Keywords"
+          content="蓝莺IM, 美信拓扑, IM SDK, 即时通讯, 即时通讯云, IM云服务, 移动IM, 开源IM, 企业IM, 聊天软件, 移动客服, 在线客服, IM业务场景, APP社交, 开发者服务, 直播聊天室, 实时音视频, 音视频, 直播平台, 美信反垃圾, 内容安全 " />
+    <meta name="Keywords" content="多云架构, 私有云, 一键部署, 一键安装, 即时通讯私有云, 方便定制, 开通私有云 " />
+    <meta name="Keywords" content="全球通连, 海外, 跨集群部署, 全球数据中心, 业务定制, 即时通讯公有云, 方便定制, 开通专有云 " />
+    <meta name="Keywords" content="消息云端存储, 多设备同步, 消息漫游, 云存储, 开放平台, 应用客户端 " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/snav.css">
+    <link rel="stylesheet" href="/css/price.css">
+    <link rel="stylesheet" href="/css/doc.css">
+
+    <script src="/js/jquery.js"></script>
+    <script>$(function () {
+  // 设置 tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['一键开通 即时通讯 公有云' ,
+    '美信拓扑已开源代码 163277 行' ,
+    '一键安装 即时通讯 私有云 ',
+    '一键部署 即时通讯 专有云' ,
+    '唯一上架阿里云云市场的 即时通讯 私有云' ,
+    '新一代 云原生 IM '
+  ];
+  const mqarr2 = ['快速集成，全球通连，每天仅需25元 ',
+    '美信拓扑开源（MTOS）2021.08.12' ,
+    '自主可控，方便定制，10分钟安装，按月付费 🔥 ',
+    '专业服务，运维无忧，随心切换底层云服务 ',
+    '直接购买阿里云云主机，选择美信拓扑镜像' ,
+    '一键启用多云架构的即时通讯云服务 '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/refund-policy/">
+    <title>蓝莺 IM - 专业SDK，私有云按月付费 </title>
+</head>
+
+
+<body style="min-width: 100px !important;">
+  <style>
+    body {
+      margin: 0;
+      /* padding: 10px 20px; */
+      color: #4f4f4f;
+      line-height: 21px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+    }
+
+    .manualEntry {
+      font-weight: 400;
+    }
+
+    .t {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .t1 {
+      text-indent: 24px;
+    }
+
+    .t2 {
+      text-indent: 48px;
+    }
+
+    .t3 {
+      text-indent: 72px;
+    }
+
+    a {
+      color: rgb(52, 117, 192);
+      text-decoration: none;
+    }
+  </style>
+  <div class="title pt30"> 美信拓扑终止服务流程 </div>
+  <div class="panel-group" id="faq-collapse" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" style="padding: 20px;">
+      <p>鉴于您已注册成为美信拓扑服务的客户，并使用由美信拓扑提供的产品/服务，本流程为美信拓扑服务合同的一部分，请您仔细阅读了解。 </p>
+      <p>若您在美信拓扑服务期届满前要求终止服务的，需遵循以下办理流程，美信拓扑将依据以下流程及要求确认您是否满足终止服务及退款的条件。 </p>
+      <p class="t">一、终止协议办理流程 </p>
+      <p class="t1">1. 您需提前一个月向您的顾问（或美信拓扑服务合同中约定的联系人）发送终止服务申请邮件并说明终止原因。 </p>
+      <p class="t1">2. 美信拓扑将在接收申请的3个工作日内回复是否同意终止服务。 </p>
+      <p class="t1">3. 若美信拓扑同意终止服务，则请您提供如下材料： </p>
+      <p class="t2">1. 发票所有联（如已开具发票）； </p>
+      <p class="t2">2. 加盖公章的情况说明； </p>
+      <p class="t2">3. 若美信拓扑已开具发票为增值税专用发票，您需在您所属的税务局开通红字发票通知单（如已认证）； </p>
+      <p class="t2">4. 加盖公章的付款凭证； </p>
+      <p class="t1">4.美信拓扑收到前述完整材料后，与您协商办理终止服务和结算退款事宜。 </p>
+      <p class="t">二、退款规则及说明 </p>
+
+      <p class="t1">1. 退款时美信拓扑只向您退还实付预付款及实际消耗服务费的差额，赠送金额和优惠金额等不计入退款结算额中。 </p>
+      <p class="t1">2. 相应产品/服务使用满6个月的，支持退款。 </p>
+      <p class="t1">3. 相应产品/服务使用不满6个月的，则退款结算规则具体如下： </p>
+      <p class="t2">1. 如果实际消耗金额大于相应服务6个月功能使用费/基础月服务费等，则按第2条说明执行，支持退款； </p>
+      <p class="t2">
+        2.
+        如果实际消耗金额小于相应服务6个月功能使用费/基础月服务费等，视为您已使用相应服务满6个月，美信拓扑将按照使用相应服务6个月计算您消耗的功能使用费/基础月服务费等，在扣除前述费用后向您退还剩余实付金额，可退款金额数为：余额-（6个月功能使用费/基础月服务费-实际消耗金额）。 
+      </p>
+      <p class="t1">4. 以下情况不支持退款： </p>
+      <p class="t2">1. 您未遵守退款流程或者退款材料缺失； </p>
+      <p class="t2">2. 您购买的是打包产品/服务或套餐产品/服务； </p>
+      <p class="t2">3. 与营销活动、优惠活动等相关的任何充值金额（包含实付金额）； </p>
+      <p class="t2">4. 因您自身原因或您违反国家相关法律规定导致美信拓扑无法兑现服务承诺。 </p>
+      <p class="t1">5. 如对退款有疑问，请先联系您所购产品/服务的专属顾问进行咨询。 </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

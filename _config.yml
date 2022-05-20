@@ -1,0 +1,38 @@
+# Site settings
+title: 蓝莺IM
+email: eva@bmxlabs.com
+url: https://www.lanyingim.com
+description: "一键启用多云架构的即时通讯云服务"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#000000'
+  links: '#219ab3'
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+#  - title: twitter
+#    url: https://twitter.com/maximtop
+#  - title: facebook
+#    url:
+#  - title: stack-overflow
+#    url: http://stackoverflow.com/questions/tagged/jekyll
+#  - title: bitbucket
+#    url: http://bitbucket.org/jekyll
+  - title: github
+    url: https://github.com/maxim-top
+
+# Build settings
+markdown: kramdown
+#markdown: kramdown #this setting option is similar with github ...
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-multiple-languages-plugin
+
+# jekyll-multiple-languages-plugin settings:
+languages: ["zh", "en"]
+
+exclude_from_localizations: []
+

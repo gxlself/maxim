@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="One-click IM Public Cloud, One-click IM Private Cloud, One-click IM Proprietary Cloud, Quick Integration, Convenient and Professional " />
+    <meta name="Keywords"
+          content="Lanying IM, Maximtop, IM SDK, Instant Messaging, IM Cloud, IM Cloud Service, Mobile IM, Open Source IM, Enterprise IM, Chat Software, Mobile Customer Service, Online Customer Service, IM Business Scenario, APP Social, Developer Service, Live Chatroom, Live Audio/Video, Audio/Video, Live Platform, Maximtop Anti-spam, Content Security " />
+    <meta name="Keywords" content="Multi-Cloud Architecture, Private Cloud, One-click Deployment, One-click Installation, IM Private Cloud, Easy to Customize, Enable Private Cloud " />
+    <meta name="Keywords" content="Global Connectivity, Overseas, Cross-Cluster Deployment, Global Data Center, Business Customization, IM Public Cloud, Made to Measure, Enable Proprietary Cloud " />
+    <meta name="Keywords" content="Cloud Storage for Message, Multi-Device Synchronization, Message Roaming, Cloud Storage, Open Platform, App Client " />
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/en/css/common.css">
+    <link rel="stylesheet" href="/en/css/index.css">
+    <link rel="stylesheet" href="/en/css/snav.css">
+    <link rel="stylesheet" href="/en/css/price.css">
+    <link rel="stylesheet" href="/en/css/doc.css">
+
+    <script src="/en/js/jquery.js"></script>
+    <script>$(function () {
+  // Set tabs + click 
+  var ww = document.documentElement.clientWidth;
+  $('.tabContent').width(ww * 6 + 'px');
+  $('.tabContent .frm').width(ww + 'px');
+
+
+  $('.tabs span').click(function () {
+    $('.tabs span').removeClass('sel');
+    $(this).addClass('sel');
+    const idx = $(this).attr('i');
+    // $('.stabc').scrollLeft(idx * ww);
+    $('.stabc').animate({ 'scrollLeft': idx * ww + 'px' })
+  });
+
+  const mqarr1 = ['One-Click IM Public Cloud' ,
+    '153,277 Lines Of Code Open Sourced' ,
+    'One-Click IM Private Cloud ',
+    'One-Click IM Proprietary Cloud' ,
+    'The 1st and Only private IM for All Clouds' ,
+    'Next-Gen Cloud Native IM '
+  ];
+  const mqarr2 = ['Easy integration, global connectivity, start at CN￥25 per day. ',
+    'Maximtop Open Source（MTOS）2021.08.12' ,
+    'Easy to customize, 10 minutes to set up, monthly charge from 0 CN￥. ',
+    'Exclusive tenant resource and cloud service level guarantee. ',
+    'Listed in AWS/Aliyun/QingCloud marketplaces, deploy anywhere.' ,
+    'Multi-cloud architecture, One-Click deployment, monthly charge (PAYG) '
+  ];
+
+  let sa = 0;
+  const timerFun = () => {
+    sa++;
+    sa = sa % 5;
+    $('#sa1').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr1[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+
+    $('#sa2').animate({
+      opacity: 0,
+    }, 'fast', function () {
+      $(this).html(mqarr2[sa]);
+      $(this).animate({ opacity: 1 });
+    })
+  }
+
+  !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+
+  var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+      'mozHidden' in document ? 'mozHidden' :
+        null;
+
+  function onVisibilityChanged (event) {
+    if (!document[hiddenProperty]) {
+      /** will show */
+      !window.sintv && (window.sintv = setInterval(timerFun, 5000));
+    } else {
+      /**** will hide */
+      clearInterval(window.sintv);
+      window.sintv = 0;
+    }
+  }
+  document.addEventListener("visibilitychange", onVisibilityChanged, false);
+
+
+  // tab
+  function visibleTabContent(dom, activeId) {
+    dom.parent().find('.tab-content').addClass('hidden').removeClass('block')
+    dom.parent().find('[infoid=' + activeId + ']').removeClass('hidden').addClass('block')
+  }
+
+  $('.tab-line').each(function(index, el) {
+    var activeId = $(el).attr('active');
+    $(el).parent().find('.tab-item').removeClass('tab-active');
+
+    var activeDom = $(el).parent().find('[tabid=' + activeId + ']');
+    activeDom.addClass('tab-active');
+    var left = activeDom[0].getBoundingClientRect().left;
+    var width = activeDom[0].getBoundingClientRect().width;
+    var parentLeft = activeDom.parent()[0].getBoundingClientRect().left;
+
+    var lineWidth = el.getBoundingClientRect().width
+    $(el).css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+  
+    visibleTabContent($(el).parent(), activeId)
+  })
+  $('.tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+    $(this).parent().find('.tab-item').removeClass('tab-active');
+    $(this).addClass('tab-active')
+    var tabLine = $(this).parent().find('.tab-line')
+    tabLine.attr('active', tabId)
+
+    var left = this.getBoundingClientRect().left;
+    var width = this.getBoundingClientRect().width;
+    var parentLeft = $(this).parent()[0].getBoundingClientRect().left; 
+    var lineWidth = tabLine[0].getBoundingClientRect().width
+
+    tabLine.css('transform', 'translateX('+ (left - parentLeft + width / 2 - lineWidth / 2) +'px)');
+    
+    visibleTabContent($(this).parent(), tabId)
+  })
+
+  $('.part-two-tab').find('.tab-item').click(function(event) {
+    var tabId = $(this).attr('tabid');
+
+    $('.part-two-img-wrap').find('div').removeClass('block').addClass('hidden')
+    $('.part-two-img-wrap').find('[imgid='+ tabId +']').addClass('block').removeClass('hidden')
+  })
+
+  // menu
+  $('.lanying-menu').find('.lanying-submenu-title').click(function() {
+    var support = $(this).attr('support') || 'mobile' // mobile & pc & all
+    if (($(document).width() <= 750 && support === 'mobile') || ($(document).width() >= 750 && support === 'pc') || support === 'all') {
+      var isActive = $(this).hasClass('active')
+      $(this).toggleClass('active')
+      var box = $(this).parent().find('.lanying-submenu-box')
+      if (isActive) {
+        box.css('height', '0px')
+      } else {
+        var children = box.children()
+        var height = 0
+        children.each(function(index, el) {
+          height += $(el).height()
+        })
+        box.css('height', height + 'px')
+      }
+    }
+  })
+
+  // drop-down
+  $('.drop-down').mouseover(function() {
+    var box = $(this).find('.drop-down-box')
+    var height = 0
+    box.children().each(function(index, el) {
+      console.log('height', $(el).height())
+      height += $(el).height()
+    })
+    
+    box.css({'height': height + 'px', 'opacity': 1})
+  }).mouseleave(function() {
+    var box = $(this).find('.drop-down-box')
+    box.css({'height': 0, 'opacity': 0})
+  })
+
+  // 动态设置根节点font-size rem变化
+  function setHtmlSize(){
+    var ratio = 16 / 1440
+    var fontSize = ratio * $(window).width()
+    $(document.documentElement).css('font-size', fontSize + 'px')
+  }
+  setHtmlSize()
+  $(window).resize(function(e) {
+    setHtmlSize()
+  })
+})
+
+
+</script>
+    <link rel="canonical" href="https://www.lanyingim.com/en/contact/">
+    <title>LANYING.IM - Professional SDK, Monthly Charged Private Cloud </title>
+</head>
+
+
+<body>
+  <div class="sheader">
+    <nav class="nav fixed top-0 left-0 right-0 text-white transition duration-500 z-20">
+  <p class="text-right text-xs font-medium mb-2.5 hidden md:block">
+    Contact Business： 
+    <a href="tel:4006660162">400-666-0162</a>
+    <span class="mx-3.5">|</span> 
+    <a href="/contact/">中文</a><span>  /  </span><a href="/en/contact/">EN</a>
+  </p>
+  
+  <div class="nav-link flex justify-between items-center font-normal">
+    <ul class="nav-link-ul items-center relative hidden md:flex">
+      <li class="mr-10">
+        <a href="/en/">
+          <img class="w-29.5 nav-logo" src="/img/whitelogo-en.png" />
+          <img class="w-29.5 nav-sticky-logo" src="/img/whitelogo-en-sticky.png" />
+        </a>
+      </li>
+      <li class="px-6 menu nav-link-li">
+        <span class="menu-item cursor-pointer" sid="pro"><a href="/en/product/">Products </a></span>
+      </li>
+      <li class="px-6 nav-link-li"><span class="menu-item cursor-pointer" sid="pri"><a href="/en/plans/">Pricing </a></span>
+      </li>
+      <li class="px-6 menu nav-link-li">
+        <span class="menu-item cursor-pointer" sid="dev"><a href="/en/developer/">Developers </a></span>
+      </li>
+      <li class="px-6 menu nav-link-li">
+        <span class="menu-item cursor-pointer" sid="dow"><a href="/en/downloads/">Downloads </a></span>
+      </li>
+      <li class="px-6 relative cursor-pointer nav-link-li">
+        <span sid="dow menu-item"><a target="_blank" href="https://github.com/maxim-top/maxims-bistro/blob/master/美信拓扑开源MTOS.md ">
+          Open Source 
+        </a></span>
+        <img class="absolute top-0 right-1 w-0.75 h-0.75 github-icon-white" src="/img/open/github-black.png" />
+        <img class="absolute top-0 right-1 w-0.75 h-0.75 github-icon-blue" src="/img/open/github-color.png" />
+      </li>
+      <li class="menu-drop shadow absolute top-10 left-0 hidden bg-white text-black transition duration-500 px-12.5 pt-11.5 pb-18.5 rounded-0.75 text-sm leading-8">
+        <ul mid="pro" class="menu-drop-content flex hidden">
+          <li class="pr-7 menu-drop-content-li">
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="/en/product/">Instant Messaging（IM） </a></p>
+            <p class=""><a href="/en/product/">Rich Media Message </a></p>
+            <p class=""><a href="/en/product/#scloud">Cloud Storage For Message </a></p>
+            <p class=""><a href="/en/product/#open">Open Platform </a></p>
+          </li>
+          <li class="pl-10 pr-14 menu-drop-content-li">
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="/en/product/">Extensions </a></p>
+            <p class=""><a class="relative" href="https://docs.lanyingim.com/v/english/quick-start/push-dev-guide.html">Lanying Push <img class="absolute top-0.5 left-full w-6.5 transform translate-x-2" src="/img/gif/new.png" /></a></p>
+            <p class=""><a href="/en/oversea/">Global Connectivity </a></p>
+          </li>
+          <li class="px-8.5 menu-drop-content-li">
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="/en/deploy/?d=pub">Deployment Modes </a></p>
+            <p class=""><a href="/en/deploy/?d=pub">Public Cloud </a></p>
+            <p class=""><a class="relative" href="/en/deploy/?d=pri">Private Cloud <img class="absolute top-0.5 left-full w-6.5 transform translate-x-2" src="/img/gif/hot.png" /></a></p>
+            <p class=""><a href="/en/deploy/?d=pro">Proprietary Cloud </a></p>
+          </li>
+        </ul>
+
+        <ul mid="dev" class="menu-drop-content hidden">
+          <li class="">
+            <p class=""><a href="/en/developer/">Development Guide </a></p>
+            <p class=""><a href="https://docs.lanyingim.com/v/english">Documentation </a></p>
+          </li>
+        </ul>
+
+        <ul mid="dow" class="menu-drop-content hidden">
+          <li>
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="/en/downloads/">Demo Apps </a></p>
+            <p class=""><a href="/en/downloads/">Sources and SDKs </a></p>
+            <p class=""><a href="/en/downloads/">Private Deployment </a></p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="block md:hidden">
+      <img class="w-v150 nav-m-logo" src="/img/whitelogo-en.png" />
+      <img class="w-v150 nav-sticky-m-logo" src="/img/whitelogo-en-sticky.png" />
+    </div>
+
+    <p class="flex items-center">
+      <a class="inline-block border text-v24 md:text-xs border-solid rounded-0.75 px-v30 md:px-7.5 h-v60 md:h-10 leading-v60 md:leading-10 whitespace-nowrap" target="_blank" href="https://console.lanyingim.com">
+        Login 
+      </a>
+      <a class="bg-gradient-01 rounded-0.75 px-v30 md:px-7.5 h-v60 md:h-10 leading-v60 md:leading-10 ml-4.5 text-white hidden md:inline-block whitespace-nowrap" target="_blank" href="https://console.lanyingim.com">
+        Try For Free 
+      </a>
+      <span class="relative block md:hidden menu-line-box flex flex-col justify-between ml-v40">
+        <span></span>
+        <span></span>
+      </span>
+    </p>
+  </div>
+</nav>
+
+<div class="nav-m-menu hidden md:hidden fixed inset-0 bg-menu-back z-10 pt-v120">
+  <div class="header-menu lanying-menu">
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title">Products </p>
+      <ul class="header-submenu-box lanying-submenu-box">
+        <li class="header-submenu-item menu-tag">Instant Messaging（IM） </li>
+        <li class="header-submenu-item"><a href="/en/contact/">Enterprise Cooperation </a></li>
+        <li class="header-submenu-item"><a href="/en/product/">Rich Media Message </a></li>
+        <li class="header-submenu-item"><a href="/en/product/#scloud">Cloud Storage For Message </a></li>
+        <li class="header-submenu-item"><a href="/en/product/#open">Open Platform </a></li>
+        
+        <li class="header-submenu-item menu-tag">Extensions </li>
+        <li class="header-submenu-item"><a class="relative flex items-center" href="https://docs.lanyingim.com/v/english/quick-start/push-dev-guide.html">Lanying Push <img class="w-v60 ml-v12" src="/img/gif/new.png" /></a></li>
+        <li class="header-submenu-item"><a href="/en/oversea/">Global Connectivity </a></li>
+
+        <li class="header-submenu-item menu-tag">Deployment Modes </li>
+        <li class="header-submenu-item"><a href="/en/deploy/?d=pub">Public Cloud </a></li>
+        <li class="header-submenu-item"><a class="relative flex items-center" href="/en/deploy/?d=pri">Private Cloud <img class="w-v60 ml-v12" src="/img/gif/hot.png" /></a></li>
+        <li class="header-submenu-item"><a href="/en/deploy/?d=pro">Proprietary Cloud </a></li>
+      </ul>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title no-arrow"><a href="/en/plans/">Pricing </a></p>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title">Developers </p>
+      <ul class="header-submenu-box lanying-submenu-box">
+        <li class="header-submenu-item"><a href="/en/developer/">Development Guide </a></li>
+        <li class="header-submenu-item"><a href="https://docs.lanyingim.com/v/english">Documentation </a></li>
+      </ul>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title">Downloads </p>
+      <ul class="header-submenu-box lanying-submenu-box">
+        <li class="header-submenu-item menu-tag">Demo Apps </li>
+        <li class="header-submenu-item"><a href="/en/downloads/">Sources and SDKs </a></li>
+        <li class="header-submenu-item"><a href="/en/downloads/">Private Deployment </a></li>
+      </ul>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title no-arrow"><a target="_blank" href="https://github.com/maxim-top/maxims-bistro/blob/master/美信拓扑开源MTOS.md ">Open Source </a></p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+function debounce(func, delay, immediate) {
+  var timer = null;
+  return function () {
+    var context = this
+    clearTimeout(timer);
+    if (immediate) {
+      var callNow = !timer;
+      timer = setTimeout(function() { timer = null }, delay);
+      if (callNow) { func.apply(context, arguments); }
+    } else {
+      timer = setTimeout(function() { func.apply(context, arguments); }, delay)
+    }
+  }
+}
+
+function ableScroll () {
+  $(document.documentElement).removeClass('overflow-hidden').removeClass('h-screen')
+}
+
+function disableScroll() {
+  $(document.documentElement).addClass('overflow-hidden').addClass('h-screen')
+}
+
+$(document).scroll(function () {
+  var st = $(this).scrollTop();
+  if (st > 0) {
+    $('.nav').addClass('nav-sticky')
+  } else {
+    $('.nav').removeClass('nav-sticky')
+  }
+});
+
+$(function () {
+  var hrefMap = {
+    pro: ['product', 'deploy', 'oversea'],
+    pri: ['plans'],
+    dev: ['plans'],
+    dow: ['download']
+  }
+
+  var href = window.location.href
+  // 下拉显示标识
+  var isNavMenuHover = false;
+  var drop = $('.nav .nav-link-ul .menu-drop');
+  var fobiddenClose = debounce(function () {
+    if (!isNavMenuHover) { drop.addClass('hidden'); }
+  }, 300)
+
+  function getHrefId () {
+    var keys = Object.keys(hrefMap)
+    var id = ''
+    keys.forEach(function(key){
+      hrefMap[key].forEach(function(hrefKey) {
+        if (href.indexOf(hrefKey) > -1) {
+          id = key
+        }
+      })
+    })
+    return id
+  }
+
+  function keepNavActive() {
+    $('.nav .nav-link-li').removeClass('nav-active')
+
+    if (href.indexOf('product') > 0 || href.indexOf('deploy') > 0 || href.indexOf('oversea') > 0) {
+      $('[sid=pro]').parent().addClass('nav-active');
+    }
+    if (href.indexOf('plans') > 0) {
+      $('[sid=pri]').parent().addClass('nav-active');
+    }
+    if (href.indexOf('developer') > 0) {
+      $('[sid=dev]').parent().addClass('nav-active');
+    }
+    if (href.indexOf('download') > 0) {
+      $('[sid=dow]').parent().addClass('nav-active');
+    }
+  }
+
+  $('.nav .nav-link .nav-link-li').mouseenter(function () {
+    var isMenu = $(this).hasClass('menu');
+    isNavMenuHover = isMenu;
+
+    $(this).addClass('nav-active');
+    if (isMenu) {
+      var sid = $(this).find('.menu-item').attr('sid');
+      drop.find('.menu-drop-content').addClass('hidden');
+      drop.find('[mid=' + sid + ']').removeClass('hidden');
+
+      var left = $(this)[0].getBoundingClientRect().left;
+      drop.css('transform', 'translateX(' + (left - 48) + 'px)');
+      if (drop.hasClass('hidden')) { drop.removeClass('hidden');};
+    }
+  }).mouseleave(function () {
+    $(this).removeClass('nav-active');
+    fobiddenClose()
+    keepNavActive()
+    isNavMenuHover = false;
+  });
+  drop.mouseenter(function() {
+    isNavMenuHover = true
+    var mid = $(this).find('.menu-drop-content:not(.hidden)').attr('mid')
+    $('.menu-item[sid='+ mid +']').parent().addClass('nav-active')
+  }).mouseleave(function() {
+    fobiddenClose();
+    isNavMenuHover = false;
+    keepNavActive()
+  })
+
+  keepNavActive()
+
+  $('.menu-line-box').click(function() {
+    var qidian = $('.class_qidian_wpa')
+    var isSticky =  $('.nav').hasClass('nav-sticky')
+    if ($(this).hasClass('open')) {
+      $(this).removeClass('open')
+      $(this).addClass('close')
+      ableScroll()
+      if ($(document).scrollTop() > 0) {
+        $('.nav').addClass('nav-sticky')
+      }
+
+      qidian.css('display', 'block')
+    } else {
+      $(this).removeClass('close')
+      $(this).addClass('open')
+      disableScroll()
+      $('.nav').removeClass('nav-sticky')
+      qidian.css('display', 'none')
+    }
+    $('.nav-m-menu').toggleClass('hidden')
+  })
+})
+</script>
+  </div>
+  <div class="container">
+    <div class="flex" style="height: 100%;">
+      <div class="wp50 ib hp100 vm tr w-1/2 flex justify-end" style=" background:linear-gradient(to bottom left,  #76c4e2,#8176b5)">
+        <div class="sitem">
+          <p class="tc fs24 mb50 cw">Interested in our enterprise cooperation program? </p>
+          <iframe class="siframe" src="/en/contactiframe/"></iframe>
+        </div>
+      </div>
+      <div class="sitem tl w-1/2">
+        <h1 class="font-light md:mb-7.5">Enterprise cooperation represents </h1>
+        <p class="flex items-center text-xl md:mb-4"><img src="/img/check.svg" class="ck" />Custom service features </p>
+        <p class="flex items-center text-xl md:mb-4"><img src="/img/check.svg" class="ck" />Exclusive technical advisor </p>
+        <p class="flex items-center text-xl md:mb-4"><img src="/img/check.svg" class="ck" />24/7 technical support </p>
+        <p class="flex items-center text-xl md:mb-4"><img src="/img/check.svg" class="ck" />technical support for big-event preparation </p>
+        <p class="flex items-center text-xl md:mb-4"><img src="/img/check.svg" class="ck" />Source opening and licensing </p>
+        <p class="flex items-center text-xl md:mb-4 text-down-link"><a href="/en/plans/">More > </a></p>
+        <hr class="text-part-link" style="border-width: 1px" />
+        <h1 class="font-light md:mb-10 md:mt-5 md:mb-5">Contact Us </h1>
+
+        <p class="">Phone </p>
+        <p class="md:mb-10">
+          <a class="text-down-link" href="tel:4006660162">400-666-0162</a>
+        </p>
+        <p class="">Official email </p>
+        <p class="md:mb-10">
+          <a class="text-down-link" href="mailto:eva@bmxlabs.com">eva@bmxlabs.com</a>
+        </p>
+        <p class="">Address </p>
+        <p class="">
+          <a class="text-down-link" href="">4th Floor, B3 Building, Zhaowei Industry Park, No.14 Jiuxianqiao, Chaoyang District, Beijing </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="/en/css/footer.css">
+<footer class="bg-footer text-footer md:pl-23.5 md:pr-19.5">
+  <div class="md:flex justify-between md:py-21 md:pr-5.5 mb-v50 md:mb-0">
+    <div class="md:flex footer-menu lanying-menu">
+      <div class="footer-submenu lanying-submenu">
+        <p class="footer-submenu-title lanying-submenu-title md:text-lg text-footer-title md:mb-5.5">Business </p>
+        <ul class="footer-submenu-box lanying-submenu-box">
+          <li class="footer-submenu-item md:text-sm md:mb-3.5"><a href="/en/about/">About Company </a></li>
+          <li class="footer-submenu-item md:text-sm md:mb-3.5"><a href="/en/contact/">Enterprise Cooperation </a></li>
+          <li class="footer-submenu-item md:text-sm"><a href="tel:4006660162">400-666-0162</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-submenu lanying-submenu md:ml-30">
+        <p class="footer-submenu-title lanying-submenu-title md:text-lg text-footer-title md:mb-5.5">IM Cloud </p>
+        <ul class="footer-submenu-box lanying-submenu-box">
+          <li class="footer-submenu-item md:text-sm md:mb-3.5"><a href="/en/product/">Products & Features </a></li>
+          <li class="footer-submenu-item md:text-sm md:mb-3.5"><a href="/en/plans/">Pricing </a></li>
+          <li class="footer-submenu-item md:text-sm"><a href="/en/developer/">Developers </a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-submenu lanying-submenu md:ml-30">
+        <p class="footer-submenu-title lanying-submenu-title md:text-lg text-footer-title md:mb-5.5">Support </p>
+        <ul class="footer-submenu-box lanying-submenu-box">
+          <li class="footer-submenu-item md:text-sm md:mb-3.5"><a href="https://github.com/maxim-top/maxims-bistro/issues" target="_blank">Having an issue? </a></li>
+          <li class="footer-submenu-item md:text-sm"><a href="https://console.lanyingim.com/">Maximtop Status </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col-reverse md:flex-row items-center pt-v80 md:pt-0">
+      <div class="flex md:flex-col footer-apps">
+        <a href="https://weibo.com/maximtop/" target="_blank">
+          <img class="w-v60 md:w-10" src="/img/social/logo.weibo.png" />
+        </a>
+        <a class="md:mt-3" href="https://mp.weixin.qq.com/s/PHbjk11w_5fwutW7MALWHg" target="_blank">
+          <img class="w-v60 md:w-10" src="/img/social/logo.wechat.png" />
+        </a>
+        <a class="md:mt-3" href="https://www.zhihu.com/org/mei-xin-tuo-bu" target="_blank">
+          <img class="w-v60 md:w-10" src="/img/social/logo.zhihu.png" />
+        </a>
+      </div>
+      <img class="w-v280 md:w-35.5 md:ml-9" src="/img/wechat/public.png" alt="" />
+    </div>
+  </div>
+  <div class="hidden md:block h-px bg-footer-line"></div>
+  <div class="text-footer-bottom text-v24 md:text-sm py-v30 md:pt-3 md:pb-4 text-center md:text-left">
+    <span>© 2019-2022 Maximtop </span>
+    <span class="s">|</span>
+    <a href="#">Beijing ICP No. 19033149 </a>
+    <span class="s">|</span>
+    <a href="#">Beijing Public Network Security No. 11010502039228 </a>
+    <span class="s">|</span>
+    <!-- <a href="#">ICPCertificate </a>
+    <span class="s">|</span> -->
+    <a href="/en/privacy/">Privacy Policy </a>
+    <span class="s">|</span>
+    <a href="/en/terms/">Terms of Use </a>
+  </div>
+</footer>
+<!-- WPA start -->
+<script id="qd28857710170a435d2f579aed2c2b579190f40eaffc" src="https://wp.qiye.qq.com/qidian/2885771017/0a435d2f579aed2c2b579190f40eaffc" charset="utf-8" async defer></script>
+<!-- WPA end -->
+</body>
+<script type="text/javascript">
+
+
+</script>
+
+<style>
+  p a {
+    /* color: rgb(66, 66, 66) */
+  }
+
+  .sitem {
+    padding: 120px 30px 90px;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .siframe {
+    border: none;
+    width: 430px;
+    height: 600px;
+    overflow: hidden;
+  }
+
+  .nav{
+    background: #ffffff;
+    color: #303030;
+  }
+  .nav-logo{
+    display: none !important;
+  }
+  .nav-sticky-logo{
+    display: block !important;
+  }
+  .github-icon-white{
+    display: none !important;
+  }
+  .github-icon-blue{
+    display: block !important;
+  }
+
+
+  .cw {
+    color: white;
+  }
+
+  textarea {
+    border: 1px solid #DDD;
+  }
+
+  .ck {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+</style>
+
+
+</html>

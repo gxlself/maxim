@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+
+  <div style="text-align: center; margin-top:180px;">
+    <img style="width:70%;margin: auto;" src="/img/colorlogo-{% t link.language %}.png" />
+  </div>
+
+  <div class="down" onclick="goDownload();">{% t auto.key_406_805813219  %} {% comment %}下载蓝莺IM{% endcomment %}</div>
+
+  <div class="stxt">{% t auto.key_3817_228909701  %} {% comment %}一键启用多云架构的即时通讯云服务{% endcomment %}</div>
+
+  <div class="mask" id="a" style="display: none;"></div>
+  <div class="down_mask" style="display: none;" id="b">
+    <img style="width:100%" src="/img/downarr.png" />
+  </div>
+
+</body>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: rgb(66, 66, 66);
+  }
+
+  .down {
+
+    background: #32ADE6;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 45px;
+    height: 45px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+    color: white;
+  }
+
+  .stxt {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    text-align: center;
+    color: #4f4f4f;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .mask {
+    background: #222;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+    ;
+  }
+
+  .down_mask {
+    width: 100%;
+    position: absolute;
+    z-index: 19;
+    ;
+  }
+</style>
+
+<script>
+  var u = navigator.userAgent;
+  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr{% t auto.key_407_285387751  %} {% comment %}') > -1; //android终端{% endcomment %}
+{% t auto.key_408_204131551  %} {% comment %}  var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端{% endcomment %}
+  var isWechat = false;
+  var ua = window.navigator.userAgent.toLowerCase();
+  if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+    isWechat = true;
+  }
+
+  if (isWechat && isAndroid) {
+    document.querySelector('#a').style.display = '';
+    document.querySelector('#b').style.display = '';
+  }
+
+  function goDownload() {
+    if (isIOS) {
+      window.open('https://apps.apple.com/app/id1518165517');
+    } else if (isAndroid) {
+      window.open('https://package.lanyingim.com/maxim-android-latest.apk');
+    }
+  }
+
+
+
+</script>
+
+</html>

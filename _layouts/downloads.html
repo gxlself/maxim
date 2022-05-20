@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  {% include snav.html %}
+
+  <div class="down-header h-screen md:h-107.5 flex flex-col md:flex-row justify-end md:justify-between items-center text-white pb-v40 md:pb-0 px-v65 md:pl-p11 md:pr-p13">
+    <div class="hidden md:block">
+      <h1 class="md:mb-2 font-light md:text-9.5">试用体验APP及小程序，<br>可直接扫描二维码</h1>
+      <p>亦可在线试用网页聊天，或者下载SDK、源码、服务端安装程序</p>
+    </div>
+
+    <div class="block md:hidden">
+      <h1 class="mb-v350 text-v54">{% t auto.key_152_857670125  %} {% comment %}Demo源码/SDK{% endcomment %}</h1>
+    </div>
+
+    <div class="flex text-center text-v24 md:text-sm justify-between">
+      <div>
+        <img class="w-v280 md:w-27 mb-v24 md:mb-3 rounded-v10 md:rounded-1" src="../img/down/download-code.png" alt="">
+        <p>{% t auto.key_149_112175994  %} {% comment %}点击下载{% endcomment %}</p>
+      </div>
+      <div class="ml-v60 md:ml-11">
+        <img class="w-v280 md:w-27 mb-v24 md:mb-3 rounded-v10 md:rounded-1" src="../img/down/wx-miniprogram.png" alt="">
+        <p>{% t auto.key_148_564772919  %} {% comment %}微信小程序{% endcomment %}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-v120 md:pt-0 md:pb-14 px-v40 md:pl-p8 md:pr-p7 flex justify-between flex-wrap down-box">
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/android_0.png" alt="android">
+          <h3 class="block md:hidden text-v28 ml-v30">Android</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">Android</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_153_865957140  %} {% comment %}Android原生版本，支持华为、小米、Oppo、Vivo等主流厂商推送{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-android" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-android/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://github.com/maxim-top/floo-android/releases" target="_blank">{% t auto.key_156_240434523  %} {% comment %}下载 SDK{% endcomment %}</a>
+        <a class="flex-1 bg-down-setup ml-v30 md:ml-5 rounded-v10 md:rounded-3" href="https://github.com/maxim-top/floo-android/releases" target="_blank">{% t auto.key_165_025957389  %} {% comment %}下载安装包{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/ios_0.png" alt="android">
+          <h3 class="block md:hidden text-v28 ml-v30">iOS</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">iOS</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_157_550032454  %} {% comment %}iOS原生版本，高效可靠功能全面，可体验视频会议等高级功能{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-ios" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-ios/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://github.com/maxim-top/floo-ios/releases" target="_blank">{% t auto.key_156_240434523  %} {% comment %}下载 SDK{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/web_0.png" alt="web">
+          <h3 class="block md:hidden text-v28 ml-v30">Web</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">Web</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_158_622005961  %} {% comment %}桌面电脑浏览器，适配 Edge/Chrome/Safari等桌面浏览器{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a class="" href="https://github.com/maxim-top/lanying-im-web" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-web/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://chat.lanyingim.com/" target="_blank">{% t auto.key_159_267566926  %} {% comment %}在线试用{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/uniapp_1.png" alt="uniapp">
+          <h3 class="block md:hidden text-v28 ml-v30">Uni-app</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">Uni-app</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_160_876031949  %} {% comment %}推荐H5和各种小程序场景使用，也可用来生成iOS/Android原生应用{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-uniapp" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-uniapp/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://chat-h5.lanyingim.com/" target="_blank">{% t auto.key_159_267566926  %} {% comment %}在线试用{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/wechat_0.png" alt="wechat">
+          <h3 class="block md:hidden text-v28 ml-v30">{% t auto.key_148_564772919  %} {% comment %}微信小程序{% endcomment %}</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">{% t auto.key_148_564772919  %} {% comment %}微信小程序{% endcomment %}</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_161_078216059  %} {% comment %}符合微信小程序标准的原生版本，功能跟 uni-app 版完全一致{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-miniprogram" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-miniprogram/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://github.com/maxim-top/floo-uniapp/releases" target="_blank">{% t auto.key_156_240434523  %} {% comment %}下载 SDK{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/linux_0.png" alt="linux">
+          <h3 class="block md:hidden text-v28 ml-v30">Linux/C++</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">Linux/C++</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_162_653467649  %} {% comment %}底层 C++ 库，适合物联网业务场景，以及封装适配其他开发框架{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-embedded" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" class="ml20" href="https://github.com/maxim-top/lanying-im-embedded/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://package.lanyingim.com/floo-v2.0.0-ubuntu-x64-g%2B%2B4.8.zip" target="_blank">{% t auto.key_156_240434523  %} {% comment %}下载 SDK{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-0 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/win_0.png" alt="win">
+          <h3 class="block md:hidden text-v28 ml-v30">Windows</h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">Windows</h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_163_110449019  %} {% comment %}PC客户端 Windows 版本，使用 Electron 开发，支持 Win7 及以上版本{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-pc" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-pc/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="{% t auto.key_164_748156572  %} {% comment %}https://package.lanyingim.com/美信拓扑IM-2.9.9.win.exe{% endcomment %}" target="_blank">{% t auto.key_165_025957389  %} {% comment %}下载 安装包{% endcomment %}</a>
+      </div>
+    </div>
+
+    <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 rounded-v16 md:rounded-3">
+      <div class="md:flex mb-v40 md:mb-5">
+        <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+          <img class="w-v90 md:w-16 self-center" src="/img/down/mac_0.png" alt="mac">
+          <h3 class="block md:hidden text-v28 ml-v30">macOS<span class="inline-block text-down-m1 bg-down-m1 ml-v16 px-v6 leading-v38 text-v22 rounded-v4">已支持M1芯片</span></h3>
+        </div>
+        <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+          <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2 md:flex items-center">macOS<span class="inline-block text-down-m1 bg-down-m1 text-xs md:leading-5.5 md:px-1.5 md:ml-3">已支持M1芯片</span></h3>
+          <div class="flex flex-col-reverse md:flex-col">
+            <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_166_728100359  %} {% comment %}PC客户端 MacOS 版本，使用 Electron 开发，支持 Mac 系列电脑{% endcomment %}</p>
+            <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+              <a href="https://github.com/maxim-top/lanying-im-pc" target="_blank">{% t auto.key_154_286262353  %} {% comment %}Demo源码{% endcomment %}</a><br />
+              <a class="ml-v30 md:ml-4" href="{% t link.doc_url %}">{% t auto.key_155_448142436  %} {% comment %}开发指南{% endcomment %}</a>
+              <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/lanying-im-pc/issues" target="_blank">
+                {% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+        <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="{% t auto.key_167_157724077  %} {% comment %}https://package.lanyingim.com/美信拓扑IM-2.9.9.dmg{% endcomment %}" target="_blank">{% t auto.key_165_025957389  %} {% comment %}下载 安装包{% endcomment %}</a>
+        <div class="flex-1 ml-v30 md:ml-5 bg-down-install rounded-v10 md:rounded-3 relative drop-down cursor-pointer">
+          {% t auto.key_3826_545712515  %} {% comment %}下载 (Intel){% endcomment %}
+          <img class="down-arrrow absolute right-v30 md:right-3.5 top-v36 md:top-5 w-v16 md:w-3 transform rotate-180 transition" src="../img/down/down-arrrow.png" />
+
+          <ul class="drop-down-box absolute left-0 right-0 md:-right-24 text-black text-v26 md:text-sm text-center md:text-left bg-white border border-down rounded-v10 md:rounded-1">
+            <a class="block hover:bg-down-version md:px-8 h-v90 md:h-15.5 leading-v90 md:leading-15.5" href="{% t auto.key_167_157724077 %} {% comment %}https://package.lanyingim.com/美信拓扑IM-2.9.9.dmg{% endcomment %}" target="_blank">.dmg（Intel）</a>
+            <a class="block hover:bg-down-version md:px-8 h-v90 md:h-15.5 leading-v90 md:leading-15.5" href="{% t auto.key_167_157724077 %} {% comment %}https://package.lanyingim.com/美信拓扑IM-2.9.9.dmg{% endcomment %}" target="_blank">.dmg（M1）</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="down-card back-none h-0"></div>
+  </div>
+
+  <div class="bg-down-part py-v120 md:pt-14.5 md:pb-12.5 px-v40 md:pl-p11 md:pr-p13">
+    <h1 class="mb-v50 md:mb-7.5 text-v42 md:text-4xl font-normal text-white">{% t auto.key_168_247409040  %} {% comment %}私有部署安装/服务端{% endcomment %}</h1>
+    
+    <div class="flex flex-col md:flex-row justify-between flex-wrap">
+      <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+        <div class="md:flex mb-v40 md:mb-5">
+          <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+            <img class="w-v90 md:w-16 self-center" src="/img/down/linux_0.png" alt="linux">
+            <h3 class="block md:hidden text-v28 ml-v30">Linux/C++</h3>
+          </div>
+          <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+            <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">Linux/C++</h3>
+            <div class="flex flex-col-reverse md:flex-col">
+              <p class="md:mb-2 text-v26 md:text-xs md:leading-4.5">v3.9.0 2021/06/19</p>
+              <p class="text-v26 md:text-xs md:leading-4.5">{% t auto.key_169_989256124  %} {% comment %}操作系统：Ubuntu / CentOS{% endcomment %} </p>
+              <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_170_202240956  %} {% comment %}硬件：X64{% endcomment %} </p>
+              <p class="mb-v16 md:mb-0 flex justify-start text-v24 md:text-xs text-down-link font-medium">
+                <a href="{% t link.doc_url %}/quick-start/how-to-deploy-private-cloud">{% t auto.key_171_816906567  %} {% comment %}安装指南{% endcomment %}</a>
+                <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/maxims-bistro/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+          <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://package.lanyingim.com/floo-v2.0.0-ubuntu-x64-g%2B%2B4.8.zip" target="_blank">{% t auto.key_156_240434523  %} {% comment %}下载 SDK{% endcomment %}</a>
+        </div>
+      </div>
+
+      <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+        <div class="md:flex mb-v40 md:mb-5">
+          <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+            <img class="w-v90 md:w-16 self-center" src="/img/down/raspi_0.png" alt="raspi">
+            <h3 class="block md:hidden text-v28 ml-v30">RaspberryPi</h3>
+          </div>
+          <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+            <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">RaspberryPi</h3>
+            <div class="flex flex-col-reverse md:flex-col">
+              <p class="md:mb-2 text-v26 md:text-xs md:leading-4.5">v1.0.1 2020/05/04</p>
+              <p class="text-v26 md:text-xs md:leading-4.5">{% t auto.key_172_512488763  %} {% comment %}操作系统：{% endcomment %}<a href="http://cdimage.ubuntu.com/releases/bionic/release/ubuntu-18.04.5-preinstalled-server-arm64+raspi4.img.xz" target="_blank">Ubuntu 18.04 rasp3</a></p>
+              <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_173_449451188  %} {% comment %}硬件：ARM64 / 树莓派4B{% endcomment %} </p>
+              <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+                <a href="{% t link.doc_url %}/quick-start/how-to-deploy-private-cloud">{% t auto.key_171_816906567  %} {% comment %}安装指南{% endcomment %}</a>
+                <a class="ml-v30 md:ml-4" class="ml20" href="https://github.com/maxim-top/maxims-bistro/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+          <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="https://package.lanyingim.com/linux/arm64/maxim.ctl" target="_blank">{% t auto.key_165_025957389  %} {% comment %}下载安装包{% endcomment %}</a>
+        </div>
+      </div>
+
+      <div class="down-card px-v30 md:px-8.5 py-v30 md:py-8.5 mb-v24 md:mb-6 rounded-v16 md:rounded-3">
+        <div class="md:flex mb-v40 md:mb-5">
+          <div class="pb-v30 md:pb-0 flex md:block items-center down-border">
+            <img class="w-v90 md:w-16 self-center" src="/img/down/mac_0.png" alt="mac">
+            <h3 class="block md:hidden text-v28 ml-v30">macOS</h3>
+          </div>
+          <div class="ml-v30 md:ml-6 pt-v30 md:pt-0">
+            <h3 class="hidden md:block text-v28 md:text-2xl md:mb-2">macOS</h3>
+            <div class="flex flex-col-reverse md:flex-col">
+              <p class="md:mb-2 text-v26 md:text-xs md:leading-4.5">v1.0.3 2020/05/18</p>
+              <p class="text-v26 md:text-xs md:leading-4.5">{% t auto.key_174_841748382  %} {% comment %}操作系统：Catalina 10.15{% endcomment %}</p>
+              <p class="md:mb-5 text-v26 md:text-xs md:leading-4.5">{% t auto.key_175_077546077  %} {% comment %}硬件：Darwin64{% endcomment %} </p>
+              <p class="mb-v16 md:mb-0 flex text-v24 md:text-xs text-down-link font-medium">
+                <a href="{% t link.doc_url %}/quick-start/how-to-deploy-private-cloud">{% t auto.key_171_816906567  %} {% comment %}安装指南{% endcomment %}</a>
+                <a class="ml-v30 md:ml-4" href="https://github.com/maxim-top/maxims-bistro/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center md:text-sm text-center text-white leading-v90 md:leading-12.5">
+          <a class="flex-1 bg-down-install rounded-v10 md:rounded-3" href="{% t auto.key_167_157724077  %} {% comment %}https://package.lanyingim.com/美信拓扑IM-2.9.9.dmg{% endcomment %}" target="_blank">{% t auto.key_165_025957389  %} {% comment %}下载 安装包{% endcomment %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include nfooter.html %}
+</body>
+<script>
+  $(function () {
+    // drop-down
+    $('.drop-down').mouseover(function() {
+      $(this).find('.down-arrrow').css('transform', 'rotate(0deg)')
+    }).mouseleave(function() {
+      $(this).find('.down-arrrow').css('transform', 'rotate(-180deg)')
+
+    })
+  })
+</script>
+</html>

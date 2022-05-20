@@ -1,0 +1,111 @@
+@import './function';
+html {
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #414141;
+	-webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+*,::after,::before {box-sizing: border-box}
+a{color:inherit;text-decoration:inherit}
+blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin: 0}
+body{font-family:inherit;line-height:inherit;margin: 0}
+ol,ul{list-style:none;margin: 0;padding:0}
+audio,canvas,embed,iframe,img,object,svg,video {display: block;vertical-align: middle}
+img,video {max-width: 100%;height: auto}
+*,::after,::before {
+	box-sizing: border-box;
+	border-width: 0;
+	border-style: solid;
+	border-color: currentColor
+}
+
+// Below is Tailwind.css style, just a little 
+/**
+  * display
+  */
+.block{display: block}
+.inline-block {display: inline-block}
+.inline {display: inline}
+.flex {display: flex}
+.inline-flex {display: inline-flex}
+.table {display: table}
+.hidden{display: none}
+
+@include md{
+  .md\:block{display: block}
+  .md\:inline-block {display: inline-block}
+  .md\:inline {display: inline}
+  .md\:flex {display: flex}
+  .md\:inline-flex {display: inline-flex}
+  .md\:table {display: table}
+  .md\:hidden{display: none}
+}
+
+/**
+  * box modal
+  */
+.box-border{box-sizing: border-box}
+.box-content{box-sizing: content-box}
+
+/*
+ * 手势
+ */
+.cursor-auto {cursor: auto}
+.cursor-default {cursor: default}
+.cursor-pointer {cursor: pointer}
+.cursor-wait {cursor: wait}
+.cursor-text {cursor: text}
+.cursor-move {cursor: move}
+.cursor-help {cursor: help}
+.cursor-not-allowed {cursor: not-allowed}
+
+/**
+  * overflow
+  */
+.overflow-auto {	overflow: auto}
+.overflow-hidden {	overflow: hidden}
+.overflow-visible {	overflow: visible}
+.overflow-scroll {	overflow: scroll}
+.overflow-x-auto {	overflow-x: auto}
+.overflow-y-auto {	overflow-y: auto}
+.overflow-x-hidden {	overflow-x: hidden}
+.overflow-y-hidden {	overflow-y: hidden}
+.overflow-x-visible {	overflow-x: visible}
+.overflow-y-visible {	overflow-y: visible}
+.overflow-x-scroll {	overflow-x: scroll}
+.overflow-y-scroll {	overflow-y: scroll}
+.overscroll-auto {	overscroll-behavior: auto}
+.overscroll-contain {	overscroll-behavior: contain}
+.overscroll-none {	overscroll-behavior: none}
+.overscroll-y-auto {	overscroll-behavior-y: auto}
+.overscroll-y-contain {	overscroll-behavior-y: contain}
+.overscroll-y-none {	overscroll-behavior-y: none}
+.overscroll-x-auto {	overscroll-behavior-x: auto}
+.overscroll-x-contain {	overscroll-behavior-x: contain}
+.overscroll-x-none {	overscroll-behavior-x: none}
+
+@include md{ 
+  .md\:overflow-auto {	overflow: auto}
+  .md\:overflow-hidden {	overflow: hidden}
+  .md\:overflow-visible {	overflow: visible}
+}
+
+
+.opacity-0 {opacity: 0}
+.opacity-5 {opacity: .05}
+.opacity-10 {opacity: .1}
+.opacity-20 {opacity: .2}
+.opacity-25 {opacity: .25}
+.opacity-30 {opacity: .3}
+.opacity-40 {opacity: .4}
+.opacity-50 {opacity: .5}
+.opacity-60 {opacity: .6}
+.opacity-70 {opacity: .7}
+.opacity-75 {opacity: .75}
+.opacity-80 {opacity: .8}
+.opacity-90 {opacity: .9}
+.opacity-95 {opacity: .95}
+.opacity-100 {opacity: 1}

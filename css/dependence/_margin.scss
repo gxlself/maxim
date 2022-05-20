@@ -1,0 +1,88 @@
+@import './function';
+/**
+  * margin
+  */
+
+.m-auto {margin: auto}
+
+
+.ml-2{margin-left:0.5rem}
+.ml-4\.5{margin-left:1.125rem}
+.ml-v12{margin-left: 1.6vw}
+.ml-v16{margin-left: 2.1333vw}
+.ml-v30{margin-left: 4vw}
+.ml-v40{margin-left: 5.3333vw}
+.ml-v60{margin-left: 8vw}
+
+.mr-10{margin-right:2.5rem}
+.mr-v24{margin-right:3.2vw}
+
+.mt-2\.5{margin-top:0.625rem}
+.mt-v24{margin-top: 3.2vw}
+.mt-v80{margin-top: 10.6667vw}
+
+.mx-3\.5{margin-left: 0.875rem;margin-right: 0.875rem}
+.mx-v24{margin-left: 3.2vw;margin-right: 3.2vw}
+  
+.mb-2\.5{margin-bottom:0.625rem}
+.mb-3\.5{margin-bottom:0.875rem;}
+.mb-v10{margin-bottom: 1.3333vw}
+.mb-v12{margin-bottom: 1.6vw}
+.mb-v14{margin-bottom: 1.8667vw}
+.mb-v16{margin-bottom: 2.1333vw}
+.mb-v24{margin-bottom: 3.2vw}
+.mb-v26{margin-bottom: 3.4667vw}
+.mb-v30{margin-bottom: 4vw}
+.mb-v40{margin-bottom: 5.3333vw}
+.mb-v42{margin-bottom: 5.6vw}
+.mb-v50{margin-bottom: 6.6667vw}
+.mb-v80{margin-bottom: 10.6667vw}
+.mb-v120{margin-bottom: 16vw}
+.mb-v286{margin-bottom: 38.1333vw}
+.mb-v350{margin-bottom: 46.6667vw}
+
+@include md{
+  .md\:ml-3{margin-left: 0.75rem}
+  .md\:ml-3\.5{margin-left: 0.875rem}
+  .md\:ml-4{margin-left: 1rem}
+  .md\:ml-4\.5{margin-left: 1.125rem}
+  .md\:ml-5{margin-left: 1.25rem}
+  .md\:ml-6{margin-left: 1.5rem}
+  .md\:ml-9{margin-left: 2.25rem}
+  .md\:ml-11{margin-left: 2.75rem}
+  .md\:ml-20{margin-left: 5rem}
+  .md\:ml-25{margin-left: 6.25rem}
+  .md\:ml-30{margin-left: 7.5rem}
+  .md\:-ml-4{margin-left: -1rem}
+
+  .md\:mr-3\.5{margin-right: 0.875rem}
+
+  .md\:mt-2{margin-top: 0.5rem}
+  .md\:mt-3{margin-top: 0.75rem}
+  .md\:mt-4{margin-top: 1rem}
+  .md\:mt-5{margin-top: 1.25rem}
+  .md\:mt-12\.5{margin-top: 3.125rem}
+  .md\:-mt-12{margin-top: -3rem}
+
+  .md\:mb-0{margin-bottom: 0}
+  .md\:mb-1{margin-bottom: 0.25rem}
+  .md\:mb-2{margin-bottom: 0.5rem}
+  .md\:mb-3{margin-bottom: 0.75rem}
+  .md\:mb-3\.5{margin-bottom: 0.875rem}
+  .md\:mb-4{margin-bottom: 1rem}
+  .md\:mb-4\.5{margin-bottom: 1.125rem}
+  .md\:mb-5{margin-bottom: 1.25rem;}
+  .md\:mb-5\.5{margin-bottom: 1.375rem}
+  .md\:mb-6{margin-bottom: 1.5rem;}
+  .md\:mb-7{margin-bottom: 1.75rem;}
+  .md\:mb-7\.5{margin-bottom: 1.875rem}
+  .md\:mb-8\.5{margin-bottom: 2.125rem}
+  .md\:mb-9{margin-bottom: 2.25rem}
+  .md\:mb-9\.5{margin-bottom: 2.375rem}
+  .md\:mb-10{margin-bottom: 2.5rem}
+  .md\:mb-11\.25{margin-bottom: 2.8125rem}
+  .md\:mb-12\.5{margin-bottom: 3.125rem}
+  .md\:mb-14\.5{margin-bottom: 3.625rem}
+  .md\:mb-20{margin-bottom: 5rem}
+  .md\:mb-25{margin-bottom: 6.25rem}
+}

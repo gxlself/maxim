@@ -1,0 +1,34 @@
+@import './dependence/_base.scss';
+@import './dependence/_flex.scss';
+@import './dependence/_text.scss';
+@import './dependence/_width.scss';
+@import './dependence/_color.scss';
+@import './dependence/_height.scss';
+@import './dependence/_margin.scss';
+@import './dependence/_border.scss';
+@import './dependence/_padding.scss';
+@import './dependence/_position.scss';
+@import './dependence/_transition.scss';
+@import './dependence/_shadow.scss';
+@import './dependence/_transform.scss';
+@import './dependence/_zIndex.scss';
+@import './dependence/_background.scss';
+
+// /***** ****/
+.fbig { font-size: 38px; font-weight: 300;}
+.ftext {font-size: 16px; font-weight: 300; line-height: 21px;}
+
+.fw3{font-weight: 300 !important;}
+
+.section {padding: 40px 0;}
+// .hidden {overflow: hidden !important;}
+.tc {text-align: center !important;}
+.auto {margin: 0 auto;}
+.mt25{margin-top:25px !important}
+.pt210{padding-top:210px !important}
+.w1200{width:1200px !important}
+.h200{height:200px !important}
+.h490{height:490px !important}
+.lh30{line-height:30px !important}
+.fs0{font-size:0px}
+.fs16{font-size:16px !important}

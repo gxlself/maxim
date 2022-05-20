@@ -1,0 +1,250 @@
+.docheader {
+  position: fixed;
+  height: 80px;
+  width: 82%;
+  background: white;
+  border-top: 2px solid #4A90E2;
+  border-left: 2px solid #dedede;
+  z-index: 3;
+  left: 18%;
+}
+
+/***************************** 华丽的分割线 *************************/
+.lnav {
+  position: fixed;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.lnav ul {
+  margin-left: 10px;
+}
+
+.lnav ul li{
+  line-height: 25px;
+  text-indent: 10px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(124, 124, 124);
+  float: inherit;
+  margin-top: 0px;
+}
+
+.lnav ul li.sel,
+.lnav ul li:hover{
+  background: rgb(238, 238, 238);
+}
+
+.lnav ul li > ul{
+  display: none;
+}
+.lnav .open{
+  display: block;
+}
+
+.lnav ul li > ul li{
+  line-height: 25px;
+  text-indent: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  color: rgb(124, 124, 124);
+}
+
+.lnav ul li.stitle {
+  height: 50px;
+  line-height: 50px;
+  text-indent: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+
+
+.lnav .item ul {
+  display: none;
+}
+
+.lnav .item p.stitle {
+  height: 50px;
+  line-height: 50px;
+  text-indent: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+
+
+
+
+.lnav .item p.sel,
+.lnav .item p:hover,
+.lnav .open p {
+  background: rgb(238, 238, 238);
+}
+
+.lnav .item ul li {
+  height: 25px;
+  line-height: 25px;
+  text-indent: 10px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgb(124, 124, 124);
+}
+
+.lnav .item p.sel,
+.lnav .item p:hover {
+  background: rgb(238, 238, 238);
+}
+
+.lnav .open ul {
+  display: block;
+}
+
+.lnav .item ul li.sel {
+  background: #EEEEEE;
+  color: black;
+}
+
+/***************************** 华丽的分割线 *************************/
+
+.scontent {
+  margin-left: 18%;
+  background: rgb(235, 235, 235);
+  border-left: 2px solid #dedede;
+}
+
+.scontent .frm {
+  max-width: 80%;
+  width: 80%;
+  padding: 0px 0px 100px 40px;
+  position: inherit;
+  overflow: hidden;
+}
+
+.scontent .anchor {
+  padding-top: 100px;
+}
+.scontent figure {
+  margin: 20px 0px 50px 0px;
+  width: 100%;
+}
+
+.scontent figure figcaption{
+  text-align: center;
+  width: 100%;
+}
+.scontent p {
+  margin-top: 20px;
+}
+
+.scontent .item {
+  height: 500px;
+}
+
+.scontent .frm img {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+
+
+.scontent .s1 {
+  font-size: 28px;
+  line-height: 31px;
+  margin-top: 30px;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+}
+
+.scontent .s2 {
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 30px;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+  margin-bottom: 5px;
+}
+
+.scontent .s3 {
+  font-size: 18px;
+  line-height: 23px;
+  margin-top: 15px;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+}
+
+.scontent .s4 {
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: 10px;
+  font-weight: 300;
+  color: rgb(51, 51, 51);
+}
+
+.scontent pre {
+  font-size: 15px;
+  background-color: #333;
+  border: 0;
+  border-left: 2px solid #ff7900;
+  color: #dedede;
+  font-family: monospace;
+  height: auto;
+  line-height: 21px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 18px 22px;
+  white-space: pre;
+}
+
+section {
+  overflow: hidden;
+  background: white;
+}
+
+table {
+  /* margin-bottom: 1.5rem; */
+  /* background: rgb(222, 222, 222); */
+  background: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+table thead,
+table thead tr,
+table thead th {
+  padding: 15px 0;
+  background: rgb(222, 222, 222);
+  border-spacing: none;
+  text-align: left;
+  text-indent: 10px;
+}
+
+table tbody td {
+  padding: 15px 10px;
+
+
+}
+
+table tbody tr td {
+  border-bottom: 1px solid rgb(222, 222, 222);
+}
+
+table .odd{
+  background-color: whitesmoke;
+}
+
+.scontent ul {
+  padding: 10px 40px;
+}
+
+.scontent ul li {
+  font-size: 15px;
+  font-weight: 400;
+  list-style: initial;
+  line-height: 24px;
+
+}

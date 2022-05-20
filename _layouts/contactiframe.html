@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  <div class="w420 fs16">
+    <form action="https://formspree.io/xjdqgezx" method="POST" name="form">
+      <div class="r">
+        <input type="text" name="name" class="w420 h35 indent5 mt25" placeholder='{% t auto.key_66_663335112  %} {% comment %}姓名 *{% endcomment %}'>
+        <div c="name" class="err">{% t auto.key_67_959873280  %} {% comment %}名字是必填项。请输入名字。{% endcomment %}</div>
+      </div>
+
+      <div class="r">
+        <input type="text" name="company" class="w420 h35 indent5 mt25" placeholder='{% t auto.key_68_878781242  %} {% comment %}公司 *{% endcomment %}'>
+        <div c="company" class="err">{% t auto.key_69_065156091  %} {% comment %}公司是必填项。请输入公司。{% endcomment %}</div>
+      </div>
+
+      <div class="r">
+        <input type="text" name="phone" class="w420 h35 indent5 mt25" placeholder='{% t auto.key_70_514458078  %} {% comment %}手机号码 *{% endcomment %}'>
+        <div c="phone" class="err">{% t auto.key_71_980128372  %} {% comment %}手机号码是必填项。请输入手机号码。{% endcomment %}</div>
+      </div>
+
+      <div class="r">
+        <input type="email" name="email" class="w420 h35 indent5 mt25" placeholder='{% t auto.key_72_021949975  %} {% comment %}邮箱 *{% endcomment %}'>
+        <div c="email" class="err">{% t auto.key_73_789995038  %} {% comment %}邮箱是必填项。请输入邮箱。{% endcomment %}</div>
+      </div>
+      <div class="r">
+        <input type="text" name="product" class="w420 h35 indent5 mt25" placeholder='{% t auto.key_74_511623526  %} {% comment %}意向产品 *{% endcomment %}'>
+        <div c="product" class="err">{% t auto.key_75_316963837  %} {% comment %}意向产品是必填项。请输入意向产品。{% endcomment %}</div>
+      </div>
+
+      <textarea name="note" class="w420 h100 mt25 indent5" placeholder='{% t auto.key_76_612835148  %} {% comment %}问题和意见（可选）{% endcomment %}'></textarea>
+      <div class="sbutton ib w420 h35 lh35 mt25" onclick="fsubmit()">{% t auto.key_77_240967316  %} {% comment %}请与我联系{% endcomment %}</div>
+    </form>
+  </div>
+</body>
+
+<script>
+  const sarr = ['name', 'company', 'phone', 'email', 'product'];
+  function fsubmit() {
+    let ret = true;
+    sarr.forEach(x => {
+      if (document.querySelector('[name=' + x + ']').value == '') {
+        document.querySelector('[c=' + x + ']').style.display = 'block';
+        ret = false;
+      } else {
+        document.querySelector('[c=' + x + ']').style.display = 'none';
+      }
+    })
+    if (ret) {
+      document.forms[0].submit();
+    }
+  }
+
+</script>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .indent5 {
+    text-indent: 5px !important;
+  }
+  .h35 {
+    height: 35px !important;
+    box-sizing: content-box;
+  }
+  .w420 {
+    width: 420px !important;
+  }
+  /* @media (max-width: 750px) {
+    .w420 {
+      width:70vw!important;
+    }
+  } */
+  .mt25 {
+    margin-top: 25px !important;
+  }
+  .r {
+    position: relative;
+  }
+  .fs16 {
+    font-size: 16px !important;
+  }
+  input{
+    border: 1px solid;
+  }
+  .h100 {
+    height: 100px !important;
+  }
+  textarea {
+    border: 1px solid #DDD;
+  }
+  .sbutton {
+    background: #F5A623;
+    border-radius: 8px;
+    width: 300px;
+    /* height: 35px; */
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+  }
+  .err {
+    font-size: 12px;
+    height: 13px;
+    line-height: 13px;
+    color: #db3f3e;
+    position: absolute;
+    top: 68px;
+    display: none;
+  }
+
+  .sbutton {
+    background: #F5A623;
+    border-radius: 8px;
+    width: 300px;
+    /* height: 35px; */
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+  }
+
+  .err {
+    font-size: 12px;
+    height: 13px;
+    line-height: 13px;
+    color: #db3f3e;
+    position: absolute;
+    top: 68px;
+    display: none;
+  }
+
+  .r {
+    position: relative;
+  }
+
+
+  textarea {
+    border: 1px solid #DDD;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+</style>
+
+
+</html>

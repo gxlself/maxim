@@ -1,0 +1,36 @@
+.sass-cache
+.jekyll-metadata
+_site/feed.xml
+_site/CNAME
+
+.DS_Store
+node_modules
+/dist
+dist.tar.gz
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+package-lock.json
+
+# local env files
+.env.local
+.env.*.local
+
+# locak dependencie 
+vendor
+.bundle
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode
+*.sw*

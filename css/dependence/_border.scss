@@ -1,0 +1,39 @@
+@import './_var';
+@import './_function';
+/**
+  * 边框
+  */
+.border-solid {border-style: solid}  
+.border-dashed {border-style: dashed}  
+.border-dotted {border-style: dotted} 
+.border-double {border-style: double}  
+.border-none {border-style: none}  
+.border-b-solid {border-style: solid}  
+// 边框厚度
+.border{border-width:1px}
+.border-0{border-width:0px}
+
+// 颜色
+.border-transparent {border-color: transparent}  
+.border-current {border-color: currentColor}
+.border-white{border-color:#ffffff}
+.border-down{border-color: #A0A0A0}
+
+// 圆角
+.rounded-0{border-radius:0}
+.rounded-0\.75{border-radius:0.1875rem}
+
+.rounded-v4{border-radius: 0.5333vw}
+.rounded-v10{border-radius: 1.3333vw}
+.rounded-v16{border-radius: 2.1333vw}
+
+@include md{
+  .md\:border-0{border-width:0px}
+  .md\:border-b-solid {border-style: solid}  
+
+  .md\:rounded-1{border-radius: 0.25rem}
+  .md\:rounded-2{border-radius: 0.5rem}
+  .md\:rounded-3{border-radius: 0.75rem}
+  .md\:rounded-3\.5{border-radius: 0.875rem}
+  .md\:rounded-4{border-radius: 1rem}
+}

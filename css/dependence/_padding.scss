@@ -1,0 +1,98 @@
+@import './function';
+/**
+  * padding
+  */
+.py-0{padding-top:0;padding-bottom: 0}
+.py-2\.5{padding-top:0.625rem;padding-bottom: 0.625rem}
+.py-v14{padding-top: 1.8667vw;padding-bottom: 1.8667vw}
+.py-v26{padding-top: 3.4667vw;padding-bottom: 3.4667vw}
+.py-v30{padding-top: 4vw;padding-bottom: 4vw}
+.py-v120{padding-top: 16vw;padding-bottom: 16vw}
+.py-v150{padding-top: 20vw;padding-bottom: 20vw}
+
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.px-7\.5{padding-left:1.875rem;padding-right:1.875rem}
+.px-8\.5{padding-left:2.125rem;padding-right:2.125rem}
+.px-12\.5{padding-left:3.125rem;padding-right:3.125rem}
+.px-v6{padding-left:0.8vw;padding-right:0.8vw}
+.px-v20{padding-left: 2.6667vw;padding-right: 2.6667vw;}
+.px-v30{padding-left: 4vw;padding-right: 4vw;}
+.px-v40{padding-left: 5.3333vw;padding-right: 5.3333vw}
+.px-v65{padding-left: 8.6667vw;padding-right: 8.6667vw}
+
+.pt-11\.5{padding-top:2.875rem}
+.pt-v30{padding-top: 4vw}
+.pt-v80{padding-top: 10.6667vw}
+.pt-v120{padding-top:16vw}
+
+.pb-18\.5{padding-bottom:4.625rem}
+.pb-1\/12{padding-bottom:8.333%}
+.pb-v30{padding-bottom: 4vw}
+.pb-v40{padding-bottom: 5.3333vw}
+.pb-v50{padding-bottom: 6.6667vw}
+.pb-v80{padding-bottom: 10.6667vw}
+.pb-v100{padding-bottom: 13.3333vw}
+.pb-v120{padding-bottom: 16vw}
+
+.pl-10{padding-left: 2.5rem;}
+.pl-p11{padding-left: 11%}
+
+.pr-7{padding-right: 1.75rem;}
+.pr-14{padding-right: 3.5rem;}
+.pr-p13{padding-left: 13%}
+
+@include md {
+  .md\:px-0{padding-left:0;padding-right:0}
+  .md\:px-1\.5{padding-left:0.375rem;padding-right:0.375rem}
+  .md\:px-7\.5{padding-left:1.875rem;padding-right:1.875rem}
+  .md\:px-8{padding-left:2rem;padding-right:2rem}
+  .md\:px-8\.5{padding-left:2.125rem;padding-right:2.125rem}
+  .md\:px-10{padding-left:2.5rem;padding-right:2.5rem}
+  .md\:px-16{padding-left:4rem;padding-right:4rem}
+  .md\:px-18\.75{padding-left:4.6875rem;padding-right:4.6875rem}
+  .md\:px-30{padding-left:7.5rem;padding-right:7.5rem}
+  .md\:px-35{padding-left:8.75rem;padding-right:8.75rem}
+  .md\:px-p6\.25{padding-left:6.25%;padding-right:6.25%}
+
+  .md\:pl-12\.5{padding-left:3.125rem}
+  .md\:pl-23\.5{padding-left:5.875rem}
+  .md\:pr-p7{padding-left:7%}
+  .md\:pl-p11{padding-left:10%}
+
+  .md\:pr-5\.5{padding-right:2.75rem}
+  .md\:pr-11{padding-right:2.75rem}
+  .md\:pr-19\.5{padding-right:4.875rem}
+  .md\:pr-25{padding-right:6.25rem}
+  .md\:pr-p8{padding-right:8%}
+  .md\:pr-p13{padding-right:13%}
+
+  .md\:py-0{padding-top: 0;padding-bottom: 0}
+  .md\:py-5{padding-top: 1.25rem;padding-bottom: 1.25rem}
+  .md\:py-5\.5{padding-top: 1.375rem;padding-bottom: 1.375rem}
+  .md\:py-8\.5{padding-top: 2.125rem;padding-bottom: 2.125rem}
+  .md\:py-14{padding-top: 3.5rem;padding-bottom: 3.5rem}
+  .md\:py-17\.5{padding-top: 4.375rem;padding-bottom: 4.375rem}
+  .md\:py-21{padding-top: 5.25rem;padding-bottom: 5.25rem}
+
+  .md\:pt-0{padding-top: 0}
+  .md\:pt-3{padding-top: 0.75rem}
+  .md\:pt-5{padding-top: 1.25rem}
+  .md\:pt-10{padding-top: 2.5rem}
+  .md\:pt-13\.5{padding-top: 3.375rem}
+  .md\:pt-14\.5{padding-top: 3.625rem}
+  .md\:pt-16{padding-top: 4rem;}
+  .md\:pt-17\.5{padding-top: 4.375rem}
+  .md\:pt-27{padding-top: 6.75rem;}
+  .md\:pt-33\.5{padding-top: 8.375rem}
+
+  .md\:pb-0{padding-bottom: 0}
+  .md\:pb-4{padding-bottom: 1rem}
+  .md\:pb-5{padding-bottom: 1.25rem}
+  .md\:pb-7\.5{padding-bottom: 1.875rem}
+  .md\:pb-12\.5{padding-bottom: 3.125rem}
+  .md\:pb-14{padding-bottom: 3.5rem}
+  .md\:pb-15{padding-bottom: 3.75rem}
+  .md\:pb-20{padding-bottom: 5rem;}
+  .md\:pb-22{padding-bottom: 5.5rem;}
+  .md\:pb-24\.5{padding-bottom: 6.125rem;}
+}

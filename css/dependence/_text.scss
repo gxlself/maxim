@@ -1,0 +1,98 @@
+@import './function';
+/**
+  * 排版
+  */
+// 字体大小
+.text-xs {font-size: .75rem;line-height: 1rem}
+.text-sm {font-size: .875rem;line-height: 1.25rem}
+.text-base {font-size: 1rem;line-height: 1.5rem}
+.text-lg {font-size: 1.125rem;line-height: 1.75rem}
+.text-xl {font-size: 1.25rem;line-height: 1.75rem}
+.text-2xl {font-size: 1.5rem;line-height: 2rem}
+.text-3xl {font-size: 1.875rem;line-height: 2.25rem}
+.text-4xl {font-size: 2.25rem;line-height: 2.5rem}
+.text-5xl {font-size: 3rem;line-height: 1}
+.text-6xl {font-size: 3.75rem;line-height: 1}
+.text-7xl {font-size: 4.5rem;line-height: 1}
+.text-8xl {font-size: 6rem;line-height: 1}
+.text-9xl {font-size: 8rem;line-height: 1}
+
+.text-v22{font-size: 2.9333vw}
+.text-v24{font-size: 3.2vw}
+.text-v26{font-size: 3.4667vw}
+.text-v28{font-size: 3.4667vw;line-height: 5.3333vw}
+.text-v34{font-size: 4.5333vw}
+.text-v54{font-size: 7.2vw;}
+.text-v42{font-size: 5.6vw;line-height: 7.7333vw}
+@include md {
+  .md\:text-sm {font-size: .875rem;line-height: 1.25rem}
+  .md\:text-base {font-size: 1rem;line-height: 1.5rem}
+  .md\:text-xs{font-size: .75rem;line-height: 1rem}
+  .md\:text-lg {font-size: 1.125rem;line-height: 1.75rem}
+  .md\:text-2xl{font-size: 1.5rem;line-height: 2rem}
+  .md\:text-4xl{font-size: 2.25rem;line-height: 2.5rem}
+  .md\:text-7xl {font-size: 4.5rem;line-height: 1}
+  
+  .md\:text-5 {font-size: 1.25rem}
+  .md\:text-9\.5 {font-size: 2.375rem}
+  .md\:text-12 {font-size: 3rem}
+  .md\:text-14\.5 {font-size: 3.625rem}
+}
+
+// 字体样式
+.italic {font-style: italic}
+.not-italic { font-style: normal}
+// 字体粗细
+.font-thin {font-weight: 100}
+.font-extralight {font-weight: 200}
+.font-light {font-weight: 300}
+.font-normal {font-weight: 400}
+.font-medium {font-weight: 500}
+.font-semibold {font-weight: 600}
+.font-bold {font-weight: 700}
+.font-extrabold {font-weight: 800}
+.font-black {font-weight: 900}
+// 垂直对齐
+.align-baseline {vertical-align: baseline}
+.align-top {vertical-align: top}
+.align-middle {vertical-align: middle}
+.align-bottom {vertical-align: bottom}
+.align-text-top {vertical-align: text-top}
+.align-text-bottom {vertical-align: text-bottom}
+// 文本换行
+.break-normal {overflow-wrap: normal;word-break: normal}
+.break-words {overflow-wrap: break-word}
+.break-all {word-break: break-all}
+// 空格
+.whitespace-normal {white-space: normal}
+.whitespace-nowrap {white-space: nowrap}
+.whitespace-pre {white-space: pre}
+.whitespace-pre-line {white-space: pre-line}
+.whitespace-pre-wrap {white-space: pre-wrap}
+// 文本转换
+.uppercase {text-transform: uppercase}
+.lowercase {text-transform: lowercase}
+.capitalize {text-transform: capitalize}
+.normal-case {text-transform: none}
+// 文本溢出
+.truncate {overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+.overflow-ellipsis {text-overflow: ellipsis}
+.overflow-clip {text-overflow: clip}
+// 文本对齐
+.text-left {text-align: left}
+.text-center {text-align: center}
+.text-right {text-align: right}
+.text-justify {text-align: justify}
+// 文本装饰
+.underline {text-decoration: underline}
+.line-through {text-decoration: line-through}
+.no-underline {text-decoration: none}
+
+@include md{
+  .md\:font-normal{font-weight: 400}
+
+  .md\:text-left {text-align: left}
+  .md\:text-center {text-align: center}
+  .md\:text-right {text-align: right}
+  .md\:text-justify {text-align: justify}
+}

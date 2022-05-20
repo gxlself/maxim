@@ -1,0 +1,65 @@
+@import './function';
+/**
+  * 定位
+  */
+.static { position: static}
+.fixed { position: fixed}
+.absolute {position: absolute}
+.relative {position: relative}
+.sticky {position: sticky}
+// top, bottom, left, right
+.top-0{top:0}
+.bottom-0{bottom:0}
+.left-0{left:0}
+.right-0{right:0}
+
+.-bottom-v10{bottom: -1.3333vw}
+.bottom-v14{bottom: 1.8667vw}
+.left-v40{left: 5.3333vw}
+.right-v40{right: 5.3333vw}
+
+.left-full {left:100%}
+.right-full {right:100%}
+
+.inset-0{top:0;left:0;right:0;bottom:0}
+
+.top-0\.5{top: 0.125rem;}
+.top-10{top:2.5rem}
+.top-v36{top: 4.8vw}
+
+.right-1{right:0.25rem}
+.right-v30{right:4vw}
+
+@include md {
+  .md\:static { position: static}
+  .md\:fixed { position: fixed}
+  .md\:absolute {position: absolute}
+  .md\:relative {position: relative}
+  .md\:sticky {position: sticky}
+
+  .md\:top-0{top:0}
+  .md\:bottom-0{bottom:0}
+  .md\:left-0{left:0}
+  .md\:right-0{right:0}
+
+  .md\:top-5{top:1.25rem}
+  .md\:top-16{top:4rem}
+  .md\:top-42\.5{top:10.625rem}
+  .md\:top-79{top:19.75rem}
+
+  .md\:top-1\/2{top:50%}
+
+  .md\:-bottom-1\.5{bottom: -0.375rem}
+  .md\:-bottom-3\.75{bottom: -0.9375rem}
+  .md\:-bottom-16{bottom: -4rem}
+  .md\:-bottom-33\.25{bottom: -8.3125rem}
+
+  .md\:-left-74{left:-18.5rem}
+
+  .md\:right-0{right: 0}
+  .md\:right-3\.5{right: 0.875rem}
+  .md\:right-31\.5{right:7.875rem}
+  .md\:right-11{right:2.75rem}
+  .md\:-right-24{right:-6rem}
+  .md\:-right-62\.5{right:-15.625rem}
+}

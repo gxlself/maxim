@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  {% include snav.html %}
+
+  <div class="deploy-back h-screen md:h-107.5 flex flex-col items-center justify-center text-white">
+    <h1 class="mb-v16 md:mb-2 md:font-light text-v54 md:text-9.5">{% t auto.key_78_154751226  %} {% comment %}多模式部署{% endcomment %}</h1>
+    <p>{% t auto.key_79_522038072  %} {% comment %}使用云原生技术，多云架构，无忧切换{% endcomment %}</p>
+  </div>
+
+  <div class="part-three px-v40 py-v120 md:px-0 md:pt-16 md:pb-14 flex flex-col items-center relative z-1">
+    <h1 class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">{% t auto.key_194_504955642  %} {% comment %}一键启用，多云架构{% endcomment %}</h1>
+
+    <div class="tab part-three-tab text-center">
+      <ul class="inline-flex relative mb-v40 md:mb-12.5 justify-start md:justify-center">
+        <li class="tab-item tab-active" tabid="public-cloud">{% t auto.key_40_536730755  %} {% comment %}公有云{% endcomment %}</li>
+        <li class="tab-item" tabid="previte-cloud">{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</li>
+        <li class="tab-item" tabid="proprietary-cloud">{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}</li>
+        <li class="tab-line absolute transition left-0 -bottom-v10 md:-bottom-1.5 w-v24 md:w-4" active="public-cloud"></li>
+      </ul>
+
+      <div class="tab-content block" infoid="public-cloud">
+        <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+          <img class="md:w-132.5 mb-v50 md:mb-0 md:self-center" src="../img/product/bg-public-cloud.png">
+          <div class="md:w-105 cloud-card">
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_196_186637694  %} {% comment %}选择信赖的云服务商{% endcomment %}</h4>
+              <p>{% t auto.key_197_194510759  %} {% comment %}解除 IaaS 厂商绑定，可以在不同云服务商之间选择，当前支持阿里云，AWS即将推出{% endcomment %}</p>
+            </div>
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_198_230000248  %} {% comment %}选择喜欢的部署方式{% endcomment %}选择喜欢的部署方式</h4>
+              <p>{% t auto.key_199_688032740  %} {% comment %}公有云一键启用，专有云一键部署，私有云一键安装，不同部署方式无忧切换，同步适应业务发展。{% endcomment %}</p>
+            </div>
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_200_613747608  %} {% comment %}专有云资源透明{% endcomment %}</h4>
+              <p>{% t auto.key_201_629555130  %} {% comment %}IaaS 资源账号开放，可检查专有云资源配比，服务状况透明可监督{% endcomment %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="tab-content hidden" infoid="previte-cloud">
+        <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+          <img class="md:w-132.5 mb-v50 md:mb-0 md:self-center" src="../img/product/bg-previte-cloud.png">
+          <div class="md:w-105 cloud-card">
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_80_609470785  %} {% comment %}独立专享的资源，比公有云更高的服务保障，私有云级别的数据自主性。专有云为专业用户提供，并可提供灵活的业务定制。{% endcomment %} </h4>
+            </div>
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_81_096276901  %} {% comment %}蓝莺IM专有云的资源完全透明可监督，通过控制台操作一键部署，可随时切换部署方式，迁移无忧。{% endcomment %} </h4>
+              <p>{% t auto.key_82_731566204  %} {% comment %}如果要切换到私有云，我们可以直接将云服务商账号转让给你，或者协助进行私有云数据迁移；如果要切换到公有云商业版，我们可以自动进行数据同步后，你的一次点击即可完成。{% endcomment %}</p>
+            </div>
+          </div>
+        </div>
+      </ul>
+
+      <ul class="tab-content hidden" infoid="proprietary-cloud">
+        <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+          <img class="md:w-132.5 mb-v50 md:mb-0 md:self-center" src="../img/product/bg-proprietary-cloud.png">
+          <div class="md:w-105 cloud-card">
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_106_796006501  %} {% comment %}自主可控，方便定制，10分钟安装，按月付费。{% endcomment %}</h4>
+              <p>{% t auto.key_107_552325646  %} {% comment %}蓝莺IM私有云可以一键安装，省心高效。使用私有云，你将完全掌控你的数据和服务，并毫无限制地访问所有服务。{% endcomment %}</p>
+            </div>
+            <div class="cloud-card-item">
+              <h4>{% t auto.key_108_474714328  %} {% comment %}借助于最先进的容器技术，蓝莺IM所有的服务有已完成云原生改造，这是私有云可以稳定可靠地运行在从裸机服务器、私有云计算平台到各种内部容器平台环境中的重要依靠。{% endcomment %} </h4>
+              <p>{% t auto.key_109_877669801  %} {% comment %}私有云非常适合在企业、学校等各种组织的非开放网络里运行。{% endcomment %} </p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="md:pt-13.5 md:pb-7.5 px-v40 md:px-10">
+    <h4 class="mb-v40 md:mb-10 text-v42 md:text-4xl font-normal text-center">{% t auto.key_83_880781987  %} {% comment %}选择美信拓扑专有云，您将获得{% endcomment %}</h4>
+    
+    <ul class="select-card">
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_84_748509158  %} {% comment %}不限制注册用户{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_85_988290374  %} {% comment %}免费的高级功能{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_86_857563286  %} {% comment %}独立的计算集群{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_87_056058912  %} {% comment %}云级别的运维保障{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_88_316397774  %} {% comment %}无限的设备数量{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_89_259766799  %} {% comment %}24小时在线技术支持{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_90_080624033  %} {% comment %}接近无限的服务调用{% endcomment %}</li>
+      <li class="select-card-item"><img class="w-v36 md:w-6.5 mr-v24 md:mr-3.5" src="../img/deploy/greenright.png">{% t auto.key_91_811876694  %} {% comment %}定制优化的链路访问{% endcomment %}</li>
+    </ul>
+  </div>
+
+  <div class="part-four pt-v120 pb-v100 md:py-5.5 px-v40 text-center">
+    <h1 class="mb-v50 md:mb-11.25 text-v42 md:text-4xl font-normal">{% t auto.key_92_991872476  %} {% comment %}还将获得优秀的服务{% endcomment %}</h1>
+
+    <div class="flex flex-wrap justify-between text-white">
+      <div class="integration-card bg-card-1 card-shadow">
+        <h4>{% t auto.key_93_206632896  %} {% comment %}行业低价{% endcomment %}</h4>
+        <p>{% t auto.key_94_191583806  %} {% comment %}极致优化的高性能服务保证了高性价比，按需使用，定价平滑不跳档。{% endcomment %}</p>
+        <a class="card-link" href="{% t link.base %}plans/">{% t auto.key_95_393408742  %} {% comment %}查看定价 >{% endcomment %}</a>
+      </div>
+      <div class="integration-card bg-card-2 card-shadow">
+        <h4>{% t auto.key_96_123222669  %} {% comment %}快速集成{% endcomment %}</h4>
+        <p>{% t auto.key_97_860999452  %} {% comment %}跨平台的SDK Floo，整洁优美的 API ，让集成非常简单。{% endcomment %}</p>
+        <a class="card-link" href="https://console.lanyingim.com" target="_blank">{% t auto.key_98_038740639  %} {% comment %}查看详情 >{% endcomment %}</a>
+      </div>
+
+      <div class="integration-card bg-card-3 card-shadow">
+        <h4>{% t auto.key_99_907129159  %} {% comment %}高效可靠{% endcomment %}</h4>
+        <p>{% t auto.key_100_070761300  %} {% comment %}全新设计的二进制通讯协议，低流量低延时，保证消息的可靠有序投递。{% endcomment %}</p>
+      </div>
+      <div class="integration-card bg-card-4 card-shadow">
+        <h4>{% t auto.key_101_228888440  %} {% comment %}稳定健壮{% endcomment %}</h4>
+        <p>{% t auto.key_102_221267471  %} {% comment %}千万级并发，服务稳定，SLA 可用性可达 99.99%。{% endcomment %}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-back relative py-v150 md:pt-27 md:pb-24.5 text-center text-white overflow-hidden hidden md:block">
+    <h1 class="mb-v50 md:mb-12.5 text-v42 md:text-4xl font-normal text-center">专业SDK, 私有云按月付费</h1>
+    <a class="inline-block border w-v320 md:w-102 text-v26 md:text-5 leading-v90 md:leading-17.5 rounded-v10 md:rounded-1" href="https://console.lanyingim.com/" target="_blank" >
+      {% t auto.key_222_137272277  %} {% comment %}立即免费试用{% endcomment %}
+    </a>
+  </div>
+  {% include nfooter.html %}
+</body>
+<script type="text/javascript">
+  function GetRequest() {
+{% t auto.key_130_369063981  %} {% comment %}    var url = location.search; //获取url中"?"符后的字串{% endcomment %}
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+
+  var da = '';
+
+  function setUrl() {
+    $('#pro').hide();
+    $('#pri').hide();
+    $('#pub').hide();
+    $('#sub_nav .item').removeClass('sel');
+    $('#sub_nav [att=' + da + ']').addClass('sel');
+    $('#' + da).show();
+  }
+
+  $(function () {
+    const saa = GetRequest();
+    if (saa.d) {
+      da = saa.d;
+    } else {
+      da = 'pub';
+    }
+    setUrl();
+
+    $('#sub_nav .item').click(function () {
+      const att = $(this).attr('att');
+      da = att;
+      setUrl();
+    });
+
+  });
+</script>
+
+<style>
+  .r4 {
+    border-radius: 4px;
+  }
+
+  .mqarea {
+    background-image: url(/img/header/deploy_back.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 406px;
+    background-position: center center;
+  }
+
+  .mqarea .simg {
+    position: absolute;
+    top: 92px;
+    right: 100px;
+    width: 386px;
+    height: 237px;
+  }
+
+  .mqarea .sa1 {
+    font-family: PingFangSC-Semibold;
+    font-size: 40px;
+    color: #4B2D00;
+  }
+
+  .mqarea .sa2 {
+    font-family: PingFangSC-Regular;
+    font-size: 17px;
+    color: #4D5863;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+  }
+
+  .backitem {
+    border: 3px solid #f2f2f2;
+    box-sizing: border-box;
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 2em 2.5em;
+  }
+</style>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  {% include snav.html %}
+
+  <div class="dev-header h-screen md:h-128.5 flex flex-col justify-end text-center px-v40 md:px-30 pb-v40 md:pb-12.5">
+    <div class="mb-v350 md:mb-25 text-white">
+      <h1 class="md:text-12 font-light0 md:mb-2">{% t auto.key_3823_230128347 %}{% comment %}美信拓扑已开源代码 163277 行{% endcomment %}</h1>
+      <p class="md:text-lg">{% t auto.key_3824_454600730 %}{% comment %}美信拓扑开源（MTOS）2021.08.12{% endcomment %}</p>
+    </div>
+
+    <div class="flex justify-between md:justify-center text-black font-normal flex-wrap md:flex-nowrap text-v26 md:text-lg">
+      <a class="link-width mb-v30 md:mb-0 leading-v90 md:leading-20 text-white bg-dev-back rounded-v10 md:rounded-3.5 common-shadow" href="{% t link.base %}downloads/">{% t auto.key_134_302632102  %} {% comment %}下载 Demo{% endcomment %}</a>
+      <a class="link-width mb-v30 md:mb-0 ml-v30 md:ml-3.5 leading-v90 md:leading-20 bg-white rounded-v10 md:rounded-3.5 common-shadow" href="https://console.lanyingim.com" target="_blank">{% t auto.key_135_944904830  %} {% comment %}控制台{% endcomment %}</a>
+      <a class="link-width md:ml-3.5 leading-v90 md:leading-20 bg-white rounded-v10 md:rounded-3.5 common-shadow" href="https://github.com/maxim-top/maxims-bistro/issues" target="_blank">{% t auto.key_136_346304374  %} {% comment %}提问{% endcomment %}</a>
+      <a class="link-width ml-v30 md:ml-3.5 leading-v90 md:leading-20 bg-white rounded-v10 md:rounded-3.5 common-shadow" href="https://github.com/maxim-top" target="_blank">{% t auto.key_137_995593032  %} {% comment %}源码{% endcomment %}</a>
+    </div>
+  </div>
+
+  <div class="text-center px-v40 md:px-30 py-v120 md:py-5">
+    <h1 class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">{% t auto.key_138_901214947  %} {% comment %}客户端跨平台技术介绍以及各端集成指南{% endcomment %}</h1>
+    <img class="block md:hidden" src="../img/dev/guide-m.png" />
+    <div class="md:text-left mt-v80 md:mt-2 md:mb-6 font-normal">
+      <a class="sm:bg-doc-detail md:block inline-block sm:leading-v90 w-v320 text-white md:text-part-link2 rounded-v10" href="{% t link.doc_url %}">{% t auto.key_139_416015231  %} {% comment %}文档详情{% endcomment %}</a>
+    </div>
+    <img class="hidden md:block" src="../img/dev/guide.png" />
+  </div>
+
+  <div class="text-center px-v40 md:px-30 md:py-17.5 mb-v120 md:mb-7.5">
+    <h1 class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">{% t auto.key_140_712316576  %} {% comment %}服务端架构设计以及API详细说明{% endcomment %}</h1>
+    <img class="block md:hidden" src="../img/dev/api-detail-m.png" />
+    <div class="md:text-left mt-v80 md:mt-2 md:mb-6 font-normal">
+      <a class="sm:bg-doc-detail md:block inline-block sm:leading-v90 w-v320 text-white md:text-part-link2 rounded-v10" href="{% t link.doc_url %}">{% t auto.key_139_416015231  %} {% comment %}文档详情{% endcomment %}</a>
+    </div>
+    <img class="hidden md:block" src="../img/dev/api-detail.png" />
+  </div>
+
+  {% include nfooter.html %}
+</body>
+</html>

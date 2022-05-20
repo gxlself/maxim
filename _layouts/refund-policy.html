@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+{% include nhead.html %}
+
+<body style="min-width: 100px !important;">
+  <style>
+    body {
+      margin: 0;
+      /* padding: 10px 20px; */
+      color: #4f4f4f;
+      line-height: 21px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+    }
+
+    .manualEntry {
+      font-weight: 400;
+    }
+
+    .t {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .t1 {
+      text-indent: 24px;
+    }
+
+    .t2 {
+      text-indent: 48px;
+    }
+
+    .t3 {
+      text-indent: 72px;
+    }
+
+    a {
+      color: rgb(52, 117, 192);
+      text-decoration: none;
+    }
+  </style>
+  <div class="title pt30"> {% t auto.key_409_814378500  %} {% comment %}美信拓扑终止服务流程{% endcomment %}</div>
+  <div class="panel-group" id="faq-collapse" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" style="padding: 20px;">
+      <p>{% t auto.key_410_198459906  %} {% comment %}鉴于您已注册成为美信拓扑服务的客户，并使用由美信拓扑提供的产品/服务，本流程为美信拓扑服务合同的一部分，请您仔细阅读了解。{% endcomment %}</p>
+      <p>{% t auto.key_411_805954068  %} {% comment %}若您在美信拓扑服务期届满前要求终止服务的，需遵循以下办理流程，美信拓扑将依据以下流程及要求确认您是否满足终止服务及退款的条件。{% endcomment %}</p>
+      <p class="t">{% t auto.key_412_688705929  %} {% comment %}一、终止协议办理流程{% endcomment %}</p>
+      <p class="t1">{% t auto.key_413_175332856  %} {% comment %}1. 您需提前一个月向您的顾问（或美信拓扑服务合同中约定的联系人）发送终止服务申请邮件并说明终止原因。{% endcomment %}</p>
+      <p class="t1">{% t auto.key_414_174186299  %} {% comment %}2. 美信拓扑将在接收申请的3个工作日内回复是否同意终止服务。{% endcomment %}</p>
+      <p class="t1">{% t auto.key_415_892740213  %} {% comment %}3. 若美信拓扑同意终止服务，则请您提供如下材料：{% endcomment %}</p>
+      <p class="t2">{% t auto.key_416_935783990  %} {% comment %}1. 发票所有联（如已开具发票）；{% endcomment %}</p>
+      <p class="t2">{% t auto.key_417_132305040  %} {% comment %}2. 加盖公章的情况说明；{% endcomment %}</p>
+      <p class="t2">{% t auto.key_418_270210960  %} {% comment %}3. 若美信拓扑已开具发票为增值税专用发票，您需在您所属的税务局开通红字发票通知单（如已认证）；{% endcomment %}</p>
+      <p class="t2">{% t auto.key_419_663237722  %} {% comment %}4. 加盖公章的付款凭证；{% endcomment %}</p>
+      <p class="t1">{% t auto.key_420_855155478  %} {% comment %}4.美信拓扑收到前述完整材料后，与您协商办理终止服务和结算退款事宜。{% endcomment %}</p>
+      <p class="t">{% t auto.key_421_503975258  %} {% comment %}二、退款规则及说明{% endcomment %}</p>
+
+      <p class="t1">{% t auto.key_422_223715720  %} {% comment %}1. 退款时美信拓扑只向您退还实付预付款及实际消耗服务费的差额，赠送金额和优惠金额等不计入退款结算额中。{% endcomment %}</p>
+      <p class="t1">{% t auto.key_423_039537696  %} {% comment %}2. 相应产品/服务使用满6个月的，支持退款。{% endcomment %}</p>
+      <p class="t1">{% t auto.key_424_766834753  %} {% comment %}3. 相应产品/服务使用不满6个月的，则退款结算规则具体如下：{% endcomment %}</p>
+      <p class="t2">{% t auto.key_425_504810764  %} {% comment %}1. 如果实际消耗金额大于相应服务6个月功能使用费/基础月服务费等，则按第2条说明执行，支持退款；{% endcomment %}</p>
+      <p class="t2">
+        2.
+        {% t auto.key_426_062599647  %} {% comment %}如果实际消耗金额小于相应服务6个月功能使用费/基础月服务费等，视为您已使用相应服务满6个月，美信拓扑将按照使用相应服务6个月计算您消耗的功能使用费/基础月服务费等，在扣除前述费用后向您退还剩余实付金额，可退款金额数为：余额-（6个月功能使用费/基础月服务费-实际消耗金额）。{% endcomment %}
+      </p>
+      <p class="t1">{% t auto.key_427_115529251  %} {% comment %}4. 以下情况不支持退款：{% endcomment %}</p>
+      <p class="t2">{% t auto.key_428_043213625  %} {% comment %}1. 您未遵守退款流程或者退款材料缺失；{% endcomment %}</p>
+      <p class="t2">{% t auto.key_429_181724446  %} {% comment %}2. 您购买的是打包产品/服务或套餐产品/服务；{% endcomment %}</p>
+      <p class="t2">{% t auto.key_430_067518991  %} {% comment %}3. 与营销活动、优惠活动等相关的任何充值金额（包含实付金额）；{% endcomment %}</p>
+      <p class="t2">{% t auto.key_431_637579653  %} {% comment %}4. 因您自身原因或您违反国家相关法律规定导致美信拓扑无法兑现服务承诺。{% endcomment %}</p>
+      <p class="t1">{% t auto.key_432_230252890  %} {% comment %}5. 如对退款有疑问，请先联系您所购产品/服务的专属顾问进行咨询。{% endcomment %}</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+
+</html>

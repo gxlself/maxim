@@ -1,0 +1,275 @@
+<nav class="nav fixed top-0 left-0 right-0 text-white transition duration-500 z-20">
+  <p class="text-right text-xs font-medium mb-2.5 hidden md:block">
+    {% t auto.key_27_971928788  %} {% comment %}联系商务：{% endcomment %}
+    <a href="tel:4006660162">400-666-0162</a>
+    <span class="mx-3.5">|</span> 
+    <a href="{{ page.url	 }}">中文</a><span>  /  </span><a href="/en{{ page.url }}">EN</a>
+  </p>
+  
+  <div class="nav-link flex justify-between items-center font-normal">
+    <ul class="nav-link-ul items-center relative hidden md:flex">
+      <li class="mr-10">
+        <a href="{% t link.base %}">
+          <img class="w-29.5 nav-logo" src="/img/whitelogo-{% t link.language %}.png" />
+          <img class="w-29.5 nav-sticky-logo" src="/img/whitelogo-{% t link.language %}-sticky.png" />
+        </a>
+      </li>
+      <li class="px-6 menu nav-link-li">
+        <span class="menu-item cursor-pointer" sid="pro"><a href="{% t link.base %}product/">{% t auto.key_31_536139129  %} {% comment %}产品{% endcomment %}</a></span>
+      </li>
+      <li class="px-6 nav-link-li"><span class="menu-item cursor-pointer" sid="pri"><a href="{% t link.base %}plans/">{% t auto.key_12_012554623  %} {% comment %}定价{% endcomment %}</a></span>
+      </li>
+      <li class="px-6 menu nav-link-li">
+        <span class="menu-item cursor-pointer" sid="dev"><a href="{% t link.base %}developer/">{% t auto.key_13_064382932  %} {% comment %}开发者中心{% endcomment %}</a></span>
+      </li>
+      <li class="px-6 menu nav-link-li">
+        <span class="menu-item cursor-pointer" sid="dow"><a href="{% t link.base %}downloads/">{% t auto.key_5_232822105  %} {% comment %}下载{% endcomment %}</a></span>
+      </li>
+      <li class="px-6 relative cursor-pointer nav-link-li">
+        <span sid="dow menu-item"><a target="_blank" href="{% t auto.key_47_119058001  %} {% comment %}https://github.com/maxim-top/maxims-bistro/blob/master/美信拓扑开源MTOS.md{% endcomment %}">
+          {% t auto.key_48_739576035  %} {% comment %}开源{% endcomment %}
+        </a></span>
+        <img class="absolute top-0 right-1 w-0.75 h-0.75 github-icon-white" src="/img/open/github-black.png" />
+        <img class="absolute top-0 right-1 w-0.75 h-0.75 github-icon-blue" src="/img/open/github-color.png" />
+      </li>
+      <li class="menu-drop shadow absolute top-10 left-0 hidden bg-white text-black transition duration-500 px-12.5 pt-11.5 pb-18.5 rounded-0.75 text-sm leading-8">
+        <ul mid="pro" class="menu-drop-content flex hidden">
+          <li class="pr-7 menu-drop-content-li">
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="{% t link.base %}product/">{% t auto.key_32_081616803  %} {% comment %}即时通讯（IM）{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.base %}product/">{% t auto.key_33_520739317  %} {% comment %}富文本消息{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.base %}product/#scloud">{% t auto.key_34_063367240  %} {% comment %}消息云存储{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.base %}product/#open">{% t auto.key_35_295607264  %} {% comment %}开放平台{% endcomment %}</a></p>
+          </li>
+          <li class="pl-10 pr-14 menu-drop-content-li">
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="{% t link.base %}product/">{% t auto.key_36_945838412  %} {% comment %}增值扩展{% endcomment %}</a></p>
+            <p class=""><a class="relative" href="{% t link.doc_url %}/quick-start/push-dev-guide.html">{% t auto.key_37_134073847  %} {% comment %}美信推送{% endcomment %}<img class="absolute top-0.5 left-full w-6.5 transform translate-x-2" src="/img/gif/new.png" /></a></p>
+            <p class=""><a href="{% t link.base %}oversea/">{% t auto.key_38_811647067  %} {% comment %}全球通连{% endcomment %}</a></p>
+          </li>
+          <li class="px-8.5 menu-drop-content-li">
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="{% t link.base %}deploy/?d=pub">{% t auto.key_39_691760787  %} {% comment %}部署模式{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.base %}deploy/?d=pub">{% t auto.key_40_536730755  %} {% comment %}公有云{% endcomment %}</a></p>
+            <p class=""><a class="relative" href="{% t link.base %}deploy/?d=pri">{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}<img class="absolute top-0.5 left-full w-6.5 transform translate-x-2" src="/img/gif/hot.png" /></a></p>
+            <p class=""><a href="{% t link.base %}deploy/?d=pro">{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</a></p>
+          </li>
+        </ul>
+
+        <ul mid="dev" class="menu-drop-content hidden">
+          <li class="">
+            <p class=""><a href="{% t link.base %}developer/">{% t auto.key_13_064382932_2  %} {% comment %}开发者中心{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.doc_url %}">{% t auto.key_43_633999428  %} {% comment %}文档中心{% endcomment %}</a></p>
+          </li>
+        </ul>
+
+        <ul mid="dow" class="menu-drop-content hidden">
+          <li>
+            <p class="text-lg leading-6 mb-3.5 text-drop-title"><a href="{% t link.base %}downloads/">{% t auto.key_44_371114768  %} {% comment %}Demo体验{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.base %}downloads/">{% t auto.key_45_283079980  %} {% comment %}源码和SDK{% endcomment %}</a></p>
+            <p class=""><a href="{% t link.base %}downloads/">{% t auto.key_46_471776591  %} {% comment %}私有部署安装{% endcomment %}</a></p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="block md:hidden">
+      <img class="w-v150 nav-m-logo" src="/img/whitelogo-{% t link.language %}.png" />
+      <img class="w-v150 nav-sticky-m-logo" src="/img/whitelogo-{% t link.language %}-sticky.png" />
+    </div>
+
+    <p class="flex items-center">
+      <a class="inline-block border text-v24 md:text-xs border-solid rounded-0.75 px-v30 md:px-7.5 h-v60 md:h-10 leading-v60 md:leading-10 whitespace-nowrap" target="_blank" href="https://console.lanyingim.com">
+        {% t auto.key_29_270778152  %} {% comment %}登录{% endcomment %}
+      </a>
+      <a class="bg-gradient-01 rounded-0.75 px-v30 md:px-7.5 h-v60 md:h-10 leading-v60 md:leading-10 ml-4.5 text-white hidden md:inline-block whitespace-nowrap" target="_blank" href="https://console.lanyingim.com">
+        {% t auto.key_30_918625413  %} {% comment %}免费注册{% endcomment %}
+      </a>
+      <span class="relative block md:hidden menu-line-box flex flex-col justify-between ml-v40">
+        <span></span>
+        <span></span>
+      </span>
+    </p>
+  </div>
+</nav>
+
+<div class="nav-m-menu hidden md:hidden fixed inset-0 bg-menu-back z-10 pt-v120">
+  <div class="header-menu lanying-menu">
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title">{% t auto.key_31_536139129  %} {% comment %}产品{% endcomment %}</p>
+      <ul class="header-submenu-box lanying-submenu-box">
+        <li class="header-submenu-item menu-tag">{% t auto.key_32_081616803  %} {% comment %}即时通讯（IM）{% endcomment %}</li>
+        <li class="header-submenu-item"><a href="{% t link.base %}contact/">{% t auto.key_9_127788799  %} {% comment %}企业级合作{% endcomment %}</a></li>
+        <li class="header-submenu-item"><a href="{% t link.base %}product/">{% t auto.key_33_520739317  %} {% comment %}富文本消息{% endcomment %}</a></li>
+        <li class="header-submenu-item"><a href="{% t link.base %}product/#scloud">{% t auto.key_34_063367240  %} {% comment %}消息云存储{% endcomment %}</a></li>
+        <li class="header-submenu-item"><a href="{% t link.base %}product/#open">{% t auto.key_35_295607264  %} {% comment %}开放平台{% endcomment %}</a></li>
+        
+        <li class="header-submenu-item menu-tag">{% t auto.key_36_945838412  %} {% comment %}增值扩展{% endcomment %}</li>
+        <li class="header-submenu-item"><a class="relative flex items-center" href="{% t link.doc_url %}/quick-start/push-dev-guide.html">{% t auto.key_37_134073847  %} {% comment %}美信推送{% endcomment %}<img class="w-v60 ml-v12" src="/img/gif/new.png" /></a></li>
+        <li class="header-submenu-item"><a href="{% t link.base %}oversea/">{% t auto.key_38_811647067  %} {% comment %}全球通连{% endcomment %}</a></li>
+
+        <li class="header-submenu-item menu-tag">{% t auto.key_39_691760787  %} {% comment %}部署模式{% endcomment %}</li>
+        <li class="header-submenu-item"><a href="{% t link.base %}deploy/?d=pub">{% t auto.key_40_536730755  %} {% comment %}公有云{% endcomment %}</a></li>
+        <li class="header-submenu-item"><a class="relative flex items-center" href="{% t link.base %}deploy/?d=pri">{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}<img class="w-v60 ml-v12" src="/img/gif/hot.png" /></a></li>
+        <li class="header-submenu-item"><a href="{% t link.base %}deploy/?d=pro">{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</a></li>
+      </ul>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title no-arrow"><a href="{% t link.base %}plans/">{% t auto.key_12_012554623  %} {% comment %}定价{% endcomment %}</a></p>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title">{% t auto.key_13_064382932  %} {% comment %}开发者中心{% endcomment %}</p>
+      <ul class="header-submenu-box lanying-submenu-box">
+        <li class="header-submenu-item"><a href="{% t link.base %}developer/">{% t auto.key_13_064382932_2  %} {% comment %}开发者中心{% endcomment %}</a></li>
+        <li class="header-submenu-item"><a href="{% t link.doc_url %}">{% t auto.key_43_633999428  %} {% comment %}文档中心{% endcomment %}</a></li>
+      </ul>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title">{% t auto.key_5_232822105  %} {% comment %}下载{% endcomment %}</p>
+      <ul class="header-submenu-box lanying-submenu-box">
+        <li class="header-submenu-item menu-tag">{% t auto.key_44_371114768  %} {% comment %}Demo体验{% endcomment %}</li>
+        <li class="header-submenu-item"><a href="{% t link.base %}downloads/">{% t auto.key_45_283079980  %} {% comment %}源码和SDK{% endcomment %}</a></li>
+        <li class="header-submenu-item"><a href="{% t link.base %}downloads/">{% t auto.key_46_471776591  %} {% comment %}私有部署安装{% endcomment %}</a></li>
+      </ul>
+    </div>
+
+    <div class="header-submenu lanying-submenu">
+      <p class="header-submenu-title lanying-submenu-title text-header-title no-arrow"><a target="_blank" href="{% t auto.key_47_119058001  %} {% comment %}https://github.com/maxim-top/maxims-bistro/blob/master/美信拓扑开源MTOS.md{% endcomment %}">{% t auto.key_48_739576035  %} {% comment %}开源{% endcomment %}</a></p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+function debounce(func, delay, immediate) {
+  var timer = null;
+  return function () {
+    var context = this
+    clearTimeout(timer);
+    if (immediate) {
+      var callNow = !timer;
+      timer = setTimeout(function() { timer = null }, delay);
+      if (callNow) { func.apply(context, arguments); }
+    } else {
+      timer = setTimeout(function() { func.apply(context, arguments); }, delay)
+    }
+  }
+}
+
+function ableScroll () {
+  $(document.documentElement).removeClass('overflow-hidden').removeClass('h-screen')
+}
+
+function disableScroll() {
+  $(document.documentElement).addClass('overflow-hidden').addClass('h-screen')
+}
+
+$(document).scroll(function () {
+  var st = $(this).scrollTop();
+  if (st > 0) {
+    $('.nav').addClass('nav-sticky')
+  } else {
+    $('.nav').removeClass('nav-sticky')
+  }
+});
+
+$(function () {
+  var hrefMap = {
+    pro: ['product', 'deploy', 'oversea'],
+    pri: ['plans'],
+    dev: ['plans'],
+    dow: ['download']
+  }
+
+  var href = window.location.href
+  // 下拉显示标识
+  var isNavMenuHover = false;
+  var drop = $('.nav .nav-link-ul .menu-drop');
+  var fobiddenClose = debounce(function () {
+    if (!isNavMenuHover) { drop.addClass('hidden'); }
+  }, 300)
+
+  function getHrefId () {
+    var keys = Object.keys(hrefMap)
+    var id = ''
+    keys.forEach(function(key){
+      hrefMap[key].forEach(function(hrefKey) {
+        if (href.indexOf(hrefKey) > -1) {
+          id = key
+        }
+      })
+    })
+    return id
+  }
+
+  function keepNavActive() {
+    $('.nav .nav-link-li').removeClass('nav-active')
+
+    if (href.indexOf('product') > 0 || href.indexOf('deploy') > 0 || href.indexOf('oversea') > 0) {
+      $('[sid=pro]').parent().addClass('nav-active');
+    }
+    if (href.indexOf('plans') > 0) {
+      $('[sid=pri]').parent().addClass('nav-active');
+    }
+    if (href.indexOf('developer') > 0) {
+      $('[sid=dev]').parent().addClass('nav-active');
+    }
+    if (href.indexOf('download') > 0) {
+      $('[sid=dow]').parent().addClass('nav-active');
+    }
+  }
+
+  $('.nav .nav-link .nav-link-li').mouseenter(function () {
+    var isMenu = $(this).hasClass('menu');
+    isNavMenuHover = isMenu;
+
+    $(this).addClass('nav-active');
+    if (isMenu) {
+      var sid = $(this).find('.menu-item').attr('sid');
+      drop.find('.menu-drop-content').addClass('hidden');
+      drop.find('[mid=' + sid + ']').removeClass('hidden');
+
+      var left = $(this)[0].getBoundingClientRect().left;
+      drop.css('transform', 'translateX(' + (left - 48) + 'px)');
+      if (drop.hasClass('hidden')) { drop.removeClass('hidden');};
+    }
+  }).mouseleave(function () {
+    $(this).removeClass('nav-active');
+    fobiddenClose()
+    keepNavActive()
+    isNavMenuHover = false;
+  });
+  drop.mouseenter(function() {
+    isNavMenuHover = true
+    var mid = $(this).find('.menu-drop-content:not(.hidden)').attr('mid')
+    $('.menu-item[sid='+ mid +']').parent().addClass('nav-active')
+  }).mouseleave(function() {
+    fobiddenClose();
+    isNavMenuHover = false;
+    keepNavActive()
+  })
+
+  keepNavActive()
+
+  $('.menu-line-box').click(function() {
+    var qidian = $('.class_qidian_wpa')
+    var isSticky =  $('.nav').hasClass('nav-sticky')
+    if ($(this).hasClass('open')) {
+      $(this).removeClass('open')
+      $(this).addClass('close')
+      ableScroll()
+      if ($(document).scrollTop() > 0) {
+        $('.nav').addClass('nav-sticky')
+      }
+
+      qidian.css('display', 'block')
+    } else {
+      $(this).removeClass('close')
+      $(this).addClass('open')
+      disableScroll()
+      $('.nav').removeClass('nav-sticky')
+      qidian.css('display', 'none')
+    }
+    $('.nav-m-menu').toggleClass('hidden')
+  })
+})
+</script>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  {% include snav.html %}
+
+  <div class="plans-header h-screen md:h-107.5 overflow-hidden px-v40">
+    <div class="text-white flex-1 flex flex-col items-center text-center justify-center h-full">
+      <div class="mb-v16 md:mb-2 text-v54 md:text-12 leading-v75 md:leading-17">{% t auto.key_231_800002154  %} {% comment %}所有套餐计划均可在控制台付费即用{% endcomment %}</div>
+      <div class="text-v26 md:text-lg leading-v36 md:leading-6">{% t auto.key_232_721684037  %} {% comment %}定价透明平滑，成本完全预测{% endcomment %}
+        <a href="https://console.lanyingim.com" target="_blank"> {% t auto.key_233_607114671  %} {% comment %}价格计算器 >>{% endcomment %} </a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="hidden md:flex justify-center price-card md:px-35 text-center">
+    <li class="price-card-item">
+      <div>
+        <h5 class="price-card-title">{% t auto.key_234_106770463  %} {% comment %}免费版{% endcomment %}</h5>
+        <p class="price-card-price">{% t auto.key_235_811016861  %} {% comment %}￥0{% endcomment %} </p>
+        <p class="price-card-old-price"></p>
+        <p class="price-card-charge">{% t auto.key_236_468414241  %} {% comment %}无计费{% endcomment %}</p>
+        <div class="price-card-desc">
+          <p>{% t auto.key_237_093597118  %} {% comment %}供个人应用或企业开发者测试{% endcomment %}</p>
+          <p>{% t auto.key_238_900768917  %} {% comment %}人数少于 100{% endcomment %} </p>
+        </div>
+      </div>
+      <a class="price-card-btn btn-free" href="https://console.lanyingim.com" target="_blank">{% t auto.key_239_551852719  %} {% comment %}立即试用{% endcomment %}</a>
+    </li>
+
+    <li class="price-card-item">
+      <div>
+        <h5 class="price-card-title">{% t auto.key_240_212126967  %} {% comment %}商业版{% endcomment %}</h5>
+        <p class="price-card-price">{% t auto.key_242_348668898  %} {% comment %}￥199{% endcomment %} <span class="fs20">{% t auto.key_243_216013572  %} {% comment %}起{% endcomment %}</span></p>
+        <p class="price-card-old-price">{% t auto.key_241_978821290  %} {% comment %}-￥1,200--{% endcomment %}</p>
+        <p class="price-card-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</p>
+        <div class="price-card-desc">
+          <p>{% t auto.key_245_734500702  %} {% comment %}为商业应用提供高级功能{% endcomment %}</p>
+          <p>{% t auto.key_246_036650691  %} {% comment %}控制台支持服务定制{% endcomment %}</p>
+          <p>{% t auto.key_247_309838662  %} {% comment %}无人数限制{% endcomment %}</p>
+        </div>
+      </div>
+      <a class="price-card-btn btn-bussiness" href="https://console.lanyingim.com" target="_blank">{% t auto.key_248_840600453  %} {% comment %}开通商业版{% endcomment %}</a>
+    </li>
+
+    <li class="price-card-item">
+      <div>
+        <h5 class="price-card-title">{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</h5>
+        <p class="price-card-price">{% t auto.key_249_063277362  %} {% comment %}￥3,000{% endcomment %} <span class="fs20">{% t auto.key_243_216013572  %} {% comment %}起{% endcomment %}</span></p>
+        <p class="price-card-old-price"></p>
+        <p class="price-card-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</p>
+        <div class="price-card-desc">
+          <p>{% t auto.key_250_827623981  %} {% comment %}为专业应用提供高可靠服务{% endcomment %}</p>
+          <p>{% t auto.key_251_888544944  %} {% comment %}专属集群资源{% endcomment %}</p>
+          <p>{% t auto.key_247_309838662  %} {% comment %}无人数限制{% endcomment %}</p>
+          <p>{% t auto.key_252_038516770  %} {% comment %}全球 200 个国家/地区部署{% endcomment %}</p>
+        </div>
+      </div>
+      <a class="price-card-btn btn-proprietary" href="https://console.lanyingim.com" target="_blank">{% t auto.key_105_417577904  %} {% comment %}开通专有云{% endcomment %}</a>
+    </li>
+
+    <li class="price-card-item">
+      <div>
+        <h5 class="price-card-title">{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}</h5>
+        <p class="price-card-price">{% t auto.key_235_811016861  %} {% comment %}￥0{% endcomment %} <span class="fs20">{% t auto.key_243_216013572  %} {% comment %}起{% endcomment %}</span></p>
+        <p class="price-card-old-price"></p>
+        <p class="price-card-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</p>
+        <div class="price-card-desc">
+          <p>{% t auto.key_253_155824340  %} {% comment %}为私有通讯网络提供{% endcomment %}</p>
+          <p>{% t auto.key_254_332893876  %} {% comment %}完全的数据所有权{% endcomment %}</p>
+          <p>{% t auto.key_255_739302403  %} {% comment %}人数少于 100 万{% endcomment %}</p>
+          <p>{% t auto.key_256_741936738  %} {% comment %}全球 任意 国家/地区部署{% endcomment %}</p>
+          <p>{% t auto.key_257_075139620  %} {% comment %}支持安全通讯*{% endcomment %}</p>
+        </div>
+      </div>
+      <a class="price-card-btn btn-private" href="https://console.lanyingim.com" target="_blank">{% t auto.key_116_620972079  %} {% comment %}开通私有云{% endcomment %}</a>
+    </li> 
+
+    <li class="price-card-item">
+      <div>
+        <h5 class="price-card-title">{% t auto.key_9_127788799_2  %} {% comment %}企业级合作{% endcomment %}</h5>
+        <p class="price-card-price">{% t auto.key_258_429263238  %} {% comment %}咨询商务{% endcomment %}</p>
+        <p class="price-card-old-price"></p>
+        <p class="price-card-charge">{% t auto.key_259_052492925  %} {% comment %}灵活计费{% endcomment %}</p>
+        <div class="price-card-desc">
+          <p>{% t auto.key_260_695431631  %} {% comment %}为深度定制业务提供{% endcomment %}</p>
+          <p>{% t auto.key_261_709148895  %} {% comment %}源码授权{% endcomment %}</p>
+          <p>{% t auto.key_262_239656178  %} {% comment %}专家顾问{% endcomment %}</p>
+        </div>
+      </div>
+      <a class="price-card-btn btn-company" href="{% t link.base %}contact/">{% t auto.key_263_358051597  %} {% comment %}立即咨询{% endcomment %}</a>
+    </li>
+  </ul>
+
+  <ul class="block md:hidden justify-center price-card-m pb-v120 px-v40 text-center">
+    <li class="price-card-m-item">
+      <div class="price-card-m-item__header">
+        <h5 class="price-card-m-title">
+          {% t auto.key_234_106770463  %} {% comment %}免费版{% endcomment %}
+          <span class="price-card-m-charge">{% t auto.key_236_468414241  %} {% comment %}无计费{% endcomment %}</span>
+        </h5>
+        <a class="price-card-m-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能{% endcomment %}</a>
+      </div>
+
+      <div class="price-card-m-desc">
+        <p>{% t auto.key_237_093597118  %} {% comment %}供个人应用或企业开发者测试{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_238_900768917  %} {% comment %}人数少于 100{% endcomment %} </p>
+      </div>
+
+      <div class="price-card-m-item__footer">
+        <p class="price-card-m-price">
+          <span>{% t auto.key_3818_905327827 %} {% comment %}￥{% endcomment %}</span>
+          <span>{% t auto.key_3819_262959191 %} {% comment %}0{% endcomment %}</span>
+        </p>
+        <a class="price-card-m-btn btn-free" href="https://console.lanyingim.com" target="_blank">{% t auto.key_239_551852719  %} {% comment %}立即试用{% endcomment %}</a>
+      </div>
+    </li>
+
+    <li class="price-card-m-item">
+      <div class="price-card-m-item__header">
+        <h5 class="price-card-m-title">
+          {% t auto.key_240_212126967  %} {% comment %}商业版{% endcomment %}
+          <span class="price-card-m-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</span>
+        </h5>
+        <a class="price-card-m-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+      </div>
+
+      <div class="price-card-m-desc">
+        <p>{% t auto.key_245_734500702  %} {% comment %}为商业应用提供高级功能{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_247_309838662  %} {% comment %}无人数限制{% endcomment %}</p>
+        <p>{% t auto.key_246_036650691  %} {% comment %}控制台支持服务定制{% endcomment %}</p>
+      </div>
+
+      <div class="price-card-m-item__footer">
+        <div class="flex items-end">
+          <p class="price-card-m-price">
+            <span>{% t auto.key_3818_905327827 %} {% comment %}￥{% endcomment %}</span>
+            <span>{% t auto.key_3820_500079951 %} {% comment %}199{% endcomment %}</span>
+            <span>{% t auto.key_243_216013572  %} {% comment %}起{% endcomment %}</span>
+          </p>
+          <p class="price-card-m-old-price opacity-40">
+            <span>{% t auto.key_3818_905327827 %} {% comment %}￥{% endcomment %}{% t auto.key_3821_070302706  %}{% comment %}1200{% endcomment %}</span>
+          </p>
+        </div>
+        <a class="price-card-m-btn btn-bussiness block md:hidden" href="https://console.lanyingim.com" target="_blank">{% t auto.key_248_840600453  %} {% comment %}开通商业版{% endcomment %}</a>
+      </div>
+    </li>
+
+    <li class="price-card-m-item">
+      <div class="price-card-m-item__header">
+        <h5 class="price-card-m-title">
+          {% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}
+          <span class="price-card-m-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</span>
+        </h5>
+        <a class="price-card-m-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+      </div>
+
+      <div class="price-card-m-desc">
+        <p>{% t auto.key_250_827623981  %} {% comment %}为专业应用提供高可靠服务{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_251_888544944  %} {% comment %}专属集群资源{% endcomment %}</p>
+        <p>{% t auto.key_247_309838662  %} {% comment %}无人数限制{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_252_038516770  %} {% comment %}全球 200 个国家/地区部署{% endcomment %}</p>
+      </div>
+
+      <div  class="price-card-m-item__footer">
+        <p class="price-card-m-price">
+          <span>{% t auto.key_3818_905327827 %} {% comment %}￥{% endcomment %}</span>
+          <span>{% t auto.key_3822_929660177 %} {% comment %}3000{% endcomment %}</span>
+        </p>
+        <a class="price-card-m-btn btn-proprietary" href="https://console.lanyingim.com" target="_blank">{% t auto.key_105_417577904  %} {% comment %}开通专有云{% endcomment %}</a>
+      </div>
+    </li>
+
+    <li class="price-card-m-item">
+      <div class="price-card-m-item__header">
+        <h5 class="price-card-m-title">
+          {% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}
+          <span class="price-card-m-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</span>
+        </h5>
+        <a class="price-card-m-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+      </div>
+      <div class="price-card-m-desc">
+        <p>{% t auto.key_253_155824340  %} {% comment %}为私有通讯网络提供{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_256_741936738  %} {% comment %}全球 任意 国家/地区部署{% endcomment %}</p>
+        <p>{% t auto.key_254_332893876  %} {% comment %}完全的数据所有权{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_255_739302403  %} {% comment %}人数少于 100 万{% endcomment %}</p>
+        <p>{% t auto.key_257_075139620  %} {% comment %}支持安全通讯*{% endcomment %}</p>
+      </div>
+      <div class="price-card-m-item__footer">
+        <p class="price-card-m-price">
+          <span>{% t auto.key_3818_905327827 %} {% comment %}￥{% endcomment %}</span>
+          <span>{% t auto.key_3819_262959191 %} {% comment %}0{% endcomment %}</span>
+        </p>
+        <a class="price-card-m-btn btn-private" href="https://console.lanyingim.com" target="_blank">{% t auto.key_116_620972079  %} {% comment %}开通私有云{% endcomment %}</a>
+      </div>
+    </li> 
+
+    <li class="price-card-m-item">
+      <div class="price-card-m-item__header">
+        <h5 class="price-card-m-title">
+          {% t auto.key_9_127788799_2  %} {% comment %}企业级合作{% endcomment %}
+          <span class="price-card-m-charge">{% t auto.key_244_293924739  %} {% comment %}按月计费{% endcomment %}</span>
+        </h5>
+        <a class="price-card-m-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+      </div>
+      <div class="price-card-m-desc">
+        <p>{% t auto.key_260_695431631  %} {% comment %}为深度定制业务提供{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_261_709148895  %} {% comment %}源码授权{% endcomment %}</p>
+        <span class="mx-v24">|</span>
+        <p>{% t auto.key_262_239656178  %} {% comment %}专家顾问{% endcomment %}</p>
+      </div>
+      <div class="price-card-m-item__footer">
+        <p class="price-card-m-price">{% t auto.key_259_052492925  %} {% comment %}灵活计费{% endcomment %}</p>
+        <a class="price-card-m-btn btn-company" href="{% t link.base %}contact/">{% t auto.key_263_358051597  %} {% comment %}立即咨询{% endcomment %}</a>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="hidden md:mt-5 md:flex justify-center version-card md:px-35 text-center">
+    <li class="version-card-item">
+      <div>
+        <h4 class="version-card-title">{% t auto.key_264_719048405  %} {% comment %}免费版包含{% endcomment %}</h4>
+        <p class="version-card-trait trait-free">{% t auto.key_265_501303040  %} {% comment %}重要特性{% endcomment %}</p>
+      </div>
+      <ul class="version-card-feature">
+        <li>{% t auto.key_266_268125003  %} {% comment %}• 免费创建100个注册账号{% endcomment %}</li>
+        <li>{% t auto.key_267_191332227  %} {% comment %}• 可使用IM所有基础功能{% endcomment %}</li>
+      </ul>
+      <a class="version-card-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+    </li>
+
+    <li class="version-card-item">
+      <div>
+        <h4 class="version-card-title">{% t auto.key_269_059887472  %} {% comment %}商业版包含{% endcomment %}</h4>
+        <p class="version-card-trait trait-bussiness">{% t auto.key_270_758682979  %} {% comment %}所有免费版功能 +{% endcomment %}</p>
+      </div>
+      <ul class="version-card-feature">
+        <li>{% t auto.key_271_213722293  %} {% comment %}• 创建注册数不限{% endcomment %}</li>
+        <li>{% t auto.key_272_042635445  %} {% comment %}• 可使IM基础功能{% endcomment %}</li>
+        <li>{% t auto.key_273_730734957  %} {% comment %}• 信息订阅{% endcomment %}</li>
+        <li>{% t auto.key_274_988590758  %} {% comment %}• 历史消息云存储{% endcomment %}</li>
+        <li>{% t auto.key_275_788507002  %} {% comment %}• 反垃圾与敏感词过滤{% endcomment %}</li>
+        <li>{% t auto.key_276_334692503  %} {% comment %}• 多端与多设备同步{% endcomment %}</li>
+        <li>{% t auto.key_277_622327852  %} {% comment %}• 可选增值服务{% endcomment %}</li>
+        <li>{% t auto.key_278_461306378  %} {% comment %}• 在线技术支持{% endcomment %}</li>
+      </ul>
+      <a class="version-card-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+    </li>
+
+    <li class="version-card-item">
+      <div class="">
+        <h4 class="version-card-title">{% t auto.key_279_721158940  %} {% comment %}专有云包含{% endcomment %}</h4>
+        <p class="version-card-trait trait-proprietary">{% t auto.key_280_384507832  %} {% comment %}所有商业版功能 +{% endcomment %}</p>
+      </div>
+      <ul class="version-card-feature">
+        <li>{% t auto.key_281_723806669  %} {% comment %}• 独立的计算集群{% endcomment %}</li>
+        <li>{% t auto.key_282_853476914  %} {% comment %}• 可全球部署{% endcomment %}</li>
+        <li>{% t auto.key_283_911036838  %} {% comment %}• 高可用 SLA 99.99%，百倍赔偿{% endcomment %}</li>
+        <li>{% t auto.key_284_801404582  %} {% comment %}• 包括商业版服务{% endcomment %}</li>
+        <li>{% t auto.key_277_622327852  %} {% comment %}• 可选增值服务{% endcomment %}</li>
+        <li>{% t auto.key_285_700253775  %} {% comment %}• 重大活动技术保障{% endcomment %}</li>
+        <li>{% t auto.key_286_247742087  %} {% comment %}• 专属技术支持群{% endcomment %}</li>
+      </ul>
+      <a class="version-card-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+    </li>
+
+    <li class="version-card-item">
+      <div class="">
+        <h4 class="version-card-title">{% t auto.key_287_144327037  %} {% comment %}私有云可部署{% endcomment %}</h4>
+        <p class="version-card-trait trait-previte">{% t auto.key_288_713969809  %} {% comment %}所有即时通讯功能 +{% endcomment %}</p>
+      </div>
+      <ul class="version-card-feature">
+        <li>{% t auto.key_289_442664275  %} {% comment %}• 一键部署{% endcomment %}</li>
+        <li>{% t auto.key_290_944034962  %} {% comment %}• 数据完全可控{% endcomment %}</li>
+        <li>{% t auto.key_277_622327852  %} {% comment %}• 可选增值服务{% endcomment %}</li>
+        <li>{% t auto.key_286_247742087  %} {% comment %}• 专属技术支持群{% endcomment %}</li>
+      </ul>
+      <a class="version-card-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+    </li>
+
+    <li class="version-card-item">
+      <div class="">
+        <h4 class="version-card-title">{% t auto.key_291_249973060  %} {% comment %}企业级合作包含{% endcomment %}</h4>
+        <p class="version-card-trait trait-company">{% t auto.key_292_884283508  %} {% comment %}所有私有云功能 +{% endcomment %}</p>
+      </div>
+      <ul class="version-card-feature">
+        <li>{% t auto.key_293_227229978  %} {% comment %}• 服务功能定制{% endcomment %}</li>
+        <li>{% t auto.key_294_707302708  %} {% comment %}• 专属技术顾问{% endcomment %}</li>
+        <li>{% t auto.key_295_452878423  %} {% comment %}• 7x24小时技术支持{% endcomment %}</li>
+        <li>{% t auto.key_285_700253775  %} {% comment %}• 重大活动技术保障{% endcomment %}</li>
+        <li>{% t auto.key_296_580394548  %} {% comment %}• 源码开放与授权{% endcomment %}</li>
+      </ul>
+      <a class="version-card-link" href="#compare">{% t auto.key_268_541497926  %} {% comment %}对比所有功能 >{% endcomment %}</a>
+    </li>
+  </ul>
+
+  <div class="px-v40 md:px-35 py-0 md:pt-10 md:pb-0">
+    <h1 class="mb-v14 md:mb-2 text-v42 md:text-4xl font-normal">{% t auto.key_297_070082552  %} {% comment %}获取更多美信拓扑服务{% endcomment %}</h1>
+    <p class="text-v24 md:text-lg mb-v42 md:mb-7 md:mb-8.5">{% t auto.key_298_288787605  %} {% comment %}使用美信拓扑为公有云商业版、专有云、私有云计划提供的多种增值服务，进一步提升您的性能和安全性{% endcomment %}</p>
+  
+    <div class="relative text-white bg-info-custom px-v30 py-v30 md:pl-12.5 md:pr-11 md:py-8.5 md:mb-6 rounded-v16 md:rounded-2 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-v30 md:mb-0">
+        <h3 class="text-v28 md:text-2xl mb-v12 md:mb-3">{% t auto.key_299_257754384  %} {% comment %}信息订阅定制{% endcomment %}</h3>
+        <p class="text-v26 md:text-base">{% t auto.key_300_168546434  %} {% comment %}信息订阅定制服务，可以通过此服务选择订阅用户的消息或{% endcomment %}{% t auto.key_301_340639757  %} {% comment %}在线状态，并设置过滤规则{% endcomment %}</p>
+      </div>
+      <a class="text-center md:ml-30 rounded-v10 md:rounded-1 border border-solid border-white w-v320 md:w-45.5 h-v90 md:h-13.5 leading-v90 md:leading-13.5" href="https://console.lanyingim.com" target="_blank">{% t auto.key_302_787893623  %} {% comment %}开通信息订阅定制{% endcomment %}</a>
+    </div>
+
+    <div class="mt-v24 md:mt-0 relative text-white bg-api-quote px-v30 py-v30 md:pl-12.5 md:pr-11 md:py-8.5 rounded-v16 md:rounded-2 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-v30 md:mb-0">
+        <h3 class="text-v28 md:text-2xl mb-v12 md:mb-3">{% t auto.key_303_039660525  %} {% comment %}高级API调用{% endcomment %}</h3>
+        <p class="text-v26 md:text-base">{% t auto.key_300_168546434_2  %} {% comment %}高级API调用服务，可以通过此服务查询用户的在线状态或{% endcomment %}{% t auto.key_301_340639757_2  %} {% comment %}给应用内所有用户发送消息{% endcomment %}</p>
+      </div>
+      <a class="text-center md:ml-30 rounded-v10 md:rounded-1 border border-solid border-white w-v320 md:w-45.5 h-v90 md:h-13.5 leading-v90 md:leading-13.5" href="https://console.lanyingim.com" target="_blank">{% t auto.key_304_653843049  %} {% comment %}开通高级API调用{% endcomment %}</a>
+    </div>
+  </div>
+
+  <div class="px-v40 md:px-35 py-v120 md:py-14">
+    <h1 class="text-center md:text-left mb-v50 md:mb-9 text-v42 md:text-4xl font-normal">{% t auto.key_305_087953462  %} {% comment %}比较所有功能{% endcomment %}</h1>
+    
+    <div class="plans-menu lanying-menu">
+      <div class="plans-submenu lanying-menu-submenu">
+        <p class="plans-submenu-title lanying-submenu-title" support="all">
+          <span>{% t auto.key_306_067434529  %} {% comment %}功能{% endcomment %}</span>
+          <img src="../img/icon-arrow.png" alt="">
+        </p>
+        <div class="plans-submenu-box lanying-submenu-box text-center">
+          <table class="hidden md:table h-0 md:h-auto" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td></td>
+              <td>{% t auto.key_234_106770463  %} {% comment %}免费版{% endcomment %}</td>
+              <td>{% t auto.key_240_212126967  %} {% comment %}商业版{% endcomment %}</td>
+              <td>{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</td>
+              <td>{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}</td>
+              <td>{% t auto.key_9_127788799  %} {% comment %}企业级合作{% endcomment %}</td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_309_838223672  %} {% comment %}单聊{% endcomment %}</td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_310_598926397  %} {% comment %}群聊{% endcomment %}</td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_33_520739317  %} {% comment %}富文本消息{% endcomment %}</td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_34_063367240  %} {% comment %}消息云存储{% endcomment %}</td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_311_212823840  %} {% comment %}历史消息查询{% endcomment %}</td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_123_249189812  %} {% comment %}内容安全{% endcomment %}</td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_121_361474993  %} {% comment %}信息订阅{% endcomment %}</td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_312_379954137  %} {% comment %}多端与多设备同步{% endcomment %}</td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_313_975914676  %} {% comment %}专属计算资源{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_314_588678370  %} {% comment %}安全通讯{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+
+            <tr>
+              <td>{% t auto.key_315_200230226  %} {% comment %}高级定制{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+          </table>
+
+          <img class="block md:hidden h-auto md:h-0" src="../img/plans/plans-feature.png">
+        </div>
+      </div>
+  
+      <div class="plans-submenu lanying-menu-submenu mt-v24 md:mt-4">
+        <p class="plans-submenu-title lanying-submenu-title" support="all">
+          <span>{% t auto.key_316_521323346  %} {% comment %}容量{% endcomment %}</span>
+          <img src="../img/icon-arrow.png" alt="">
+        </p>
+        <div class="plans-submenu-box lanying-submenu-box text-center">
+          <table class="hidden md:table table-align-top h-0 md:h-auto" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td></td>
+              <td>{% t auto.key_234_106770463  %} {% comment %}免费版{% endcomment %}</td>
+              <td>{% t auto.key_240_212126967  %} {% comment %}商业版{% endcomment %}</td>
+              <td>{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</td>
+              <td>{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}</td>
+              <td>{% t auto.key_9_127788799  %} {% comment %}企业级合作{% endcomment %}</td>
+            </tr>
+            
+            <tr>
+              <td>{% t auto.key_307_710398530  %} {% comment %}注册用户数{% endcomment %}</td>
+              <td>100</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+            </tr>
+  
+            <tr>
+              <td>{% t auto.key_317_649406191  %} {% comment %}API接口限流{% endcomment %}</td>
+              <td>{% t auto.key_318_371136473  %} {% comment %}10次/秒{% endcomment %}</td>
+              <td>{% t auto.key_319_457496027  %} {% comment %}30次/秒{% endcomment %}</td>
+              <td>{% t auto.key_319_457496027  %} {% comment %}30次/秒{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+            </tr>
+  
+            <tr>
+              <td>{% t auto.key_320_978107372  %} {% comment %}支持设备数{% endcomment %}</td>
+              <td>{% t auto.key_321_134682605  %} {% comment %}3个/用户{% endcomment %}</td>
+              <td>{% t auto.key_322_146008601  %} {% comment %}5个/用户{% endcomment %}<br />{% t auto.key_323_834602402  %} {% comment %}可购买10个/用户{% endcomment %}<br />{% t auto.key_324_548604683  %} {% comment %}或更高{% endcomment %}</td>
+              <td>{% t auto.key_322_146008601  %} {% comment %}5个/用户{% endcomment %}<br />{% t auto.key_323_834602402  %} {% comment %}可购买10个/用户{% endcomment %}<br />{% t auto.key_324_548604683  %} {% comment %}或更高{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}<br />{% t auto.key_325_185981170  %} {% comment %}可自由配置{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+            </tr>
+  
+            <tr>
+              <td>{% t auto.key_326_326405334  %} {% comment %}存储空间的大小{% endcomment %}</td>
+              <td>1T</td>
+              <td>1T</td>
+              <td>1T</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+            </tr>
+  
+            <tr>
+              <td>{% t auto.key_327_707084155  %} {% comment %}每日下行消息数{% endcomment %}</td>
+              <td>{% t auto.key_328_135215827  %} {% comment %}2万{% endcomment %}</td>
+              <td>{% t auto.key_329_345874953  %} {% comment %}1000万{% endcomment %}</td>
+              <td>{% t auto.key_330_511390075  %} {% comment %}3000万{% endcomment %}<br />{% t auto.key_331_139002230  %} {% comment %}可购买更高{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+              <td>{% t auto.key_308_785021496  %} {% comment %}不限{% endcomment %}</td>
+            </tr>
+  
+            <tr>
+              <td>{% t auto.key_332_414851711  %} {% comment %}群数量{% endcomment %}</td>
+              <td>{% t auto.key_333_426056783  %} {% comment %}500个群/人{% endcomment %}</td>
+              <td>{% t auto.key_334_086216107  %} {% comment %}1000个群/人{% endcomment %}</td>
+              <td>{% t auto.key_334_086216107  %} {% comment %}1000个群/人{% endcomment %}</td>
+              <td>{% t auto.key_335_805159694  %} {% comment %}不限/人{% endcomment %}</td>
+              <td>{% t auto.key_335_805159694  %} {% comment %}不限/人{% endcomment %}</td>
+            </tr>
+  
+            <tr>
+              <td>{% t auto.key_336_170477228  %} {% comment %}群规模{% endcomment %}</td>
+              <td>{% t auto.key_337_887193004  %} {% comment %}200人/群{% endcomment %}</td>
+              <td>{% t auto.key_338_996905800  %} {% comment %}2000人/群{% endcomment %}<br />{% t auto.key_339_736256640  %} {% comment %}可购买10000人/群{% endcomment %}<br />{% t auto.key_324_548604683  %} {% comment %}或更高{% endcomment %}</td>
+              <td>{% t auto.key_338_996905800  %} {% comment %}2000人/群{% endcomment %}<br />{% t auto.key_339_736256640  %} {% comment %}可购买10000人/群{% endcomment %}<br />{% t auto.key_324_548604683  %} {% comment %}或更高{% endcomment %}</td>
+              <td>{% t auto.key_338_996905800  %} {% comment %}2000人/群{% endcomment %}<br />{% t auto.key_340_061419698  %} {% comment %}可配置更高{% endcomment %}</td>
+              <td>{% t auto.key_338_996905800  %} {% comment %}2000人/群{% endcomment %}</td>
+            </tr>
+          </table>
+
+          <img class="block md:hidden h-auto md:h-0" src="../img/plans/plans-capacity.png">
+        </div>
+      </div>
+  
+      <div class="plans-submenu lanying-menu-submenu mt-v24 md:mt-4">
+        <p class="plans-submenu-title lanying-submenu-title" support="all">
+          <span>{% t auto.key_14_996688898  %} {% comment %}支持{% endcomment %}</span>
+          <img src="../img/icon-arrow.png" alt="">
+        </p>
+        <div class="plans-submenu-box lanying-submenu-box text-center">
+          <table class="hidden md:table h-0 md:h-auto" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td></td>
+              <td>{% t auto.key_234_106770463  %} {% comment %}免费版{% endcomment %}</td>
+              <td>{% t auto.key_240_212126967  %} {% comment %}商业版{% endcomment %}</td>
+              <td>{% t auto.key_42_304263959  %} {% comment %}专有云{% endcomment %}</td>
+              <td>{% t auto.key_41_277622082  %} {% comment %}私有云{% endcomment %}</td>
+              <td>{% t auto.key_9_127788799  %} {% comment %}企业级合作{% endcomment %}</td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_341_371993489  %} {% comment %}论坛支持{% endcomment %}</td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_342_163740694  %} {% comment %}在线聊天支持{% endcomment %}</td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_343_913815655  %} {% comment %}技术支持群{% endcomment %}</td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_344_149581225  %} {% comment %}专属技术支持群{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_59_980477105  %} {% comment %}重大活动技术保障{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_345_502472254  %} {% comment %}紧急响应电话{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+            <tr>
+              <td>{% t auto.key_346_055136606  %} {% comment %}技术咨询顾问{% endcomment %}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><img src="/img/r.png" /></td>
+            </tr>
+          </table>
+
+          <img class="block md:hidden h-auto md:h-0" src="../img/plans/plans-support.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include nfooter.html %}
+
+  <script type="text/javascript">
+    $(function () {
+      $('.compare .item .arr').click(function () {
+        if ($(this).hasClass('arr_r')) {
+          $(this).removeClass('arr_r').addClass('arr_b').parents('.item').find('.scontent').show();
+        } else {
+          $(this).removeClass('arr_b').addClass('arr_r').parents('.item').find('.scontent').hide();
+        }
+      })
+    });
+  </script>
+</body>
+</html>

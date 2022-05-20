@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include nhead.html %}
+
+<body>
+  {% include snav.html %}
+
+  <div class="sheader bg-blue relative h-screen md:h-107.5 overflow-hidden px-v40 md:px-0">
+    <div class="text-white flex-1 flex flex-col items-center text-center justify-center h-full pb-1/12">
+      <h1 class="md:font-light mb-v16 md:mb-2 text-v54 md:text-9.5">{% t auto.key_3813_601251060 %} {% comment %}唯一上架阿里云云市场的 即时通讯 私有云{% endcomment %}</h1>
+      <p class="text-v26 md:text-lg leading-v36 md:leading-6">{% t auto.key_3815_061159536 %} {% comment %}直接购买阿里云云主机，选择美信拓扑镜像{% endcomment %}</p>
+    </div>
+
+    <div class="sheader-shape-01 absolute md:w-173.5 md:h-173.5 md:top-16 md:-left-74"></div>
+    <div class="sheader-shape-03 absolute md:w-127 md:h-127 md:-bottom-33.25 md:right-0"></div>
+  </div>
+
+  <div class="part-one relative z-1 flex flex-col flex-col-reverse md:h-125 md:flex-row justify-center items-center px-v40 md:px-0 pt-v120 pb-v80 md:py-0">
+    <div class="part-btns flex md:hidden w-full">
+      <button class="btn-doc">{% t auto.key_3825_558693963 %} {% comment %}文档{% endcomment %}</button>
+      <button class="btn-download">{% t auto.key_5_232822105 %} {% comment %}下载{% endcomment %}</button>
+    </div>
+    
+    <img class="md:w-124 md:self-end transform md:translate-y-7 hidden md:block" src="../img/product/part1-pic.png" />
+    <img class="md:w-124 md:self-end transform md:translate-y-7 block md:hidden mt-v80" src="../img/product/part1-pic-m.png" />
+
+    <div>
+      <h1 id="open" class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">极简设计的SDK与API，快速集成</h1>
+
+      <div class="tab">
+        <ul class="flex relative mb-v40 md:mb-12.5">
+          <li class="tab-item tab-active" tabid="im">IM</li>
+          <li class="tab-item" tabid="push">推送</li>
+          <li class="tab-line absolute transition left-0 -bottom-v10 md:-bottom-1.5 w-v24 md:w-4" active="im"></li>
+        </ul>
+  
+        <ul class="tab-content block" infoid="im">
+          <li>{% t auto.key_184_430047489  %} {% comment %}IM聊天支持语音、图片、自定义消息{% endcomment %}</li>
+          <li>{% t auto.key_185_884305785  %} {% comment %}消息云端存储，支持多设备同步{% endcomment %}</li>
+          <li>{% t auto.key_186_620891751  %} {% comment %}开放平台架构，方便支持服务扩展{% endcomment %}</li>
+        </ul>
+  
+        <ul class="tab-content hidden" infoid="push">
+          <li>基于蓝莺 IMSDK 实现，两大服务仅需一次集成；</li>
+          <li>默认支持各主流厂商通道；</li>
+          <li>独创证书设置与更新机制，无忧升级。</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="part-btns hidden md:flex w-full">
+        <button class="btn-doc">文档</button>
+        <button class="btn-download">下载</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-two relative md:px-16 z-0 flex flex-col md:flex-row justify-center items-center bg-part-back px-v40 md:px-0 py-v120 md:pt-33.5 md:pb-0 md:transform md:-translate-y-25">
+    <div>
+      <h1 id="scloud" class="mb-v50 md:mb-5 text-v42 md:text-4xl font-normal">支持各种聊天场景，任何场景即时通讯</h1>
+
+      <div class="tab part-two-tab">
+        <ul class="flex relative mb-v40 md:mb-12.5">
+          <li class="tab-item tab-active" tabid="live-home">直播间</li>
+          <li class="tab-item" tabid="online-service">在线客服</li>
+          <li class="tab-item" tabid="online-education">在线教育</li>
+          <li class="tab-item" tabid="app-soclal">APP社交</li>
+          <li class="tab-item" tabid="oa">协同办公</li>
+          <li class="tab-line absolute transition left-0 -bottom-v10 md:-bottom-1.5 w-v24 md:w-4" active="live-home"></li>
+        </ul>
+  
+        <div class="tab-content block" infoid="live-home">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </div>
+  
+        <ul class="tab-content hidden" infoid="online-service">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+
+        </ul>
+
+        <ul class="tab-content block" infoid="online-education">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </ul>
+  
+        <ul class="tab-content hidden" infoid="app-soclal">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </ul>
+
+        <ul class="tab-content block" infoid="oa">
+          单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑IM#的AZ设计类似。//@一乐:腾讯云TSF的这篇文章思考非常深入，单看参考文章就可以说明一切单元化架构也是多云架构的重要设计之一，跟现在#美信拓扑I
+        </ul>
+      </div>
+    </div>
+
+    <div class="md:ml-25 w-full md:w-auto part-two-img-wrap">
+      <div imgid="live-home" class="w-full md:w-72.5 h-v330 md:h-72.5 block live-home"></div>
+      <div imgid="online-service" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden online-service"></div>
+      <div imgid="online-education" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden online-education"></div>
+      <div imgid="app-soclal" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden app-soclal"></div>
+      <div imgid="oa" class="w-full md:w-72.5 h-v330 md:h-72.5 hidden oa"></div>
+    </div>
+  </div>
+
+  <div class="part-four pt-v120 pb-v100 md:pt-16 md:pb-5 px-v40 text-center">
+    <h1 class="mb-v10 md:mb-5 text-v42 md:text-4xl font-normal">{% t auto.key_192_258671863  %} {% comment %}快速集成，简单专业{% endcomment %}</h1>
+    <p class="text-center text-v24 md:text-lg mb-v50 md:mb-7">
+      {% t auto.key_193_549348393  %} {% comment %}专业即时通讯，扫码试用，1小时集成，初创企业必选{% endcomment %}
+    </p>
+
+    <div class="flex flex-wrap justify-between text-white">
+      <div class="integration-card bg-card-1 card-shadow">
+        <h4>{% t auto.key_93_206632896  %} {% comment %}行业低价{% endcomment %}</h4>
+        <p>{% t auto.key_94_191583806  %} {% comment %}极致优化的高性能服务保证了高性价比，按需使用，定价平滑不跳档。{% endcomment %}</p>
+        <a class="card-link" href="{% t link.base %}plans/">{% t auto.key_95_393408742  %} {% comment %}查看定价 >{% endcomment %}</a>
+      </div>
+      <div class="integration-card bg-card-2 card-shadow">
+        <h4>{% t auto.key_96_123222669  %} {% comment %}快速集成{% endcomment %}</h4>
+        <p>{% t auto.key_97_860999452  %} {% comment %}跨平台的SDK Floo，整洁优美的 API ，让集成非常简单。{% endcomment %}</p>
+        <a class="card-link" href="https://console.lanyingim.com" target="_blank">{% t auto.key_98_038740639  %} {% comment %}查看详情 >{% endcomment %}</a>
+      </div>
+
+      <div class="integration-card bg-card-3 card-shadow">
+        <h4>{% t auto.key_99_907129159  %} {% comment %}高效可靠{% endcomment %}</h4>
+        <p>{% t auto.key_100_070761300  %} {% comment %}全新设计的二进制通讯协议，低流量低延时，保证消息的可靠有序投递。{% endcomment %}</p>
+      </div>
+      <div class="integration-card bg-card-4 card-shadow">
+        <h4>{% t auto.key_101_228888440  %} {% comment %}稳定健壮{% endcomment %}</h4>
+        <p>{% t auto.key_102_221267471  %} {% comment %}千万级并发，服务稳定，SLA 可用性可达 99.99%。{% endcomment %}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-back relative py-v150 md:pt-27 md:pb-24.5 text-center text-white overflow-hidden">
+    <h1 class="mb-v50 md:mb-12.5 text-v42 md:text-4xl font-normal text-center">专业SDK, 私有云按月付费</h1>
+    <a class="inline-block border w-v320 md:w-102 text-v26 md:text-5 leading-v90 md:leading-17.5 rounded-v10 md:rounded-1" href="https://console.lanyingim.com/" target="_blank" >
+      {% t auto.key_222_137272277  %} {% comment %}立即免费试用{% endcomment %}
+    </a>
+  </div>
+
+  {% include nfooter.html %}
+</body>
+</html>
